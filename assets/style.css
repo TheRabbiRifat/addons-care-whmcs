@@ -1,18 +1,18 @@
-﻿/**
+/**
  * Addons Care - Module-Specific CSS
  * =============================================================================
- * Thin override layer loaded on top of addons-care.css.
+ * Thin override layer loaded on top of addonscare.css.
  * Only module-specific adjustments belong here.
- * All core styles live in assets/addons-care.css.
- * Scope: .addons-care (never break out of this namespace)
+ * All core styles live in assets/addonscare.css.
+ * Scope: .addonscare (never break out of this namespace)
  * =============================================================================
  */
 
 /* ---------------------------------------------------------------------------
    Layout: fill the WHMCS admin content column
    --------------------------------------------------------------------------- */
-.addons-care,
-.addons-care #ac-app {
+.addonscare,
+.addonscare #ac-app {
     min-height: 100vh;
     min-height: 100dvh;
 }
@@ -20,7 +20,7 @@
 /* ---------------------------------------------------------------------------
    Typography: neutralise host-page font-size cascade
    --------------------------------------------------------------------------- */
-.addons-care {
+.addonscare {
     font-size: 14px;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -28,15 +28,15 @@
 /* ---------------------------------------------------------------------------
    Sidebar: module brand background
    --------------------------------------------------------------------------- */
-.addons-care .ac-sidebar {
+.addonscare .ac-sidebar {
     background: #1a1f2e;
 }
 
 /* ---------------------------------------------------------------------------
    Table: compact row height for this module
    --------------------------------------------------------------------------- */
-.addons-care .ac-table td,
-.addons-care .ac-table th {
+.addonscare .ac-table td,
+.addonscare .ac-table th {
     padding-top: 0.625rem;
     padding-bottom: 0.625rem;
 }
@@ -45,19 +45,19 @@
    Print: hide navigational chrome when printing
    --------------------------------------------------------------------------- */
 @media print {
-    .addons-care .ac-sidebar,
-    .addons-care .ac-header,
-    .addons-care .ac-pagination,
-    .addons-care .ac-btn-group,
-    .addons-care .ac-toast-container {
+    .addonscare .ac-sidebar,
+    .addonscare .ac-header,
+    .addonscare .ac-pagination,
+    .addonscare .ac-btn-group,
+    .addonscare .ac-toast-container {
         display: none !important;
     }
 
-    .addons-care .ac-main {
+    .addonscare .ac-main {
         margin-left: 0 !important;
     }
 
-    .addons-care .ac-content {
+    .addonscare .ac-content {
         padding: 0 !important;
         overflow: visible !important;
     }

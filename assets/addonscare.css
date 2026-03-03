@@ -1,7 +1,7 @@
 /*!
  * Addons Care - Monolithic CSS Bundle
  * All components, tokens, utilities, and layout in one file.
- * Scope: .addons-care  |  Prefix: .ac-
+ * Scope: .addonscare  |  Prefix: .ac-
  * ============================================================
  */
 
@@ -12,13 +12,13 @@
 
 /**
  * Addons Care - Design Tokens: Master Variables
- * Scope: .addons-care
+ * Scope: .addonscare
  * All custom properties are declared here and consumed across all components.
  * -----------------------------------------------------------------------------
- * DO NOT use these variables outside .addons-care context.
+ * DO NOT use these variables outside .addonscare context.
  */
 
-.addons-care {
+.addonscare {
 
   /* --- Brand Colors --------------------------------------------------------- */
   --ac-color-primary-50:  #eef2ff;
@@ -195,22 +195,22 @@
 
 /**
  * Addons Care - Base Styles
- * Scope: strictly inside .addons-care { }
+ * Scope: strictly inside .addonscare { }
  * Purpose: A safe, non-leaking reset + base prose styles that only affect
- *          elements INSIDE the .addons-care wrapper, protecting the host
+ *          elements INSIDE the .addonscare wrapper, protecting the host
  *          WHMCS/Blesta/WordPress page from any side-effects.
  * -----------------------------------------------------------------------------
  */
 
 /* --- Scoped Box-Model Reset ------------------------------------------------ */
-.addons-care *,
-.addons-care *::before,
-.addons-care *::after {
+.addonscare *,
+.addonscare *::before,
+.addonscare *::after {
   box-sizing: border-box;
 }
 
 /* --- Root Container -------------------------------------------------------- */
-.addons-care {
+.addonscare {
   font-family: var(--ac-font-family);
   font-size:   var(--ac-text-base);
   font-weight: var(--ac-font-normal);
@@ -223,73 +223,73 @@
 }
 
 /* --- Heading Scale --------------------------------------------------------- */
-.addons-care h1,
-.addons-care h2,
-.addons-care h3,
-.addons-care h4,
-.addons-care h5,
-.addons-care h6 {
+.addonscare h1,
+.addonscare h2,
+.addonscare h3,
+.addonscare h4,
+.addonscare h5,
+.addonscare h6 {
   margin: 0 0 var(--ac-space-3) 0;
   font-weight: var(--ac-font-semibold);
   line-height: var(--ac-leading-tight);
   color: var(--ac-text-primary);
 }
 
-.addons-care h1 { font-size: var(--ac-text-4xl); }
-.addons-care h2 { font-size: var(--ac-text-3xl); }
-.addons-care h3 { font-size: var(--ac-text-2xl); }
-.addons-care h4 { font-size: var(--ac-text-xl);  }
-.addons-care h5 { font-size: var(--ac-text-lg);  }
-.addons-care h6 { font-size: var(--ac-text-base);}
+.addonscare h1 { font-size: var(--ac-text-4xl); }
+.addonscare h2 { font-size: var(--ac-text-3xl); }
+.addonscare h3 { font-size: var(--ac-text-2xl); }
+.addonscare h4 { font-size: var(--ac-text-xl);  }
+.addonscare h5 { font-size: var(--ac-text-lg);  }
+.addonscare h6 { font-size: var(--ac-text-base);}
 
 /* --- Body Text ------------------------------------------------------------- */
-.addons-care p {
+.addonscare p {
   margin: 0 0 var(--ac-space-4) 0;
   color: var(--ac-text-primary);
 }
 
-.addons-care small,
-.addons-care .ac-text-sm { font-size: var(--ac-text-sm); }
+.addonscare small,
+.addonscare .ac-text-sm { font-size: var(--ac-text-sm); }
 
-.addons-care .ac-text-xs { font-size: var(--ac-text-xs); }
+.addonscare .ac-text-xs { font-size: var(--ac-text-xs); }
 
 /* --- Links ----------------------------------------------------------------- */
-.addons-care a {
+.addonscare a {
   color: var(--ac-text-link);
   text-decoration: none;
   transition: color var(--ac-transition-base);
 }
-.addons-care a:hover {
+.addonscare a:hover {
   color: var(--ac-text-link-hover);
   text-decoration: underline;
 }
-.addons-care a:focus-visible {
+.addonscare a:focus-visible {
   outline: 2px solid var(--ac-border-focus);
   outline-offset: 2px;
   border-radius: var(--ac-radius-sm);
 }
 
 /* --- Lists ----------------------------------------------------------------- */
-.addons-care ul,
-.addons-care ol {
+.addonscare ul,
+.addonscare ol {
   margin: 0 0 var(--ac-space-4) 0;
   padding-left: var(--ac-space-6);
 }
-.addons-care li { margin-bottom: var(--ac-space-1); }
+.addonscare li { margin-bottom: var(--ac-space-1); }
 
 /* --- Code ------------------------------------------------------------------ */
-.addons-care code,
-.addons-care pre {
+.addonscare code,
+.addonscare pre {
   font-family: var(--ac-font-mono);
   font-size: var(--ac-text-sm);
 }
-.addons-care code {
+.addonscare code {
   background: var(--ac-neutral-100);
   color: var(--ac-color-primary-700);
   padding: var(--ac-space-0-5) var(--ac-space-1-5);
   border-radius: var(--ac-radius-sm);
 }
-.addons-care pre {
+.addonscare pre {
   background: var(--ac-neutral-900);
   color: var(--ac-neutral-100);
   padding: var(--ac-space-4);
@@ -298,48 +298,48 @@
 }
 
 /* --- HR -------------------------------------------------------------------- */
-.addons-care hr {
+.addonscare hr {
   border: none;
   border-top: 1px solid var(--ac-border-color);
   margin: var(--ac-space-6) 0;
 }
 
 /* --- Images ---------------------------------------------------------------- */
-.addons-care img {
+.addonscare img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
 /* --- Inputs (base override  detailed in _form.css) ----------------------- */
-.addons-care input,
-.addons-care select,
-.addons-care textarea,
-.addons-care button {
+.addonscare input,
+.addonscare select,
+.addonscare textarea,
+.addonscare button {
   font-family: inherit;
   font-size:   inherit;
 }
 
 /* --- Focus Visible (global focus ring inside scope) ----------------------- */
-.addons-care :focus-visible {
+.addonscare :focus-visible {
   outline: 2px solid var(--ac-border-focus);
   outline-offset: 2px;
 }
 
 /* --- Selection ------------------------------------------------------------- */
-.addons-care ::selection {
+.addonscare ::selection {
   background: var(--ac-color-primary-200);
   color: var(--ac-color-primary-900);
 }
 
 /* --- Scrollbar (webkit) ---------------------------------------------------- */
-.addons-care ::-webkit-scrollbar       { width: 6px; height: 6px; }
-.addons-care ::-webkit-scrollbar-track { background: var(--ac-neutral-100); }
-.addons-care ::-webkit-scrollbar-thumb {
+.addonscare ::-webkit-scrollbar       { width: 6px; height: 6px; }
+.addonscare ::-webkit-scrollbar-track { background: var(--ac-neutral-100); }
+.addonscare ::-webkit-scrollbar-thumb {
   background: var(--ac-neutral-300);
   border-radius: var(--ac-radius-full);
 }
-.addons-care ::-webkit-scrollbar-thumb:hover { background: var(--ac-neutral-400); }
+.addonscare ::-webkit-scrollbar-thumb:hover { background: var(--ac-neutral-400); }
 
 
 /* ================================================================
@@ -348,221 +348,221 @@
 
 /**
  * Addons Care - Utility Classes
- * Scope: .addons-care
+ * Scope: .addonscare
  * Purpose: Single-purpose helper classes for rapid layout and styling.
  *          All selectors are scoped to prevent host-page conflicts.
  * -----------------------------------------------------------------------------
  */
 
 /* --- Display --------------------------------------------------------------- */
-.addons-care .ac-d-none        { display: none !important; }
-.addons-care .ac-d-block       { display: block !important; }
-.addons-care .ac-d-inline      { display: inline !important; }
-.addons-care .ac-d-inline-block{ display: inline-block !important; }
-.addons-care .ac-d-flex        { display: flex !important; }
-.addons-care .ac-d-inline-flex { display: inline-flex !important; }
-.addons-care .ac-d-grid        { display: grid !important; }
+.addonscare .ac-d-none        { display: none !important; }
+.addonscare .ac-d-block       { display: block !important; }
+.addonscare .ac-d-inline      { display: inline !important; }
+.addonscare .ac-d-inline-block{ display: inline-block !important; }
+.addonscare .ac-d-flex        { display: flex !important; }
+.addonscare .ac-d-inline-flex { display: inline-flex !important; }
+.addonscare .ac-d-grid        { display: grid !important; }
 
 /* --- Flex Utilities -------------------------------------------------------- */
-.addons-care .ac-flex-row     { flex-direction: row; }
-.addons-care .ac-flex-col     { flex-direction: column; }
-.addons-care .ac-flex-wrap    { flex-wrap: wrap; }
-.addons-care .ac-flex-nowrap  { flex-wrap: nowrap; }
-.addons-care .ac-flex-1       { flex: 1 1 0%; }
-.addons-care .ac-flex-auto    { flex: 1 1 auto; }
-.addons-care .ac-flex-none    { flex: none; }
-.addons-care .ac-flex-shrink-0{ flex-shrink: 0; }
-.addons-care .ac-grow-0       { flex-grow: 0; }
-.addons-care .ac-grow-1       { flex-grow: 1; }
+.addonscare .ac-flex-row     { flex-direction: row; }
+.addonscare .ac-flex-col     { flex-direction: column; }
+.addonscare .ac-flex-wrap    { flex-wrap: wrap; }
+.addonscare .ac-flex-nowrap  { flex-wrap: nowrap; }
+.addonscare .ac-flex-1       { flex: 1 1 0%; }
+.addonscare .ac-flex-auto    { flex: 1 1 auto; }
+.addonscare .ac-flex-none    { flex: none; }
+.addonscare .ac-flex-shrink-0{ flex-shrink: 0; }
+.addonscare .ac-grow-0       { flex-grow: 0; }
+.addonscare .ac-grow-1       { flex-grow: 1; }
 
 /* Justify Content */
-.addons-care .ac-justify-start   { justify-content: flex-start; }
-.addons-care .ac-justify-end     { justify-content: flex-end; }
-.addons-care .ac-justify-center  { justify-content: center; }
-.addons-care .ac-justify-between { justify-content: space-between; }
-.addons-care .ac-justify-around  { justify-content: space-around; }
-.addons-care .ac-justify-evenly  { justify-content: space-evenly; }
+.addonscare .ac-justify-start   { justify-content: flex-start; }
+.addonscare .ac-justify-end     { justify-content: flex-end; }
+.addonscare .ac-justify-center  { justify-content: center; }
+.addonscare .ac-justify-between { justify-content: space-between; }
+.addonscare .ac-justify-around  { justify-content: space-around; }
+.addonscare .ac-justify-evenly  { justify-content: space-evenly; }
 
 /* Align Items */
-.addons-care .ac-items-start    { align-items: flex-start; }
-.addons-care .ac-items-end      { align-items: flex-end; }
-.addons-care .ac-items-center   { align-items: center; }
-.addons-care .ac-items-baseline { align-items: baseline; }
-.addons-care .ac-items-stretch  { align-items: stretch; }
+.addonscare .ac-items-start    { align-items: flex-start; }
+.addonscare .ac-items-end      { align-items: flex-end; }
+.addonscare .ac-items-center   { align-items: center; }
+.addonscare .ac-items-baseline { align-items: baseline; }
+.addonscare .ac-items-stretch  { align-items: stretch; }
 
 /* Gap */
-.addons-care .ac-gap-1  { gap: var(--ac-space-1); }
-.addons-care .ac-gap-2  { gap: var(--ac-space-2); }
-.addons-care .ac-gap-3  { gap: var(--ac-space-3); }
-.addons-care .ac-gap-4  { gap: var(--ac-space-4); }
-.addons-care .ac-gap-5  { gap: var(--ac-space-5); }
-.addons-care .ac-gap-6  { gap: var(--ac-space-6); }
-.addons-care .ac-gap-8  { gap: var(--ac-space-8); }
+.addonscare .ac-gap-1  { gap: var(--ac-space-1); }
+.addonscare .ac-gap-2  { gap: var(--ac-space-2); }
+.addonscare .ac-gap-3  { gap: var(--ac-space-3); }
+.addonscare .ac-gap-4  { gap: var(--ac-space-4); }
+.addonscare .ac-gap-5  { gap: var(--ac-space-5); }
+.addonscare .ac-gap-6  { gap: var(--ac-space-6); }
+.addonscare .ac-gap-8  { gap: var(--ac-space-8); }
 
 /* --- Grid Utilities -------------------------------------------------------- */
-.addons-care .ac-grid-cols-1 { grid-template-columns: repeat(1, minmax(0,1fr)); }
-.addons-care .ac-grid-cols-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-.addons-care .ac-grid-cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-.addons-care .ac-grid-cols-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
-.addons-care .ac-col-span-2  { grid-column: span 2 / span 2; }
-.addons-care .ac-col-span-3  { grid-column: span 3 / span 3; }
-.addons-care .ac-col-span-4  { grid-column: span 4 / span 4; }
+.addonscare .ac-grid-cols-1 { grid-template-columns: repeat(1, minmax(0,1fr)); }
+.addonscare .ac-grid-cols-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.addonscare .ac-grid-cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.addonscare .ac-grid-cols-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.addonscare .ac-col-span-2  { grid-column: span 2 / span 2; }
+.addonscare .ac-col-span-3  { grid-column: span 3 / span 3; }
+.addonscare .ac-col-span-4  { grid-column: span 4 / span 4; }
 
 /* --- Spacing --------------------------------------------------------------- */
 /* Margin */
-.addons-care .ac-m-0  { margin: var(--ac-space-0) !important; }
-.addons-care .ac-m-1  { margin: var(--ac-space-1) !important; }
-.addons-care .ac-m-2  { margin: var(--ac-space-2) !important; }
-.addons-care .ac-m-3  { margin: var(--ac-space-3) !important; }
-.addons-care .ac-m-4  { margin: var(--ac-space-4) !important; }
-.addons-care .ac-m-auto { margin: auto !important; }
-.addons-care .ac-mx-auto { margin-left: auto !important; margin-right: auto !important; }
-.addons-care .ac-mt-0  { margin-top: var(--ac-space-0)  !important; }
-.addons-care .ac-mt-1  { margin-top: var(--ac-space-1)  !important; }
-.addons-care .ac-mt-2  { margin-top: var(--ac-space-2)  !important; }
-.addons-care .ac-mt-3  { margin-top: var(--ac-space-3)  !important; }
-.addons-care .ac-mt-4  { margin-top: var(--ac-space-4)  !important; }
-.addons-care .ac-mt-6  { margin-top: var(--ac-space-6)  !important; }
-.addons-care .ac-mb-0  { margin-bottom: var(--ac-space-0) !important; }
-.addons-care .ac-mb-1  { margin-bottom: var(--ac-space-1) !important; }
-.addons-care .ac-mb-2  { margin-bottom: var(--ac-space-2) !important; }
-.addons-care .ac-mb-3  { margin-bottom: var(--ac-space-3) !important; }
-.addons-care .ac-mb-4  { margin-bottom: var(--ac-space-4) !important; }
-.addons-care .ac-mb-6  { margin-bottom: var(--ac-space-6) !important; }
-.addons-care .ac-ml-auto { margin-left: auto !important; }
-.addons-care .ac-mr-auto { margin-right: auto !important; }
+.addonscare .ac-m-0  { margin: var(--ac-space-0) !important; }
+.addonscare .ac-m-1  { margin: var(--ac-space-1) !important; }
+.addonscare .ac-m-2  { margin: var(--ac-space-2) !important; }
+.addonscare .ac-m-3  { margin: var(--ac-space-3) !important; }
+.addonscare .ac-m-4  { margin: var(--ac-space-4) !important; }
+.addonscare .ac-m-auto { margin: auto !important; }
+.addonscare .ac-mx-auto { margin-left: auto !important; margin-right: auto !important; }
+.addonscare .ac-mt-0  { margin-top: var(--ac-space-0)  !important; }
+.addonscare .ac-mt-1  { margin-top: var(--ac-space-1)  !important; }
+.addonscare .ac-mt-2  { margin-top: var(--ac-space-2)  !important; }
+.addonscare .ac-mt-3  { margin-top: var(--ac-space-3)  !important; }
+.addonscare .ac-mt-4  { margin-top: var(--ac-space-4)  !important; }
+.addonscare .ac-mt-6  { margin-top: var(--ac-space-6)  !important; }
+.addonscare .ac-mb-0  { margin-bottom: var(--ac-space-0) !important; }
+.addonscare .ac-mb-1  { margin-bottom: var(--ac-space-1) !important; }
+.addonscare .ac-mb-2  { margin-bottom: var(--ac-space-2) !important; }
+.addonscare .ac-mb-3  { margin-bottom: var(--ac-space-3) !important; }
+.addonscare .ac-mb-4  { margin-bottom: var(--ac-space-4) !important; }
+.addonscare .ac-mb-6  { margin-bottom: var(--ac-space-6) !important; }
+.addonscare .ac-ml-auto { margin-left: auto !important; }
+.addonscare .ac-mr-auto { margin-right: auto !important; }
 
 /* Padding */
-.addons-care .ac-p-0  { padding: var(--ac-space-0) !important; }
-.addons-care .ac-p-1  { padding: var(--ac-space-1) !important; }
-.addons-care .ac-p-2  { padding: var(--ac-space-2) !important; }
-.addons-care .ac-p-3  { padding: var(--ac-space-3) !important; }
-.addons-care .ac-p-4  { padding: var(--ac-space-4) !important; }
-.addons-care .ac-p-5  { padding: var(--ac-space-5) !important; }
-.addons-care .ac-p-6  { padding: var(--ac-space-6) !important; }
-.addons-care .ac-px-2 { padding-left: var(--ac-space-2) !important; padding-right: var(--ac-space-2) !important; }
-.addons-care .ac-px-4 { padding-left: var(--ac-space-4) !important; padding-right: var(--ac-space-4) !important; }
-.addons-care .ac-px-6 { padding-left: var(--ac-space-6) !important; padding-right: var(--ac-space-6) !important; }
-.addons-care .ac-py-2 { padding-top: var(--ac-space-2) !important; padding-bottom: var(--ac-space-2) !important; }
-.addons-care .ac-py-3 { padding-top: var(--ac-space-3) !important; padding-bottom: var(--ac-space-3) !important; }
-.addons-care .ac-py-4 { padding-top: var(--ac-space-4) !important; padding-bottom: var(--ac-space-4) !important; }
+.addonscare .ac-p-0  { padding: var(--ac-space-0) !important; }
+.addonscare .ac-p-1  { padding: var(--ac-space-1) !important; }
+.addonscare .ac-p-2  { padding: var(--ac-space-2) !important; }
+.addonscare .ac-p-3  { padding: var(--ac-space-3) !important; }
+.addonscare .ac-p-4  { padding: var(--ac-space-4) !important; }
+.addonscare .ac-p-5  { padding: var(--ac-space-5) !important; }
+.addonscare .ac-p-6  { padding: var(--ac-space-6) !important; }
+.addonscare .ac-px-2 { padding-left: var(--ac-space-2) !important; padding-right: var(--ac-space-2) !important; }
+.addonscare .ac-px-4 { padding-left: var(--ac-space-4) !important; padding-right: var(--ac-space-4) !important; }
+.addonscare .ac-px-6 { padding-left: var(--ac-space-6) !important; padding-right: var(--ac-space-6) !important; }
+.addonscare .ac-py-2 { padding-top: var(--ac-space-2) !important; padding-bottom: var(--ac-space-2) !important; }
+.addonscare .ac-py-3 { padding-top: var(--ac-space-3) !important; padding-bottom: var(--ac-space-3) !important; }
+.addonscare .ac-py-4 { padding-top: var(--ac-space-4) !important; padding-bottom: var(--ac-space-4) !important; }
 
 /* --- Typography ------------------------------------------------------------ */
-.addons-care .ac-font-light    { font-weight: var(--ac-font-light);    }
-.addons-care .ac-font-normal   { font-weight: var(--ac-font-normal);   }
-.addons-care .ac-font-medium   { font-weight: var(--ac-font-medium);   }
-.addons-care .ac-font-semibold { font-weight: var(--ac-font-semibold); }
-.addons-care .ac-font-bold     { font-weight: var(--ac-font-bold);     }
+.addonscare .ac-font-light    { font-weight: var(--ac-font-light);    }
+.addonscare .ac-font-normal   { font-weight: var(--ac-font-normal);   }
+.addonscare .ac-font-medium   { font-weight: var(--ac-font-medium);   }
+.addonscare .ac-font-semibold { font-weight: var(--ac-font-semibold); }
+.addonscare .ac-font-bold     { font-weight: var(--ac-font-bold);     }
 
-.addons-care .ac-text-xs   { font-size: var(--ac-text-xs);   }
-.addons-care .ac-text-sm   { font-size: var(--ac-text-sm);   }
-.addons-care .ac-text-base { font-size: var(--ac-text-base); }
-.addons-care .ac-text-lg   { font-size: var(--ac-text-lg);   }
-.addons-care .ac-text-xl   { font-size: var(--ac-text-xl);   }
-.addons-care .ac-text-2xl  { font-size: var(--ac-text-2xl);  }
+.addonscare .ac-text-xs   { font-size: var(--ac-text-xs);   }
+.addonscare .ac-text-sm   { font-size: var(--ac-text-sm);   }
+.addonscare .ac-text-base { font-size: var(--ac-text-base); }
+.addonscare .ac-text-lg   { font-size: var(--ac-text-lg);   }
+.addonscare .ac-text-xl   { font-size: var(--ac-text-xl);   }
+.addonscare .ac-text-2xl  { font-size: var(--ac-text-2xl);  }
 
-.addons-care .ac-text-left    { text-align: left;    }
-.addons-care .ac-text-center  { text-align: center;  }
-.addons-care .ac-text-right   { text-align: right;   }
+.addonscare .ac-text-left    { text-align: left;    }
+.addonscare .ac-text-center  { text-align: center;  }
+.addonscare .ac-text-right   { text-align: right;   }
 
-.addons-care .ac-text-primary   { color: var(--ac-text-primary);   }
-.addons-care .ac-text-secondary { color: var(--ac-text-secondary); }
-.addons-care .ac-text-muted     { color: var(--ac-text-muted);     }
-.addons-care .ac-text-inverse   { color: var(--ac-text-inverse);   }
-.addons-care .ac-text-success   { color: var(--ac-color-success);  }
-.addons-care .ac-text-warning   { color: var(--ac-color-warning);  }
-.addons-care .ac-text-error     { color: var(--ac-color-error);    }
-.addons-care .ac-text-info      { color: var(--ac-color-info);     }
-.addons-care .ac-text-brand     { color: var(--ac-brand);          }
-.addons-care .ac-text-accent    { color: var(--ac-accent);         }
+.addonscare .ac-text-primary   { color: var(--ac-text-primary);   }
+.addonscare .ac-text-secondary { color: var(--ac-text-secondary); }
+.addonscare .ac-text-muted     { color: var(--ac-text-muted);     }
+.addonscare .ac-text-inverse   { color: var(--ac-text-inverse);   }
+.addonscare .ac-text-success   { color: var(--ac-color-success);  }
+.addonscare .ac-text-warning   { color: var(--ac-color-warning);  }
+.addonscare .ac-text-error     { color: var(--ac-color-error);    }
+.addonscare .ac-text-info      { color: var(--ac-color-info);     }
+.addonscare .ac-text-brand     { color: var(--ac-brand);          }
+.addonscare .ac-text-accent    { color: var(--ac-accent);         }
 
-.addons-care .ac-truncate {
+.addonscare .ac-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.addons-care .ac-break-word { word-break: break-word; }
-.addons-care .ac-uppercase  { text-transform: uppercase; }
-.addons-care .ac-lowercase  { text-transform: lowercase; }
-.addons-care .ac-capitalize { text-transform: capitalize; }
-.addons-care .ac-leading-none   { line-height: 1; }
-.addons-care .ac-leading-tight  { line-height: var(--ac-leading-tight); }
-.addons-care .ac-leading-normal { line-height: var(--ac-leading-normal); }
+.addonscare .ac-break-word { word-break: break-word; }
+.addonscare .ac-uppercase  { text-transform: uppercase; }
+.addonscare .ac-lowercase  { text-transform: lowercase; }
+.addonscare .ac-capitalize { text-transform: capitalize; }
+.addonscare .ac-leading-none   { line-height: 1; }
+.addonscare .ac-leading-tight  { line-height: var(--ac-leading-tight); }
+.addonscare .ac-leading-normal { line-height: var(--ac-leading-normal); }
 
 /* --- Background ------------------------------------------------------------ */
-.addons-care .ac-bg-base    { background-color: var(--ac-bg-base);    }
-.addons-care .ac-bg-surface { background-color: var(--ac-bg-surface); }
-.addons-care .ac-bg-raised  { background-color: var(--ac-bg-raised);  }
-.addons-care .ac-bg-brand   { background-color: var(--ac-brand);      }
-.addons-care .ac-bg-accent  { background-color: var(--ac-accent);     }
-.addons-care .ac-bg-success { background-color: var(--ac-color-success-light); }
-.addons-care .ac-bg-warning { background-color: var(--ac-color-warning-light); }
-.addons-care .ac-bg-error   { background-color: var(--ac-color-error-light);   }
-.addons-care .ac-bg-info    { background-color: var(--ac-color-info-light);    }
+.addonscare .ac-bg-base    { background-color: var(--ac-bg-base);    }
+.addonscare .ac-bg-surface { background-color: var(--ac-bg-surface); }
+.addonscare .ac-bg-raised  { background-color: var(--ac-bg-raised);  }
+.addonscare .ac-bg-brand   { background-color: var(--ac-brand);      }
+.addonscare .ac-bg-accent  { background-color: var(--ac-accent);     }
+.addonscare .ac-bg-success { background-color: var(--ac-color-success-light); }
+.addonscare .ac-bg-warning { background-color: var(--ac-color-warning-light); }
+.addonscare .ac-bg-error   { background-color: var(--ac-color-error-light);   }
+.addonscare .ac-bg-info    { background-color: var(--ac-color-info-light);    }
 
 /* --- Border ---------------------------------------------------------------- */
-.addons-care .ac-border          { border: 1px solid var(--ac-border-color); }
-.addons-care .ac-border-top      { border-top: 1px solid var(--ac-border-color); }
-.addons-care .ac-border-bottom   { border-bottom: 1px solid var(--ac-border-color); }
-.addons-care .ac-border-0        { border: none; }
-.addons-care .ac-rounded-sm  { border-radius: var(--ac-radius-sm);   }
-.addons-care .ac-rounded-md  { border-radius: var(--ac-radius-md);   }
-.addons-care .ac-rounded-lg  { border-radius: var(--ac-radius-lg);   }
-.addons-care .ac-rounded-xl  { border-radius: var(--ac-radius-xl);   }
-.addons-care .ac-rounded-2xl { border-radius: var(--ac-radius-2xl);  }
-.addons-care .ac-rounded-full{ border-radius: var(--ac-radius-full); }
+.addonscare .ac-border          { border: 1px solid var(--ac-border-color); }
+.addonscare .ac-border-top      { border-top: 1px solid var(--ac-border-color); }
+.addonscare .ac-border-bottom   { border-bottom: 1px solid var(--ac-border-color); }
+.addonscare .ac-border-0        { border: none; }
+.addonscare .ac-rounded-sm  { border-radius: var(--ac-radius-sm);   }
+.addonscare .ac-rounded-md  { border-radius: var(--ac-radius-md);   }
+.addonscare .ac-rounded-lg  { border-radius: var(--ac-radius-lg);   }
+.addonscare .ac-rounded-xl  { border-radius: var(--ac-radius-xl);   }
+.addonscare .ac-rounded-2xl { border-radius: var(--ac-radius-2xl);  }
+.addonscare .ac-rounded-full{ border-radius: var(--ac-radius-full); }
 
 /* --- Shadow ---------------------------------------------------------------- */
-.addons-care .ac-shadow-sm  { box-shadow: var(--ac-shadow-sm); }
-.addons-care .ac-shadow-md  { box-shadow: var(--ac-shadow-md); }
-.addons-care .ac-shadow-lg  { box-shadow: var(--ac-shadow-lg); }
-.addons-care .ac-shadow-xl  { box-shadow: var(--ac-shadow-xl); }
-.addons-care .ac-shadow-none{ box-shadow: none; }
+.addonscare .ac-shadow-sm  { box-shadow: var(--ac-shadow-sm); }
+.addonscare .ac-shadow-md  { box-shadow: var(--ac-shadow-md); }
+.addonscare .ac-shadow-lg  { box-shadow: var(--ac-shadow-lg); }
+.addonscare .ac-shadow-xl  { box-shadow: var(--ac-shadow-xl); }
+.addonscare .ac-shadow-none{ box-shadow: none; }
 
 /* --- Sizing ---------------------------------------------------------------- */
-.addons-care .ac-w-full  { width: 100%; }
-.addons-care .ac-w-auto  { width: auto; }
-.addons-care .ac-h-full  { height: 100%; }
-.addons-care .ac-h-auto  { height: auto; }
-.addons-care .ac-min-w-0 { min-width: 0; }
-.addons-care .ac-max-w-xs  { max-width: 20rem; }
-.addons-care .ac-max-w-sm  { max-width: 24rem; }
-.addons-care .ac-max-w-md  { max-width: 28rem; }
-.addons-care .ac-max-w-lg  { max-width: 32rem; }
-.addons-care .ac-max-w-xl  { max-width: 36rem; }
-.addons-care .ac-max-w-2xl { max-width: 42rem; }
-.addons-care .ac-max-w-full{ max-width: 100%;  }
+.addonscare .ac-w-full  { width: 100%; }
+.addonscare .ac-w-auto  { width: auto; }
+.addonscare .ac-h-full  { height: 100%; }
+.addonscare .ac-h-auto  { height: auto; }
+.addonscare .ac-min-w-0 { min-width: 0; }
+.addonscare .ac-max-w-xs  { max-width: 20rem; }
+.addonscare .ac-max-w-sm  { max-width: 24rem; }
+.addonscare .ac-max-w-md  { max-width: 28rem; }
+.addonscare .ac-max-w-lg  { max-width: 32rem; }
+.addonscare .ac-max-w-xl  { max-width: 36rem; }
+.addonscare .ac-max-w-2xl { max-width: 42rem; }
+.addonscare .ac-max-w-full{ max-width: 100%;  }
 
 /* --- Position -------------------------------------------------------------- */
-.addons-care .ac-relative { position: relative; }
-.addons-care .ac-absolute { position: absolute; }
-.addons-care .ac-fixed    { position: fixed; }
-.addons-care .ac-sticky   { position: sticky; }
-.addons-care .ac-inset-0  { inset: 0; }
+.addonscare .ac-relative { position: relative; }
+.addonscare .ac-absolute { position: absolute; }
+.addonscare .ac-fixed    { position: fixed; }
+.addonscare .ac-sticky   { position: sticky; }
+.addonscare .ac-inset-0  { inset: 0; }
 
 /* --- Overflow -------------------------------------------------------------- */
-.addons-care .ac-overflow-hidden { overflow: hidden; }
-.addons-care .ac-overflow-auto   { overflow: auto; }
-.addons-care .ac-overflow-x-auto { overflow-x: auto; }
-.addons-care .ac-overflow-y-auto { overflow-y: auto; }
+.addonscare .ac-overflow-hidden { overflow: hidden; }
+.addonscare .ac-overflow-auto   { overflow: auto; }
+.addonscare .ac-overflow-x-auto { overflow-x: auto; }
+.addonscare .ac-overflow-y-auto { overflow-y: auto; }
 
 /* --- Cursor ---------------------------------------------------------------- */
-.addons-care .ac-cursor-pointer  { cursor: pointer; }
-.addons-care .ac-cursor-default  { cursor: default; }
-.addons-care .ac-cursor-not-allowed { cursor: not-allowed; }
+.addonscare .ac-cursor-pointer  { cursor: pointer; }
+.addonscare .ac-cursor-default  { cursor: default; }
+.addonscare .ac-cursor-not-allowed { cursor: not-allowed; }
 
 /* --- Opacity --------------------------------------------------------------- */
-.addons-care .ac-opacity-0   { opacity: 0; }
-.addons-care .ac-opacity-50  { opacity: 0.5; }
-.addons-care .ac-opacity-75  { opacity: 0.75; }
-.addons-care .ac-opacity-100 { opacity: 1; }
+.addonscare .ac-opacity-0   { opacity: 0; }
+.addonscare .ac-opacity-50  { opacity: 0.5; }
+.addonscare .ac-opacity-75  { opacity: 0.75; }
+.addonscare .ac-opacity-100 { opacity: 1; }
 
 /* --- Pointer Events -------------------------------------------------------- */
-.addons-care .ac-pointer-events-none { pointer-events: none; }
-.addons-care .ac-pointer-events-auto { pointer-events: auto; }
+.addonscare .ac-pointer-events-none { pointer-events: none; }
+.addonscare .ac-pointer-events-auto { pointer-events: auto; }
 
 /* --- Visually Hidden (a11y) ------------------------------------------------ */
-.addons-care .ac-sr-only {
+.addonscare .ac-sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -575,7 +575,7 @@
 }
 
 /* --- Divider --------------------------------------------------------------- */
-.addons-care .ac-divider {
+.addonscare .ac-divider {
   border: none;
   border-top: 1px solid var(--ac-border-color);
   margin: var(--ac-space-4) 0;
@@ -583,18 +583,18 @@
 
 /* --- Responsive Utilities -------------------------------------------------- */
 @media (max-width: 767px) {
-  .addons-care .ac-hidden-mobile  { display: none !important; }
-  .addons-care .ac-d-flex-mobile  { display: flex !important; }
-  .addons-care .ac-w-full-mobile  { width: 100% !important;    }
-  .addons-care .ac-text-center-mobile { text-align: center !important; }
+  .addonscare .ac-hidden-mobile  { display: none !important; }
+  .addonscare .ac-d-flex-mobile  { display: flex !important; }
+  .addonscare .ac-w-full-mobile  { width: 100% !important;    }
+  .addonscare .ac-text-center-mobile { text-align: center !important; }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .addons-care .ac-hidden-tablet  { display: none !important; }
+  .addonscare .ac-hidden-tablet  { display: none !important; }
 }
 
 @media (min-width: 992px) {
-  .addons-care .ac-hidden-desktop { display: none !important; }
+  .addonscare .ac-hidden-desktop { display: none !important; }
 }
 
 
@@ -604,7 +604,7 @@
 
 /**
  * Addons Care - Admin Layout System
- * Scope: .addons-care
+ * Scope: .addonscare
  * -----------------------------------------------------------------------------
  * Structure:
  *   .ac-layout
@@ -623,7 +623,7 @@
  */
 
 /* --- Root Layout ----------------------------------------------------------- */
-.addons-care .ac-layout {
+.addonscare .ac-layout {
   display:    flex;
   min-height: 100vh;
   min-height: 100dvh;
@@ -634,7 +634,7 @@
 }
 
 /* --- Main Pane ------------------------------------------------------------- */
-.addons-care .ac-main {
+.addonscare .ac-main {
   flex:           1;
   display:        flex;
   flex-direction: column;
@@ -644,7 +644,7 @@
 }
 
 /* --- Content Area ---------------------------------------------------------- */
-.addons-care .ac-content {
+.addonscare .ac-content {
   flex:       1;
   overflow-y: auto;
   overflow-x: hidden;
@@ -654,7 +654,7 @@
 }
 
 /* --- Page Wrapper ---------------------------------------------------------- */
-.addons-care .ac-page {
+.addonscare .ac-page {
   width:     100%;
   max-width: var(--ac-content-max-width);
   margin:    0 auto;
@@ -665,27 +665,27 @@
 }
 
 /* --- Page Header ----------------------------------------------------------- */
-.addons-care .ac-page-header {
+.addonscare .ac-page-header {
   display:         flex;
   align-items:     flex-start;
   justify-content: space-between;
   gap:             var(--ac-space-4);
   flex-wrap:       wrap;
 }
-.addons-care .ac-page-header__info { flex: 1; min-width: 0; }
-.addons-care .ac-page-header__title {
+.addonscare .ac-page-header__info { flex: 1; min-width: 0; }
+.addonscare .ac-page-header__title {
   font-size:   var(--ac-text-2xl);
   font-weight: var(--ac-font-bold);
   color:       var(--ac-text-primary);
   margin:      0 0 var(--ac-space-1) 0;
   line-height: var(--ac-leading-tight);
 }
-.addons-care .ac-page-header__desc {
+.addonscare .ac-page-header__desc {
   font-size: var(--ac-text-sm);
   color:     var(--ac-text-secondary);
   margin:    0;
 }
-.addons-care .ac-page-header__actions {
+.addonscare .ac-page-header__actions {
   display:     flex;
   align-items: center;
   gap:         var(--ac-space-2);
@@ -694,7 +694,7 @@
 }
 
 /* --- Breadcrumbs ----------------------------------------------------------- */
-.addons-care .ac-breadcrumb {
+.addonscare .ac-breadcrumb {
   display:     flex;
   align-items: center;
   gap:         var(--ac-space-1);
@@ -705,30 +705,30 @@
   font-size:   var(--ac-text-sm);
   color:       var(--ac-text-muted);
 }
-.addons-care .ac-breadcrumb li { display: flex; align-items: center; }
-.addons-care .ac-breadcrumb a  { color: var(--ac-text-secondary); text-decoration: none; }
-.addons-care .ac-breadcrumb a:hover { color: var(--ac-brand); }
-.addons-care .ac-breadcrumb .ac-breadcrumb__sep {
+.addonscare .ac-breadcrumb li { display: flex; align-items: center; }
+.addonscare .ac-breadcrumb a  { color: var(--ac-text-secondary); text-decoration: none; }
+.addonscare .ac-breadcrumb a:hover { color: var(--ac-brand); }
+.addonscare .ac-breadcrumb .ac-breadcrumb__sep {
   color:   var(--ac-neutral-300);
   padding: 0 var(--ac-space-1);
   user-select: none;
 }
-.addons-care .ac-breadcrumb li:last-child { color: var(--ac-text-primary); font-weight: var(--ac-font-medium); }
+.addonscare .ac-breadcrumb li:last-child { color: var(--ac-text-primary); font-weight: var(--ac-font-medium); }
 
 /* --- Content Sections ------------------------------------------------------ */
-.addons-care .ac-section {
+.addonscare .ac-section {
   display:        flex;
   flex-direction: column;
   gap:            var(--ac-space-4);
 }
-.addons-care .ac-section__header {
+.addonscare .ac-section__header {
   display:         flex;
   align-items:     center;
   justify-content: space-between;
   gap:             var(--ac-space-3);
   flex-wrap:       wrap;
 }
-.addons-care .ac-section__title {
+.addonscare .ac-section__title {
   font-size:   var(--ac-text-lg);
   font-weight: var(--ac-font-semibold);
   color:       var(--ac-text-primary);
@@ -736,51 +736,51 @@
 }
 
 /* --- Dashboard Grid -------------------------------------------------------- */
-.addons-care .ac-dashboard-grid {
+.addonscare .ac-dashboard-grid {
   display:               grid;
   grid-template-columns: repeat(4, 1fr);
   gap:                   var(--ac-space-5);
 }
 
-.addons-care .ac-dashboard-grid .ac-span-2 { grid-column: span 2; }
-.addons-care .ac-dashboard-grid .ac-span-3 { grid-column: span 3; }
-.addons-care .ac-dashboard-grid .ac-span-4 { grid-column: span 4; }
+.addonscare .ac-dashboard-grid .ac-span-2 { grid-column: span 2; }
+.addonscare .ac-dashboard-grid .ac-span-3 { grid-column: span 3; }
+.addonscare .ac-dashboard-grid .ac-span-4 { grid-column: span 4; }
 
 /* --- Two-column layout ----------------------------------------------------- */
-.addons-care .ac-layout-2col {
+.addonscare .ac-layout-2col {
   display: grid;
   grid-template-columns: 1fr 320px;
   gap: var(--ac-space-6);
   align-items: start;
 }
-.addons-care .ac-layout-2col--equal { grid-template-columns: 1fr 1fr; }
-.addons-care .ac-layout-2col--wide  { grid-template-columns: 1fr 240px; }
+.addonscare .ac-layout-2col--equal { grid-template-columns: 1fr 1fr; }
+.addonscare .ac-layout-2col--wide  { grid-template-columns: 1fr 240px; }
 
 /* --- Sidebar collapsed  push main ---------------------------------------- */
-.addons-care .ac-layout .ac-sidebar--collapsed + .ac-main {
+.addonscare .ac-layout .ac-sidebar--collapsed + .ac-main {
   /* Handled by sidebar width var change */
 }
 
 /* --- Responsive ------------------------------------------------------------ */
 @media (max-width: 1199px) {
-  .addons-care .ac-dashboard-grid { grid-template-columns: repeat(2, 1fr); }
-  .addons-care .ac-dashboard-grid .ac-span-2 { grid-column: span 1; }
-  .addons-care .ac-dashboard-grid .ac-span-3 { grid-column: span 2; }
-  .addons-care .ac-dashboard-grid .ac-span-4 { grid-column: span 2; }
+  .addonscare .ac-dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+  .addonscare .ac-dashboard-grid .ac-span-2 { grid-column: span 1; }
+  .addonscare .ac-dashboard-grid .ac-span-3 { grid-column: span 2; }
+  .addonscare .ac-dashboard-grid .ac-span-4 { grid-column: span 2; }
 }
 
 @media (max-width: 991px) {
-  .addons-care .ac-layout-2col { grid-template-columns: 1fr; }
-  .addons-care .ac-content { padding: var(--ac-space-5); }
+  .addonscare .ac-layout-2col { grid-template-columns: 1fr; }
+  .addonscare .ac-content { padding: var(--ac-space-5); }
 }
 
 @media (max-width: 767px) {
-  .addons-care .ac-content { padding: var(--ac-space-4); }
-  .addons-care .ac-dashboard-grid { grid-template-columns: 1fr; gap: var(--ac-space-3); }
-  .addons-care .ac-dashboard-grid [class*="ac-span-"] { grid-column: span 1; }
-  .addons-care .ac-page-header { flex-direction: column; }
-  .addons-care .ac-page-header__actions { width: 100%; }
-  .addons-care .ac-page-header__title { font-size: var(--ac-text-xl); }
+  .addonscare .ac-content { padding: var(--ac-space-4); }
+  .addonscare .ac-dashboard-grid { grid-template-columns: 1fr; gap: var(--ac-space-3); }
+  .addonscare .ac-dashboard-grid [class*="ac-span-"] { grid-column: span 1; }
+  .addonscare .ac-page-header { flex-direction: column; }
+  .addonscare .ac-page-header__actions { width: 100%; }
+  .addonscare .ac-page-header__title { font-size: var(--ac-text-xl); }
 }
 
 
@@ -790,7 +790,7 @@
 
 /**
  * Addons Care - Button Component
- * Scope: .addons-care
+ * Scope: .addonscare
  * -----------------------------------------------------------------------------
  * BEM: .ac-btn  /  .ac-btn--{variant}  /  .ac-btn--{size}
  *
@@ -802,7 +802,7 @@
  */
 
 /* --- Base ------------------------------------------------------------------ */
-.addons-care .ac-btn {
+.addonscare .ac-btn {
   display:          inline-flex;
   align-items:      center;
   justify-content:  center;
@@ -827,139 +827,139 @@
   min-height:       36px;    /* accessibility min-height */
 }
 
-.addons-care .ac-btn:focus-visible {
+.addonscare .ac-btn:focus-visible {
   outline: none;
   box-shadow: var(--ac-shadow-focus);
 }
 
 /* --- Disabled -------------------------------------------------------------- */
-.addons-care .ac-btn:disabled,
-.addons-care .ac-btn[aria-disabled="true"] {
+.addonscare .ac-btn:disabled,
+.addonscare .ac-btn[aria-disabled="true"] {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
 }
 
 /* --- Sizes ----------------------------------------------------------------- */
-.addons-care .ac-btn--sm {
+.addonscare .ac-btn--sm {
   font-size: var(--ac-text-xs);
   padding:   var(--ac-space-1-5) var(--ac-space-3);
   min-height: 30px;
 }
 
-.addons-care .ac-btn--lg {
+.addonscare .ac-btn--lg {
   font-size: var(--ac-text-base);
   padding:   var(--ac-space-3) var(--ac-space-6);
   min-height: 44px;
 }
 
 /* --- Full Width ------------------------------------------------------------ */
-.addons-care .ac-btn--block {
+.addonscare .ac-btn--block {
   width: 100%;
 }
 
 /* --- Primary --------------------------------------------------------------- */
-.addons-care .ac-btn--primary {
+.addonscare .ac-btn--primary {
   background-color: var(--ac-brand);
   border-color:     var(--ac-brand);
   color:            var(--ac-text-inverse);
 }
-.addons-care .ac-btn--primary:hover:not(:disabled) {
+.addonscare .ac-btn--primary:hover:not(:disabled) {
   background-color: var(--ac-brand-hover);
   border-color:     var(--ac-brand-hover);
 }
-.addons-care .ac-btn--primary:active:not(:disabled) {
+.addonscare .ac-btn--primary:active:not(:disabled) {
   background-color: var(--ac-brand-active);
   border-color:     var(--ac-brand-active);
 }
 
 /* --- Secondary ------------------------------------------------------------- */
-.addons-care .ac-btn--secondary {
+.addonscare .ac-btn--secondary {
   background-color: var(--ac-bg-surface);
   border-color:     var(--ac-border-strong);
   color:            var(--ac-text-primary);
 }
-.addons-care .ac-btn--secondary:hover:not(:disabled) {
+.addonscare .ac-btn--secondary:hover:not(:disabled) {
   background-color: var(--ac-neutral-100);
   border-color:     var(--ac-neutral-400);
 }
-.addons-care .ac-btn--secondary:active:not(:disabled) {
+.addonscare .ac-btn--secondary:active:not(:disabled) {
   background-color: var(--ac-neutral-200);
 }
 
 /* --- Danger ---------------------------------------------------------------- */
-.addons-care .ac-btn--danger {
+.addonscare .ac-btn--danger {
   background-color: var(--ac-color-error);
   border-color:     var(--ac-color-error);
   color:            var(--ac-text-inverse);
 }
-.addons-care .ac-btn--danger:hover:not(:disabled) {
+.addonscare .ac-btn--danger:hover:not(:disabled) {
   background-color: var(--ac-color-error-dark);
   border-color:     var(--ac-color-error-dark);
 }
-.addons-care .ac-btn--danger:focus-visible {
+.addonscare .ac-btn--danger:focus-visible {
   box-shadow: var(--ac-shadow-focus-error);
 }
 
 /* --- Ghost ----------------------------------------------------------------- */
-.addons-care .ac-btn--ghost {
+.addonscare .ac-btn--ghost {
   background-color: transparent;
   border-color:     transparent;
   color:            var(--ac-text-primary);
 }
-.addons-care .ac-btn--ghost:hover:not(:disabled) {
+.addonscare .ac-btn--ghost:hover:not(:disabled) {
   background-color: var(--ac-neutral-100);
 }
-.addons-care .ac-btn--ghost:active:not(:disabled) {
+.addonscare .ac-btn--ghost:active:not(:disabled) {
   background-color: var(--ac-neutral-200);
 }
 
 /* --- Link ------------------------------------------------------------------ */
-.addons-care .ac-btn--link {
+.addonscare .ac-btn--link {
   background-color: transparent;
   border-color:     transparent;
   color:            var(--ac-text-link);
   padding-left: 0;
   padding-right: 0;
 }
-.addons-care .ac-btn--link:hover:not(:disabled) {
+.addonscare .ac-btn--link:hover:not(:disabled) {
   color: var(--ac-text-link-hover);
   text-decoration: underline;
 }
 
 /* --- Accent ---------------------------------------------------------------- */
-.addons-care .ac-btn--accent {
+.addonscare .ac-btn--accent {
   background-color: var(--ac-accent);
   border-color:     var(--ac-accent);
   color:            var(--ac-text-inverse);
 }
-.addons-care .ac-btn--accent:hover:not(:disabled) {
+.addonscare .ac-btn--accent:hover:not(:disabled) {
   background-color: var(--ac-color-accent-600);
   border-color:     var(--ac-color-accent-600);
 }
 
 /* --- Icon-only ------------------------------------------------------------- */
-.addons-care .ac-btn--icon-only {
+.addonscare .ac-btn--icon-only {
   padding:       var(--ac-space-2);
   min-width:     36px;
   width:         36px;
   height:        36px;
   border-radius: var(--ac-radius-md);
 }
-.addons-care .ac-btn--icon-only.ac-btn--sm {
+.addonscare .ac-btn--icon-only.ac-btn--sm {
   width: 30px; height: 30px; min-width: 30px; padding: var(--ac-space-1-5);
 }
-.addons-care .ac-btn--icon-only.ac-btn--lg {
+.addonscare .ac-btn--icon-only.ac-btn--lg {
   width: 44px; height: 44px; min-width: 44px; padding: var(--ac-space-3);
 }
 
 /* --- Loading State --------------------------------------------------------- */
-.addons-care .ac-btn--loading {
+.addonscare .ac-btn--loading {
   pointer-events: none;
   cursor: wait;
 }
-.addons-care .ac-btn--loading .ac-btn__text { opacity: 0; }
-.addons-care .ac-btn--loading::after {
+.addonscare .ac-btn--loading .ac-btn__text { opacity: 0; }
+.addonscare .ac-btn--loading::after {
   content: '';
   position: absolute;
   width:  16px;
@@ -971,7 +971,7 @@
 }
 
 /* --- Icon inside button ---------------------------------------------------- */
-.addons-care .ac-btn__icon {
+.addonscare .ac-btn__icon {
   width:  16px;
   height: 16px;
   flex-shrink: 0;
@@ -981,26 +981,26 @@
 }
 
 /* --- Button Group ---------------------------------------------------------- */
-.addons-care .ac-btn-group {
+.addonscare .ac-btn-group {
   display: inline-flex;
   flex-wrap: wrap;
   gap: var(--ac-space-2);
   align-items: center;
 }
-.addons-care .ac-btn-group--attached { gap: 0; }
-.addons-care .ac-btn-group--attached .ac-btn {
+.addonscare .ac-btn-group--attached { gap: 0; }
+.addonscare .ac-btn-group--attached .ac-btn {
   border-radius: 0;
   margin-left: -1px;
 }
-.addons-care .ac-btn-group--attached .ac-btn:first-child {
+.addonscare .ac-btn-group--attached .ac-btn:first-child {
   border-radius: var(--ac-radius-md) 0 0 var(--ac-radius-md);
   margin-left: 0;
 }
-.addons-care .ac-btn-group--attached .ac-btn:last-child {
+.addonscare .ac-btn-group--attached .ac-btn:last-child {
   border-radius: 0 var(--ac-radius-md) var(--ac-radius-md) 0;
 }
-.addons-care .ac-btn-group--attached .ac-btn:hover,
-.addons-care .ac-btn-group--attached .ac-btn:focus {
+.addonscare .ac-btn-group--attached .ac-btn:hover,
+.addonscare .ac-btn-group--attached .ac-btn:focus {
   z-index: 1;
 }
 
@@ -1011,11 +1011,11 @@
 
 /* --- Responsive ------------------------------------------------------------ */
 @media (max-width: 767px) {
-  .addons-care .ac-btn-group--stack-mobile {
+  .addonscare .ac-btn-group--stack-mobile {
     flex-direction: column;
     width: 100%;
   }
-  .addons-care .ac-btn-group--stack-mobile .ac-btn {
+  .addonscare .ac-btn-group--stack-mobile .ac-btn {
     width: 100%;
   }
 }
@@ -1027,7 +1027,7 @@
 
 /**
  * Addons Care - Card Component
- * Scope: .addons-care
+ * Scope: .addonscare
  * -----------------------------------------------------------------------------
  * BEM: .ac-card  /  .ac-card--{variant}
  *
@@ -1037,7 +1037,7 @@
  */
 
 /* --- Base Card ------------------------------------------------------------- */
-.addons-care .ac-card {
+.addonscare .ac-card {
   background-color: var(--ac-bg-surface);
   border:           1px solid var(--ac-border-color);
   border-radius:    var(--ac-radius-xl);
@@ -1050,7 +1050,7 @@
 }
 
 /* --- Header ---------------------------------------------------------------- */
-.addons-care .ac-card__header {
+.addonscare .ac-card__header {
   display:         flex;
   align-items:     center;
   justify-content: space-between;
@@ -1060,7 +1060,7 @@
   flex-shrink:     0;
 }
 
-.addons-care .ac-card__title {
+.addonscare .ac-card__title {
   font-size:   var(--ac-text-base);
   font-weight: var(--ac-font-semibold);
   color:       var(--ac-text-primary);
@@ -1068,13 +1068,13 @@
   line-height: var(--ac-leading-tight);
 }
 
-.addons-care .ac-card__subtitle {
+.addonscare .ac-card__subtitle {
   font-size: var(--ac-text-sm);
   color:     var(--ac-text-secondary);
   margin:    var(--ac-space-0-5) 0 0 0;
 }
 
-.addons-care .ac-card__actions {
+.addonscare .ac-card__actions {
   display:     flex;
   align-items: center;
   gap:         var(--ac-space-2);
@@ -1083,13 +1083,13 @@
 }
 
 /* --- Body ------------------------------------------------------------------ */
-.addons-care .ac-card__body {
+.addonscare .ac-card__body {
   padding: var(--ac-space-5);
   flex:    1 1 auto;
 }
 
 /* --- Footer ---------------------------------------------------------------- */
-.addons-care .ac-card__footer {
+.addonscare .ac-card__footer {
   padding:       var(--ac-space-4) var(--ac-space-5);
   border-top:    1px solid var(--ac-border-color);
   background:    var(--ac-bg-raised);
@@ -1100,7 +1100,7 @@
 }
 
 /* --- Cover Image ----------------------------------------------------------- */
-.addons-care .ac-card__image {
+.addonscare .ac-card__image {
   width:  100%;
   height: 180px;
   object-fit: cover;
@@ -1109,7 +1109,7 @@
 }
 
 /* --- Meta row inside card (icon + label) ----------------------------------- */
-.addons-care .ac-card__meta {
+.addonscare .ac-card__meta {
   display:     flex;
   align-items: center;
   gap:         var(--ac-space-1-5);
@@ -1120,51 +1120,51 @@
 /* --- Variants -------------------------------------------------------------- */
 
 /* Flat - no shadow */
-.addons-care .ac-card--flat {
+.addonscare .ac-card--flat {
   box-shadow: none;
 }
 
 /* Bordered - stronger border, no shadow */
-.addons-care .ac-card--bordered {
+.addonscare .ac-card--bordered {
   box-shadow:   none;
   border-color: var(--ac-border-strong);
 }
 
 /* Elevated */
-.addons-care .ac-card--elevated {
+.addonscare .ac-card--elevated {
   box-shadow: var(--ac-shadow-xl);
   border-color: transparent;
 }
 
 /* Interactive (clickable card) */
-.addons-care .ac-card--interactive {
+.addonscare .ac-card--interactive {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
 }
-.addons-care .ac-card--interactive:hover {
+.addonscare .ac-card--interactive:hover {
   box-shadow:   var(--ac-shadow-lg);
   border-color: var(--ac-color-primary-300);
   transform:    translateY(-1px);
 }
-.addons-care .ac-card--interactive:active {
+.addonscare .ac-card--interactive:active {
   transform: translateY(0);
   box-shadow: var(--ac-elevation-1);
 }
-.addons-care .ac-card--interactive:focus-visible {
+.addonscare .ac-card--interactive:focus-visible {
   outline: 2px solid var(--ac-border-focus);
   outline-offset: 2px;
 }
 
 /* Colored accent strip at top */
-.addons-care .ac-card--primary   { border-top: 3px solid var(--ac-brand); }
-.addons-care .ac-card--success   { border-top: 3px solid var(--ac-color-success); }
-.addons-care .ac-card--warning   { border-top: 3px solid var(--ac-color-warning); }
-.addons-care .ac-card--danger    { border-top: 3px solid var(--ac-color-error);   }
-.addons-care .ac-card--info      { border-top: 3px solid var(--ac-color-info);    }
+.addonscare .ac-card--primary   { border-top: 3px solid var(--ac-brand); }
+.addonscare .ac-card--success   { border-top: 3px solid var(--ac-color-success); }
+.addonscare .ac-card--warning   { border-top: 3px solid var(--ac-color-warning); }
+.addonscare .ac-card--danger    { border-top: 3px solid var(--ac-color-error);   }
+.addonscare .ac-card--info      { border-top: 3px solid var(--ac-color-info);    }
 
 /* --- Stat Card (metric display) ------------------------------------------- */
-.addons-care .ac-stat-card {
+.addonscare .ac-stat-card {
   background-color: var(--ac-bg-surface);
   border:           1px solid var(--ac-border-color);
   border-radius:    var(--ac-radius-xl);
@@ -1174,7 +1174,7 @@
   align-items:      flex-start;
   gap:              var(--ac-space-4);
 }
-.addons-care .ac-stat-card__icon {
+.addonscare .ac-stat-card__icon {
   width:            48px;
   height:           48px;
   border-radius:    var(--ac-radius-lg);
@@ -1186,20 +1186,20 @@
   flex-shrink:      0;
   font-size:        var(--ac-text-xl);
 }
-.addons-care .ac-stat-card__body { flex: 1; min-width: 0; }
-.addons-care .ac-stat-card__value {
+.addonscare .ac-stat-card__body { flex: 1; min-width: 0; }
+.addonscare .ac-stat-card__value {
   font-size:   var(--ac-text-2xl);
   font-weight: var(--ac-font-bold);
   color:       var(--ac-text-primary);
   line-height: 1;
   margin-bottom: var(--ac-space-1);
 }
-.addons-care .ac-stat-card__label {
+.addonscare .ac-stat-card__label {
   font-size: var(--ac-text-sm);
   color:     var(--ac-text-secondary);
   margin:    0;
 }
-.addons-care .ac-stat-card__change {
+.addonscare .ac-stat-card__change {
   font-size:   var(--ac-text-xs);
   font-weight: var(--ac-font-medium);
   margin-top:  var(--ac-space-1);
@@ -1207,11 +1207,11 @@
   align-items: center;
   gap:         var(--ac-space-0-5);
 }
-.addons-care .ac-stat-card__change--up   { color: var(--ac-color-success-dark); }
-.addons-care .ac-stat-card__change--down { color: var(--ac-color-error-dark);   }
+.addonscare .ac-stat-card__change--up   { color: var(--ac-color-success-dark); }
+.addonscare .ac-stat-card__change--down { color: var(--ac-color-error-dark);   }
 
 /* --- Card Grid ------------------------------------------------------------- */
-.addons-care .ac-card-grid {
+.addonscare .ac-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--ac-space-5);
@@ -1219,10 +1219,10 @@
 
 /* --- Responsive ------------------------------------------------------------ */
 @media (max-width: 767px) {
-  .addons-care .ac-card__header { padding: var(--ac-space-3) var(--ac-space-4); }
-  .addons-care .ac-card__body   { padding: var(--ac-space-4); }
-  .addons-care .ac-card__footer { padding: var(--ac-space-3) var(--ac-space-4); }
-  .addons-care .ac-card-grid    { grid-template-columns: 1fr; gap: var(--ac-space-3); }
+  .addonscare .ac-card__header { padding: var(--ac-space-3) var(--ac-space-4); }
+  .addonscare .ac-card__body   { padding: var(--ac-space-4); }
+  .addonscare .ac-card__footer { padding: var(--ac-space-3) var(--ac-space-4); }
+  .addonscare .ac-card-grid    { grid-template-columns: 1fr; gap: var(--ac-space-3); }
 }
 
 
@@ -1232,7 +1232,7 @@
 
 /**
  * Addons Care - Table Component
- * Scope: .addons-care
+ * Scope: .addonscare
  * -----------------------------------------------------------------------------
  * BEM:  .ac-table-wrap  /  .ac-table  /  .ac-table--{modifier}
  *
@@ -1243,7 +1243,7 @@
  */
 
 /* --- Wrapper (handles overflow on small screens) --------------------------- */
-.addons-care .ac-table-wrap {
+.addonscare .ac-table-wrap {
   width:         100%;
   overflow-x:    auto;
   border:        1px solid var(--ac-border-color);
@@ -1254,7 +1254,7 @@
 }
 
 /* --- Table Base ------------------------------------------------------------ */
-.addons-care .ac-table {
+.addonscare .ac-table {
   width:           100%;
   border-collapse: collapse;
   font-size:       var(--ac-text-sm);
@@ -1262,9 +1262,9 @@
 }
 
 /* --- Head ------------------------------------------------------------------ */
-.addons-care .ac-table thead { background: var(--ac-neutral-50); }
+.addonscare .ac-table thead { background: var(--ac-neutral-50); }
 
-.addons-care .ac-table thead th {
+.addonscare .ac-table thead th {
   padding:         var(--ac-space-3) var(--ac-space-4);
   text-align:      left;
   font-size:       var(--ac-text-xs);
@@ -1281,15 +1281,15 @@
 }
 
 /* --- Sorting ---------------------------------------------------------------- */
-.addons-care .ac-table th.ac-sort {
+.addonscare .ac-table th.ac-sort {
   cursor: pointer;
   user-select: none;
 }
-.addons-care .ac-table th.ac-sort:hover {
+.addonscare .ac-table th.ac-sort:hover {
   background: var(--ac-neutral-100);
   color: var(--ac-text-primary);
 }
-.addons-care .ac-table th.ac-sort .ac-sort__icon {
+.addonscare .ac-table th.ac-sort .ac-sort__icon {
   display: inline-flex;
   flex-direction: column;
   gap: 1px;
@@ -1297,20 +1297,20 @@
   opacity: 0.35;
   transition: opacity var(--ac-transition-base);
 }
-.addons-care .ac-table th.ac-sort:hover .ac-sort__icon,
-.addons-care .ac-table th.ac-sort--asc .ac-sort__icon,
-.addons-care .ac-table th.ac-sort--desc .ac-sort__icon { opacity: 1; }
-.addons-care .ac-table th.ac-sort--asc  { color: var(--ac-brand); }
-.addons-care .ac-table th.ac-sort--desc { color: var(--ac-brand); }
+.addonscare .ac-table th.ac-sort:hover .ac-sort__icon,
+.addonscare .ac-table th.ac-sort--asc .ac-sort__icon,
+.addonscare .ac-table th.ac-sort--desc .ac-sort__icon { opacity: 1; }
+.addonscare .ac-table th.ac-sort--asc  { color: var(--ac-brand); }
+.addonscare .ac-table th.ac-sort--desc { color: var(--ac-brand); }
 
 /* --- Body ------------------------------------------------------------------ */
-.addons-care .ac-table tbody tr {
+.addonscare .ac-table tbody tr {
   border-bottom: 1px solid var(--ac-border-color);
   transition: background-color var(--ac-transition-fast);
 }
-.addons-care .ac-table tbody tr:last-child { border-bottom: none; }
+.addonscare .ac-table tbody tr:last-child { border-bottom: none; }
 
-.addons-care .ac-table tbody td {
+.addonscare .ac-table tbody td {
   padding:     var(--ac-space-3) var(--ac-space-4);
   color:       var(--ac-text-primary);
   vertical-align: middle;
@@ -1318,41 +1318,41 @@
 
 /* --- Variants -------------------------------------------------------------- */
 /* Hoverable */
-.addons-care .ac-table--hoverable tbody tr:hover {
+.addonscare .ac-table--hoverable tbody tr:hover {
   background-color: var(--ac-color-primary-50);
 }
 
 /* Striped */
-.addons-care .ac-table--striped tbody tr:nth-child(even) {
+.addonscare .ac-table--striped tbody tr:nth-child(even) {
   background-color: var(--ac-neutral-50);
 }
 
 /* Bordered (all cells) */
-.addons-care .ac-table--bordered td,
-.addons-care .ac-table--bordered th {
+.addonscare .ac-table--bordered td,
+.addonscare .ac-table--bordered th {
   border: 1px solid var(--ac-border-color);
 }
 
 /* Compact */
-.addons-care .ac-table--compact thead th { padding: var(--ac-space-2) var(--ac-space-3); }
-.addons-care .ac-table--compact tbody td { padding: var(--ac-space-2) var(--ac-space-3); }
+.addonscare .ac-table--compact thead th { padding: var(--ac-space-2) var(--ac-space-3); }
+.addonscare .ac-table--compact tbody td { padding: var(--ac-space-2) var(--ac-space-3); }
 
 /* --- Row States ------------------------------------------------------------ */
-.addons-care .ac-table tbody tr.ac-row--selected {
+.addonscare .ac-table tbody tr.ac-row--selected {
   background-color: var(--ac-color-primary-50);
 }
-.addons-care .ac-table tbody tr.ac-row--selected td { color: var(--ac-brand); }
-.addons-care .ac-table tbody tr.ac-row--danger   { background: var(--ac-color-error-light); }
-.addons-care .ac-table tbody tr.ac-row--warning  { background: var(--ac-color-warning-light); }
-.addons-care .ac-table tbody tr.ac-row--success  { background: var(--ac-color-success-light); }
+.addonscare .ac-table tbody tr.ac-row--selected td { color: var(--ac-brand); }
+.addonscare .ac-table tbody tr.ac-row--danger   { background: var(--ac-color-error-light); }
+.addonscare .ac-table tbody tr.ac-row--warning  { background: var(--ac-color-warning-light); }
+.addonscare .ac-table tbody tr.ac-row--success  { background: var(--ac-color-success-light); }
 
 /* --- Checkbox Column ------------------------------------------------------- */
-.addons-care .ac-table .ac-table__check {
+.addonscare .ac-table .ac-table__check {
   width: 44px;
   padding-right: 0;
   text-align: center;
 }
-.addons-care .ac-table .ac-table__check input[type="checkbox"] {
+.addonscare .ac-table .ac-table__check input[type="checkbox"] {
   width:  16px;
   height: 16px;
   cursor: pointer;
@@ -1360,7 +1360,7 @@
 }
 
 /* --- Table Toolbar --------------------------------------------------------- */
-.addons-care .ac-table-toolbar {
+.addonscare .ac-table-toolbar {
   display:         flex;
   align-items:     center;
   justify-content: space-between;
@@ -1369,11 +1369,11 @@
   border-bottom:   1px solid var(--ac-border-color);
   flex-wrap:       wrap;
 }
-.addons-care .ac-table-toolbar__left  { display: flex; align-items: center; gap: var(--ac-space-2); flex-wrap: wrap; }
-.addons-care .ac-table-toolbar__right { display: flex; align-items: center; gap: var(--ac-space-2); flex-wrap: wrap; margin-left: auto; }
+.addonscare .ac-table-toolbar__left  { display: flex; align-items: center; gap: var(--ac-space-2); flex-wrap: wrap; }
+.addonscare .ac-table-toolbar__right { display: flex; align-items: center; gap: var(--ac-space-2); flex-wrap: wrap; margin-left: auto; }
 
 /* Bulk action bar (appears when rows selected) */
-.addons-care .ac-table-bulk-bar {
+.addonscare .ac-table-bulk-bar {
   display:          flex;
   align-items:      center;
   gap:              var(--ac-space-3);
@@ -1386,10 +1386,10 @@
   flex-wrap:        wrap;
   transition:       all var(--ac-transition-base);
 }
-.addons-care .ac-table-bulk-bar[aria-hidden="true"] { display: none; }
+.addonscare .ac-table-bulk-bar[aria-hidden="true"] { display: none; }
 
 /* --- Foot ------------------------------------------------------------------ */
-.addons-care .ac-table tfoot td {
+.addonscare .ac-table tfoot td {
   padding:        var(--ac-space-3) var(--ac-space-4);
   border-top:     2px solid var(--ac-border-color);
   font-size:      var(--ac-text-xs);
@@ -1399,19 +1399,19 @@
 
 /* --- Responsive: Stacked Cards on Mobile ----------------------------------- */
 @media (max-width: 767px) {
-  .addons-care .ac-table--responsive thead { display: none; }
-  .addons-care .ac-table--responsive,
-  .addons-care .ac-table--responsive tbody,
-  .addons-care .ac-table--responsive tr,
-  .addons-care .ac-table--responsive td { display: block; width: 100%; }
+  .addonscare .ac-table--responsive thead { display: none; }
+  .addonscare .ac-table--responsive,
+  .addonscare .ac-table--responsive tbody,
+  .addonscare .ac-table--responsive tr,
+  .addonscare .ac-table--responsive td { display: block; width: 100%; }
 
-  .addons-care .ac-table--responsive tbody tr {
+  .addonscare .ac-table--responsive tbody tr {
     border: 1px solid var(--ac-border-color);
     border-radius: var(--ac-radius-lg);
     margin-bottom: var(--ac-space-3);
     overflow: hidden;
   }
-  .addons-care .ac-table--responsive tbody td {
+  .addonscare .ac-table--responsive tbody td {
     display:       flex;
     justify-content: space-between;
     align-items:   flex-start;
@@ -1419,8 +1419,8 @@
     padding:       var(--ac-space-2-5) var(--ac-space-4);
     border-bottom: 1px solid var(--ac-border-color);
   }
-  .addons-care .ac-table--responsive tbody td:last-child { border-bottom: none; }
-  .addons-care .ac-table--responsive tbody td::before {
+  .addonscare .ac-table--responsive tbody td:last-child { border-bottom: none; }
+  .addonscare .ac-table--responsive tbody td::before {
     content: attr(data-label);
     font-weight: var(--ac-font-semibold);
     color:       var(--ac-text-secondary);
@@ -1432,11 +1432,11 @@
     margin-right: var(--ac-space-3);
   }
 
-  .addons-care .ac-table-toolbar {
+  .addonscare .ac-table-toolbar {
     flex-direction: column;
     align-items: stretch;
   }
-  .addons-care .ac-table-toolbar__right { margin-left: 0; }
+  .addonscare .ac-table-toolbar__right { margin-left: 0; }
 }
 
 
@@ -1446,7 +1446,7 @@
 
 /**
  * Addons Care - Modal Component
- * Scope: .addons-care
+ * Scope: .addonscare
  * -----------------------------------------------------------------------------
  * BEM: .ac-modal  /  .ac-modal__*
  *
@@ -1457,7 +1457,7 @@
  */
 
 /* --- Overlay / Backdrop ---------------------------------------------------- */
-.addons-care .ac-modal-overlay {
+.addonscare .ac-modal-overlay {
   position:         fixed;
   inset:            0;
   background:       var(--ac-bg-overlay);
@@ -1470,17 +1470,17 @@
   animation:        ac-fade-in var(--ac-transition-base) ease forwards;
 }
 
-.addons-care .ac-modal-overlay[aria-hidden="true"],
-.addons-care .ac-modal-overlay.ac-hidden {
+.addonscare .ac-modal-overlay[aria-hidden="true"],
+.addonscare .ac-modal-overlay.ac-hidden {
   display: none;
 }
 
-.addons-care .ac-modal-overlay.ac-closing {
+.addonscare .ac-modal-overlay.ac-closing {
   animation: ac-fade-out var(--ac-transition-slow) ease forwards;
 }
 
 /* --- Dialog Container ------------------------------------------------------ */
-.addons-care .ac-modal {
+.addonscare .ac-modal {
   background:    var(--ac-bg-surface);
   border-radius: var(--ac-radius-2xl);
   box-shadow:    var(--ac-elevation-3);
@@ -1494,16 +1494,16 @@
   animation:     ac-modal-in var(--ac-transition-slow) var(--ac-transition-bounce) forwards;
 }
 
-.addons-care .ac-modal-overlay.ac-closing .ac-modal {
+.addonscare .ac-modal-overlay.ac-closing .ac-modal {
   animation: ac-modal-out var(--ac-transition-base) ease forwards;
 }
 
 /* --- Sizes ----------------------------------------------------------------- */
-.addons-care .ac-modal--sm  { max-width: 400px; }
-.addons-care .ac-modal--md  { max-width: 560px; }
-.addons-care .ac-modal--lg  { max-width: 720px; }
-.addons-care .ac-modal--xl  { max-width: 960px; }
-.addons-care .ac-modal--full{
+.addonscare .ac-modal--sm  { max-width: 400px; }
+.addonscare .ac-modal--md  { max-width: 560px; }
+.addonscare .ac-modal--lg  { max-width: 720px; }
+.addonscare .ac-modal--xl  { max-width: 960px; }
+.addonscare .ac-modal--full{
   max-width:    100%;
   max-height:   100%;
   border-radius: 0;
@@ -1512,7 +1512,7 @@
 }
 
 /* --- Header ---------------------------------------------------------------- */
-.addons-care .ac-modal__header {
+.addonscare .ac-modal__header {
   display:         flex;
   align-items:     center;
   gap:             var(--ac-space-3);
@@ -1521,7 +1521,7 @@
   flex-shrink:     0;
 }
 
-.addons-care .ac-modal__icon {
+.addonscare .ac-modal__icon {
   width:         40px;
   height:        40px;
   border-radius: var(--ac-radius-full);
@@ -1531,12 +1531,12 @@
   flex-shrink:   0;
   font-size:     var(--ac-text-xl);
 }
-.addons-care .ac-modal__icon--danger  { background: var(--ac-color-error-light);   color: var(--ac-color-error);   }
-.addons-care .ac-modal__icon--warning { background: var(--ac-color-warning-light); color: var(--ac-color-warning); }
-.addons-care .ac-modal__icon--info    { background: var(--ac-color-info-light);    color: var(--ac-color-info);    }
-.addons-care .ac-modal__icon--success { background: var(--ac-color-success-light); color: var(--ac-color-success); }
+.addonscare .ac-modal__icon--danger  { background: var(--ac-color-error-light);   color: var(--ac-color-error);   }
+.addonscare .ac-modal__icon--warning { background: var(--ac-color-warning-light); color: var(--ac-color-warning); }
+.addonscare .ac-modal__icon--info    { background: var(--ac-color-info-light);    color: var(--ac-color-info);    }
+.addonscare .ac-modal__icon--success { background: var(--ac-color-success-light); color: var(--ac-color-success); }
 
-.addons-care .ac-modal__title {
+.addonscare .ac-modal__title {
   font-size:   var(--ac-text-lg);
   font-weight: var(--ac-font-semibold);
   color:       var(--ac-text-primary);
@@ -1545,7 +1545,7 @@
   min-width:   0;
 }
 
-.addons-care .ac-modal__close {
+.addonscare .ac-modal__close {
   width:            32px;
   height:           32px;
   border:           none;
@@ -1562,10 +1562,10 @@
   transition:       background-color var(--ac-transition-fast), color var(--ac-transition-fast);
   margin-left:      auto;
 }
-.addons-care .ac-modal__close:hover { background: var(--ac-neutral-100); color: var(--ac-text-primary); }
+.addonscare .ac-modal__close:hover { background: var(--ac-neutral-100); color: var(--ac-text-primary); }
 
 /* --- Body ------------------------------------------------------------------ */
-.addons-care .ac-modal__body {
+.addonscare .ac-modal__body {
   padding:    var(--ac-space-6);
   overflow-y: auto;
   flex:       1;
@@ -1575,7 +1575,7 @@
 }
 
 /* --- Footer ---------------------------------------------------------------- */
-.addons-care .ac-modal__footer {
+.addonscare .ac-modal__footer {
   display:         flex;
   align-items:     center;
   justify-content: flex-end;
@@ -1588,16 +1588,16 @@
 }
 
 /* --- Confirmation Dialog variant ------------------------------------------ */
-.addons-care .ac-modal--confirm .ac-modal__body { text-align: center; padding-top: var(--ac-space-8); }
-.addons-care .ac-modal--confirm .ac-modal__footer { justify-content: center; }
+.addonscare .ac-modal--confirm .ac-modal__body { text-align: center; padding-top: var(--ac-space-8); }
+.addonscare .ac-modal--confirm .ac-modal__footer { justify-content: center; }
 
 /* --- Side Panel variant ---------------------------------------------------- */
-.addons-care .ac-modal-overlay--side {
+.addonscare .ac-modal-overlay--side {
   justify-content: flex-end;
   align-items:     stretch;
   padding:         0;
 }
-.addons-care .ac-modal--side {
+.addonscare .ac-modal--side {
   max-width:     420px;
   max-height:    100%;
   height:        100%;
@@ -1614,20 +1614,20 @@
 
 /* --- Responsive ------------------------------------------------------------ */
 @media (max-width: 767px) {
-  .addons-care .ac-modal-overlay {
+  .addonscare .ac-modal-overlay {
     padding: 0;
     align-items: flex-end;
   }
-  .addons-care .ac-modal {
+  .addonscare .ac-modal {
     max-width:     100%;
     border-radius: var(--ac-radius-2xl) var(--ac-radius-2xl) 0 0;
     max-height:    90vh;
     animation:     ac-slide-up var(--ac-transition-slow) ease forwards;
   }
-  .addons-care .ac-modal__header { padding: var(--ac-space-4); }
-  .addons-care .ac-modal__body   { padding: var(--ac-space-4); }
-  .addons-care .ac-modal__footer { padding: var(--ac-space-3) var(--ac-space-4); flex-direction: column-reverse; }
-  .addons-care .ac-modal__footer .ac-btn { width: 100%; }
+  .addonscare .ac-modal__header { padding: var(--ac-space-4); }
+  .addonscare .ac-modal__body   { padding: var(--ac-space-4); }
+  .addonscare .ac-modal__footer { padding: var(--ac-space-3) var(--ac-space-4); flex-direction: column-reverse; }
+  .addonscare .ac-modal__footer .ac-btn { width: 100%; }
 }
 
 @keyframes ac-slide-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
@@ -1639,7 +1639,7 @@
 
 /**
  * Addons Care - Form Component
- * Scope: .addons-care
+ * Scope: .addonscare
  * -----------------------------------------------------------------------------
  * BEM: .ac-form  /  .ac-form-group  /  .ac-form-control  /  .ac-form-label
  *
@@ -1651,27 +1651,27 @@
  */
 
 /* --- Form Layout ----------------------------------------------------------- */
-.addons-care .ac-form { width: 100%; }
+.addonscare .ac-form { width: 100%; }
 
-.addons-care .ac-form-row {
+.addonscare .ac-form-row {
   display: flex;
   flex-wrap: wrap;
   gap: var(--ac-space-4);
 }
-.addons-care .ac-form-col { flex: 1 1 200px; min-width: 0; }
-.addons-care .ac-form-col--full { flex: 0 0 100%; }
+.addonscare .ac-form-col { flex: 1 1 200px; min-width: 0; }
+.addonscare .ac-form-col--full { flex: 0 0 100%; }
 
 /* --- Form Group ------------------------------------------------------------ */
-.addons-care .ac-form-group {
+.addonscare .ac-form-group {
   display:       flex;
   flex-direction: column;
   gap:           var(--ac-space-1-5);
   margin-bottom: var(--ac-space-4);
 }
-.addons-care .ac-form-group:last-child { margin-bottom: 0; }
+.addonscare .ac-form-group:last-child { margin-bottom: 0; }
 
 /* --- Label ----------------------------------------------------------------- */
-.addons-care .ac-form-label {
+.addonscare .ac-form-label {
   display:     inline-flex;
   align-items: center;
   gap:         var(--ac-space-1);
@@ -1680,13 +1680,13 @@
   color:       var(--ac-text-primary);
   line-height: 1;
 }
-.addons-care .ac-form-label__required {
+.addonscare .ac-form-label__required {
   color: var(--ac-color-error);
   font-size: var(--ac-text-sm);
 }
 
 /* --- Input / Select / Textarea --------------------------------------------- */
-.addons-care .ac-form-control {
+.addonscare .ac-form-control {
   display:          block;
   width:            100%;
   padding:          var(--ac-space-2) var(--ac-space-3);
@@ -1705,69 +1705,69 @@
   appearance: none;
 }
 
-.addons-care .ac-form-control::placeholder { color: var(--ac-text-muted); }
-.addons-care .ac-form-control:hover:not(:disabled):not(:focus) {
+.addonscare .ac-form-control::placeholder { color: var(--ac-text-muted); }
+.addonscare .ac-form-control:hover:not(:disabled):not(:focus) {
   border-color: var(--ac-neutral-400);
 }
-.addons-care .ac-form-control:focus {
+.addonscare .ac-form-control:focus {
   outline:      none;
   border-color: var(--ac-border-focus);
   box-shadow:   var(--ac-shadow-focus);
 }
-.addons-care .ac-form-control:disabled {
+.addonscare .ac-form-control:disabled {
   background-color: var(--ac-neutral-100);
   color:            var(--ac-text-muted);
   cursor:           not-allowed;
   border-color:     var(--ac-border-color);
 }
-.addons-care .ac-form-control[readonly] {
+.addonscare .ac-form-control[readonly] {
   background-color: var(--ac-neutral-50);
   cursor:           default;
 }
 
 /* --- Validation States ----------------------------------------------------- */
-.addons-care .ac-is-valid .ac-form-control,
-.addons-care .ac-form-control.ac-is-valid {
+.addonscare .ac-is-valid .ac-form-control,
+.addonscare .ac-form-control.ac-is-valid {
   border-color: var(--ac-color-success);
 }
-.addons-care .ac-is-valid .ac-form-control:focus,
-.addons-care .ac-form-control.ac-is-valid:focus {
+.addonscare .ac-is-valid .ac-form-control:focus,
+.addonscare .ac-form-control.ac-is-valid:focus {
   box-shadow: 0 0 0 3px rgba(34,197,94,.25);
 }
 
-.addons-care .ac-is-invalid .ac-form-control,
-.addons-care .ac-form-control.ac-is-invalid {
+.addonscare .ac-is-invalid .ac-form-control,
+.addonscare .ac-form-control.ac-is-invalid {
   border-color: var(--ac-color-error);
 }
-.addons-care .ac-is-invalid .ac-form-control:focus,
-.addons-care .ac-form-control.ac-is-invalid:focus {
+.addonscare .ac-is-invalid .ac-form-control:focus,
+.addonscare .ac-form-control.ac-is-invalid:focus {
   box-shadow: var(--ac-shadow-focus-error);
 }
 
-.addons-care .ac-form-feedback {
+.addonscare .ac-form-feedback {
   font-size: var(--ac-text-xs);
   display:   flex;
   align-items: center;
   gap:       var(--ac-space-1);
 }
-.addons-care .ac-form-feedback--valid   { color: var(--ac-color-success-dark); }
-.addons-care .ac-form-feedback--invalid { color: var(--ac-color-error);        }
-.addons-care .ac-form-hint { font-size: var(--ac-text-xs); color: var(--ac-text-muted); }
+.addonscare .ac-form-feedback--valid   { color: var(--ac-color-success-dark); }
+.addonscare .ac-form-feedback--invalid { color: var(--ac-color-error);        }
+.addonscare .ac-form-hint { font-size: var(--ac-text-xs); color: var(--ac-text-muted); }
 
 /* --- Sizes ----------------------------------------------------------------- */
-.addons-care .ac-form-control--sm {
+.addonscare .ac-form-control--sm {
   padding:    var(--ac-space-1-5) var(--ac-space-2-5);
   font-size:  var(--ac-text-xs);
   min-height: 30px;
 }
-.addons-care .ac-form-control--lg {
+.addonscare .ac-form-control--lg {
   padding:    var(--ac-space-3) var(--ac-space-4);
   font-size:  var(--ac-text-base);
   min-height: 46px;
 }
 
 /* --- Select ---------------------------------------------------------------- */
-.addons-care select.ac-form-control {
+.addonscare select.ac-form-control {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%2394a3b8' stroke-width='1.5' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat:   no-repeat;
   background-position: right var(--ac-space-3) center;
@@ -1776,22 +1776,22 @@
 }
 
 /* --- Textarea -------------------------------------------------------------- */
-.addons-care textarea.ac-form-control {
+.addonscare textarea.ac-form-control {
   min-height:  100px;
   resize:      vertical;
   line-height: var(--ac-leading-relaxed);
 }
 
 /* --- Input Group (prefix / suffix) ---------------------------------------- */
-.addons-care .ac-input-group {
+.addonscare .ac-input-group {
   display:  flex;
   position: relative;
 }
-.addons-care .ac-input-group .ac-form-control { flex: 1; min-width: 0; }
-.addons-care .ac-input-group .ac-form-control:not(:first-child) { border-radius: 0 var(--ac-radius-md) var(--ac-radius-md) 0; border-left: none; }
-.addons-care .ac-input-group .ac-form-control:not(:last-child)  { border-radius: var(--ac-radius-md) 0 0 var(--ac-radius-md); }
+.addonscare .ac-input-group .ac-form-control { flex: 1; min-width: 0; }
+.addonscare .ac-input-group .ac-form-control:not(:first-child) { border-radius: 0 var(--ac-radius-md) var(--ac-radius-md) 0; border-left: none; }
+.addonscare .ac-input-group .ac-form-control:not(:last-child)  { border-radius: var(--ac-radius-md) 0 0 var(--ac-radius-md); }
 
-.addons-care .ac-input-group__addon {
+.addonscare .ac-input-group__addon {
   display:          flex;
   align-items:      center;
   padding:          var(--ac-space-2) var(--ac-space-3);
@@ -1802,12 +1802,12 @@
   white-space:      nowrap;
   flex-shrink:      0;
 }
-.addons-care .ac-input-group__addon:first-child { border-radius: var(--ac-radius-md) 0 0 var(--ac-radius-md); border-right: none; }
-.addons-care .ac-input-group__addon:last-child  { border-radius: 0 var(--ac-radius-md) var(--ac-radius-md) 0; border-left: none; }
+.addonscare .ac-input-group__addon:first-child { border-radius: var(--ac-radius-md) 0 0 var(--ac-radius-md); border-right: none; }
+.addonscare .ac-input-group__addon:last-child  { border-radius: 0 var(--ac-radius-md) var(--ac-radius-md) 0; border-left: none; }
 
 /* Input icon (positioned inside) */
-.addons-care .ac-input-icon-wrap { position: relative; }
-.addons-care .ac-input-icon-wrap .ac-input-icon {
+.addonscare .ac-input-icon-wrap { position: relative; }
+.addonscare .ac-input-icon-wrap .ac-input-icon {
   position:  absolute;
   top:       50%;
   transform: translateY(-50%);
@@ -1816,22 +1816,22 @@
   display:   flex;
   align-items: center;
 }
-.addons-care .ac-input-icon-wrap .ac-input-icon--left  { left: var(--ac-space-3); }
-.addons-care .ac-input-icon-wrap .ac-input-icon--right { right: var(--ac-space-3); }
-.addons-care .ac-input-icon-wrap .ac-form-control--icon-left  { padding-left:  var(--ac-space-8); }
-.addons-care .ac-input-icon-wrap .ac-form-control--icon-right { padding-right: var(--ac-space-8); }
+.addonscare .ac-input-icon-wrap .ac-input-icon--left  { left: var(--ac-space-3); }
+.addonscare .ac-input-icon-wrap .ac-input-icon--right { right: var(--ac-space-3); }
+.addonscare .ac-input-icon-wrap .ac-form-control--icon-left  { padding-left:  var(--ac-space-8); }
+.addonscare .ac-input-icon-wrap .ac-form-control--icon-right { padding-right: var(--ac-space-8); }
 
 /* --- Checkbox & Radio ------------------------------------------------------ */
-.addons-care .ac-check-wrap,
-.addons-care .ac-radio-wrap {
+.addonscare .ac-check-wrap,
+.addonscare .ac-radio-wrap {
   display:     flex;
   align-items: flex-start;
   gap:         var(--ac-space-2);
   cursor:      pointer;
   user-select: none;
 }
-.addons-care .ac-check-wrap input,
-.addons-care .ac-radio-wrap input {
+.addonscare .ac-check-wrap input,
+.addonscare .ac-radio-wrap input {
   width:        18px;
   height:       18px;
   flex-shrink:  0;
@@ -1839,23 +1839,23 @@
   accent-color: var(--ac-brand);
   margin-top:   1px;
 }
-.addons-care .ac-check-wrap__label,
-.addons-care .ac-radio-wrap__label {
+.addonscare .ac-check-wrap__label,
+.addonscare .ac-radio-wrap__label {
   font-size: var(--ac-text-sm);
   color:     var(--ac-text-primary);
   line-height: var(--ac-leading-normal);
 }
 
 /* --- Toggle Switch --------------------------------------------------------- */
-.addons-care .ac-toggle {
+.addonscare .ac-toggle {
   display:      inline-flex;
   align-items:  center;
   gap:          var(--ac-space-2);
   cursor:       pointer;
   user-select:  none;
 }
-.addons-care .ac-toggle__input { display: none; }
-.addons-care .ac-toggle__track {
+.addonscare .ac-toggle__input { display: none; }
+.addonscare .ac-toggle__track {
   position:      relative;
   width:         44px;
   height:        24px;
@@ -1864,7 +1864,7 @@
   transition:    background-color var(--ac-transition-base);
   flex-shrink:   0;
 }
-.addons-care .ac-toggle__track::after {
+.addonscare .ac-toggle__track::after {
   content:       '';
   position:      absolute;
   top:           2px;
@@ -1876,30 +1876,30 @@
   box-shadow:    var(--ac-shadow-sm);
   transition:    transform var(--ac-transition-base);
 }
-.addons-care .ac-toggle__input:checked + .ac-toggle__track {
+.addonscare .ac-toggle__input:checked + .ac-toggle__track {
   background: var(--ac-brand);
 }
-.addons-care .ac-toggle__input:checked + .ac-toggle__track::after {
+.addonscare .ac-toggle__input:checked + .ac-toggle__track::after {
   transform: translateX(20px);
 }
-.addons-care .ac-toggle__label { font-size: var(--ac-text-sm); color: var(--ac-text-primary); }
-.addons-care .ac-toggle__input:disabled + .ac-toggle__track {
+.addonscare .ac-toggle__label { font-size: var(--ac-text-sm); color: var(--ac-text-primary); }
+.addonscare .ac-toggle__input:disabled + .ac-toggle__track {
   opacity: 0.5; cursor: not-allowed;
 }
 
 /* --- Form Section ---------------------------------------------------------- */
-.addons-care .ac-form-section {
+.addonscare .ac-form-section {
   padding:       var(--ac-space-6) 0;
   border-bottom: 1px solid var(--ac-border-color);
 }
-.addons-care .ac-form-section:last-child { border-bottom: none; }
-.addons-care .ac-form-section__title {
+.addonscare .ac-form-section:last-child { border-bottom: none; }
+.addonscare .ac-form-section__title {
   font-size:   var(--ac-text-base);
   font-weight: var(--ac-font-semibold);
   color:       var(--ac-text-primary);
   margin:      0 0 var(--ac-space-1) 0;
 }
-.addons-care .ac-form-section__desc {
+.addonscare .ac-form-section__desc {
   font-size: var(--ac-text-sm);
   color:     var(--ac-text-secondary);
   margin:    0 0 var(--ac-space-5) 0;
@@ -1907,8 +1907,8 @@
 
 /* --- Responsive ------------------------------------------------------------ */
 @media (max-width: 767px) {
-  .addons-care .ac-form-row { flex-direction: column; gap: 0; }
-  .addons-care .ac-form-col { flex: 0 0 100%; }
+  .addonscare .ac-form-row { flex-direction: column; gap: 0; }
+  .addonscare .ac-form-col { flex: 0 0 100%; }
 }
 
 
@@ -1918,7 +1918,7 @@
 
 /**
  * Addons Care - Tabs Component
- * Scope: .addons-care
+ * Scope: .addonscare
  * -----------------------------------------------------------------------------
  * BEM: .ac-tabs  /  .ac-tabs--{variant}  /  .ac-tabs__nav  /  .ac-tabs__panel
  *
@@ -1929,10 +1929,10 @@
  */
 
 /* --- Tabs Container -------------------------------------------------------- */
-.addons-care .ac-tabs { display: flex; flex-direction: column; }
+.addonscare .ac-tabs { display: flex; flex-direction: column; }
 
 /* --- Nav Bar --------------------------------------------------------------- */
-.addons-care .ac-tabs__nav {
+.addonscare .ac-tabs__nav {
   display:        flex;
   align-items:    stretch;
   gap:            0;
@@ -1943,10 +1943,10 @@
   -ms-overflow-style: none;
   flex-shrink:    0;
 }
-.addons-care .ac-tabs__nav::-webkit-scrollbar { display: none; }
+.addonscare .ac-tabs__nav::-webkit-scrollbar { display: none; }
 
 /* --- Tab Button ------------------------------------------------------------ */
-.addons-care .ac-tabs__tab {
+.addonscare .ac-tabs__tab {
   display:         inline-flex;
   align-items:     center;
   gap:             var(--ac-space-2);
@@ -1967,31 +1967,31 @@
   min-height:      44px;
   text-decoration: none;
 }
-.addons-care .ac-tabs__tab:hover:not([disabled]):not(.ac-tabs__tab--active) {
+.addonscare .ac-tabs__tab:hover:not([disabled]):not(.ac-tabs__tab--active) {
   color:        var(--ac-text-primary);
   border-color: var(--ac-neutral-300);
   background:   var(--ac-neutral-50);
 }
-.addons-care .ac-tabs__tab--active,
-.addons-care .ac-tabs__tab[aria-selected="true"] {
+.addonscare .ac-tabs__tab--active,
+.addonscare .ac-tabs__tab[aria-selected="true"] {
   color:        var(--ac-brand);
   border-color: var(--ac-brand);
   font-weight:  var(--ac-font-semibold);
 }
-.addons-care .ac-tabs__tab:focus-visible {
+.addonscare .ac-tabs__tab:focus-visible {
   outline:        2px solid var(--ac-border-focus);
   outline-offset: -2px;
   border-radius:  var(--ac-radius-sm);
 }
-.addons-care .ac-tabs__tab[disabled],
-.addons-care .ac-tabs__tab--disabled {
+.addonscare .ac-tabs__tab[disabled],
+.addonscare .ac-tabs__tab--disabled {
   opacity: 0.4;
   cursor:  not-allowed;
   pointer-events: none;
 }
 
 /* Badge inside tab */
-.addons-care .ac-tabs__badge {
+.addonscare .ac-tabs__badge {
   background:    var(--ac-neutral-200);
   color:         var(--ac-text-secondary);
   font-size:     var(--ac-text-xs);
@@ -2001,22 +2001,22 @@
   line-height:   1.4;
   transition:    background var(--ac-transition-base), color var(--ac-transition-base);
 }
-.addons-care .ac-tabs__tab--active .ac-tabs__badge,
-.addons-care .ac-tabs__tab[aria-selected="true"] .ac-tabs__badge {
+.addonscare .ac-tabs__tab--active .ac-tabs__badge,
+.addonscare .ac-tabs__tab[aria-selected="true"] .ac-tabs__badge {
   background: var(--ac-color-primary-100);
   color:      var(--ac-brand);
 }
 
 /* --- Tab Panel ------------------------------------------------------------- */
-.addons-care .ac-tabs__panels { min-height: 0; }
+.addonscare .ac-tabs__panels { min-height: 0; }
 
-.addons-care .ac-tabs__panel {
+.addonscare .ac-tabs__panel {
   display:    none;
   padding:    var(--ac-space-5) 0;
   animation:  ac-tab-fade-in var(--ac-transition-base) ease forwards;
 }
-.addons-care .ac-tabs__panel--active,
-.addons-care .ac-tabs__panel[aria-hidden="false"] { display: block; }
+.addonscare .ac-tabs__panel--active,
+.addonscare .ac-tabs__panel[aria-hidden="false"] { display: block; }
 
 @keyframes ac-tab-fade-in {
   from { opacity: 0; transform: translateY(4px); }
@@ -2024,24 +2024,24 @@
 }
 
 /* --- Variant: Pills -------------------------------------------------------- */
-.addons-care .ac-tabs--pills .ac-tabs__nav {
+.addonscare .ac-tabs--pills .ac-tabs__nav {
   border-bottom: none;
   gap:           var(--ac-space-1);
   padding:       var(--ac-space-1);
   background:    var(--ac-neutral-100);
   border-radius: var(--ac-radius-lg);
 }
-.addons-care .ac-tabs--pills .ac-tabs__tab {
+.addonscare .ac-tabs--pills .ac-tabs__tab {
   border:        none;
   border-radius: var(--ac-radius-md);
   margin-bottom: 0;
   padding:       var(--ac-space-2) var(--ac-space-3);
 }
-.addons-care .ac-tabs--pills .ac-tabs__tab:hover:not([disabled]):not(.ac-tabs__tab--active) {
+.addonscare .ac-tabs--pills .ac-tabs__tab:hover:not([disabled]):not(.ac-tabs__tab--active) {
   background: var(--ac-neutral-200);
 }
-.addons-care .ac-tabs--pills .ac-tabs__tab--active,
-.addons-care .ac-tabs--pills .ac-tabs__tab[aria-selected="true"] {
+.addonscare .ac-tabs--pills .ac-tabs__tab--active,
+.addonscare .ac-tabs--pills .ac-tabs__tab[aria-selected="true"] {
   background:  var(--ac-bg-surface);
   color:       var(--ac-brand);
   box-shadow:  var(--ac-shadow-sm);
@@ -2049,18 +2049,18 @@
 }
 
 /* --- Variant: Boxed -------------------------------------------------------- */
-.addons-care .ac-tabs--boxed .ac-tabs__nav {
+.addonscare .ac-tabs--boxed .ac-tabs__nav {
   border-bottom: 1px solid var(--ac-border-color);
   gap:           0;
 }
-.addons-care .ac-tabs--boxed .ac-tabs__tab {
+.addonscare .ac-tabs--boxed .ac-tabs__tab {
   border:        1px solid transparent;
   border-bottom: none;
   border-radius: var(--ac-radius-md) var(--ac-radius-md) 0 0;
   margin-bottom: -1px;
 }
-.addons-care .ac-tabs--boxed .ac-tabs__tab--active,
-.addons-care .ac-tabs--boxed .ac-tabs__tab[aria-selected="true"] {
+.addonscare .ac-tabs--boxed .ac-tabs__tab--active,
+.addonscare .ac-tabs--boxed .ac-tabs__tab[aria-selected="true"] {
   background:    var(--ac-bg-surface);
   color:         var(--ac-text-primary);
   border-color:  var(--ac-border-color);
@@ -2068,11 +2068,11 @@
 }
 
 /* --- Variant: Vertical ----------------------------------------------------- */
-.addons-care .ac-tabs--vertical {
+.addonscare .ac-tabs--vertical {
   flex-direction: row;
   gap: var(--ac-space-6);
 }
-.addons-care .ac-tabs--vertical .ac-tabs__nav {
+.addonscare .ac-tabs--vertical .ac-tabs__nav {
   flex-direction:  column;
   border-bottom:   none;
   border-right:    2px solid var(--ac-border-color);
@@ -2080,7 +2080,7 @@
   min-width:       160px;
   flex-shrink:     0;
 }
-.addons-care .ac-tabs--vertical .ac-tabs__tab {
+.addonscare .ac-tabs--vertical .ac-tabs__tab {
   border-bottom:   none;
   border-right:    2px solid transparent;
   margin-bottom:   0;
@@ -2088,32 +2088,32 @@
   text-align:      left;
   border-radius:   var(--ac-radius-md) 0 0 var(--ac-radius-md);
 }
-.addons-care .ac-tabs--vertical .ac-tabs__tab--active {
+.addonscare .ac-tabs--vertical .ac-tabs__tab--active {
   border-right-color: var(--ac-brand);
   background: var(--ac-color-primary-50);
 }
-.addons-care .ac-tabs--vertical .ac-tabs__panels { flex: 1; }
-.addons-care .ac-tabs--vertical .ac-tabs__panel  { padding: 0; }
+.addonscare .ac-tabs--vertical .ac-tabs__panels { flex: 1; }
+.addonscare .ac-tabs--vertical .ac-tabs__panel  { padding: 0; }
 
 /* --- Responsive ------------------------------------------------------------ */
 @media (max-width: 767px) {
-  .addons-care .ac-tabs--vertical {
+  .addonscare .ac-tabs--vertical {
     flex-direction: column;
   }
-  .addons-care .ac-tabs--vertical .ac-tabs__nav {
+  .addonscare .ac-tabs--vertical .ac-tabs__nav {
     flex-direction:  row;
     border-right:    none;
     border-bottom:   2px solid var(--ac-border-color);
     overflow-x:      auto;
   }
-  .addons-care .ac-tabs--vertical .ac-tabs__tab {
+  .addonscare .ac-tabs--vertical .ac-tabs__tab {
     border-right:  none;
     border-bottom: 2px solid transparent;
     margin-right:  0;
     margin-bottom: -2px;
     border-radius: 0;
   }
-  .addons-care .ac-tabs--vertical .ac-tabs__tab--active {
+  .addonscare .ac-tabs--vertical .ac-tabs__tab--active {
     border-right-color: transparent;
     border-bottom-color: var(--ac-brand);
   }
@@ -2126,7 +2126,7 @@
 
 /**
  * Addons Care - Navigation (Sidebar + Topbar Header)
- * Scope: .addons-care
+ * Scope: .addonscare
  * -----------------------------------------------------------------------------
  * BEM:
  *   Sidebar :  .ac-sidebar  /  .ac-sidebar__*
@@ -2140,7 +2140,7 @@
 /*  SIDEBAR                                                                   */
 /* --------------------------------------------------------------------------- */
 
-.addons-care .ac-sidebar {
+.addonscare .ac-sidebar {
   width:            var(--ac-sidebar-width);
   min-height:       100%;
   background:       var(--ac-neutral-900);
@@ -2155,7 +2155,7 @@
 }
 
 /* --- Brand / Logo Area ----------------------------------------------------- */
-.addons-care .ac-sidebar__brand {
+.addonscare .ac-sidebar__brand {
   display:         flex;
   align-items:     center;
   gap:             var(--ac-space-3);
@@ -2166,14 +2166,14 @@
   overflow:        hidden;
   text-decoration: none;
 }
-.addons-care .ac-sidebar__logo {
+.addonscare .ac-sidebar__logo {
   width:         32px;
   height:        32px;
   border-radius: var(--ac-radius-md);
   flex-shrink:   0;
   object-fit:    contain;
 }
-.addons-care .ac-sidebar__brand-name {
+.addonscare .ac-sidebar__brand-name {
   font-size:   var(--ac-text-base);
   font-weight: var(--ac-font-bold);
   color:       var(--ac-neutral-0);
@@ -2184,7 +2184,7 @@
 }
 
 /* --- Scroll Area ----------------------------------------------------------- */
-.addons-care .ac-sidebar__scroll {
+.addonscare .ac-sidebar__scroll {
   flex:       1;
   overflow-y: auto;
   overflow-x: hidden;
@@ -2192,9 +2192,9 @@
 }
 
 /* --- Nav Group ------------------------------------------------------------- */
-.addons-care .ac-nav-group { margin-bottom: var(--ac-space-4); }
+.addonscare .ac-nav-group { margin-bottom: var(--ac-space-4); }
 
-.addons-care .ac-nav-group__title {
+.addonscare .ac-nav-group__title {
   font-size:      var(--ac-text-xs);
   font-weight:    var(--ac-font-semibold);
   color:          var(--ac-neutral-500);
@@ -2208,7 +2208,7 @@
 }
 
 /* --- Nav Item -------------------------------------------------------------- */
-.addons-care .ac-nav-item {
+.addonscare .ac-nav-item {
   display:         flex;
   align-items:     center;
   gap:             var(--ac-space-3);
@@ -2232,18 +2232,18 @@
   text-align:      left;
 }
 
-.addons-care .ac-nav-item:hover {
+.addonscare .ac-nav-item:hover {
   color:            var(--ac-neutral-100);
   background-color: rgba(255,255,255,.07);
 }
 
-.addons-care .ac-nav-item--active,
-.addons-care .ac-nav-item[aria-current="page"] {
+.addonscare .ac-nav-item--active,
+.addonscare .ac-nav-item[aria-current="page"] {
   color:            var(--ac-neutral-0);
   background-color: rgba(255,255,255,.10);
 }
-.addons-care .ac-nav-item--active::before,
-.addons-care .ac-nav-item[aria-current="page"]::before {
+.addonscare .ac-nav-item--active::before,
+.addonscare .ac-nav-item[aria-current="page"]::before {
   content:       '';
   position:      absolute;
   left:          0;
@@ -2254,7 +2254,7 @@
   border-radius: 0 var(--ac-radius-full) var(--ac-radius-full) 0;
 }
 
-.addons-care .ac-nav-item__icon {
+.addonscare .ac-nav-item__icon {
   width:         18px;
   height:        18px;
   display:       inline-flex;
@@ -2264,9 +2264,9 @@
   font-size:     16px;
   transition:    color var(--ac-transition-base);
 }
-.addons-care .ac-nav-item--active .ac-nav-item__icon { color: var(--ac-brand); }
+.addonscare .ac-nav-item--active .ac-nav-item__icon { color: var(--ac-brand); }
 
-.addons-care .ac-nav-item__label {
+.addonscare .ac-nav-item__label {
   flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2274,7 +2274,7 @@
   transition: opacity var(--ac-transition-base), width var(--ac-transition-slow);
 }
 
-.addons-care .ac-nav-item__badge {
+.addonscare .ac-nav-item__badge {
   background:    var(--ac-color-error);
   color:         #fff;
   font-size:     var(--ac-text-xs);
@@ -2288,42 +2288,42 @@
 }
 
 /* --- Sub-Nav (nested) ------------------------------------------------------ */
-.addons-care .ac-nav-item--has-children .ac-nav-item__arrow {
+.addonscare .ac-nav-item--has-children .ac-nav-item__arrow {
   margin-left: auto;
   flex-shrink: 0;
   font-size:   12px;
   transition:  transform var(--ac-transition-base);
   color:       var(--ac-neutral-600);
 }
-.addons-care .ac-nav-item--expanded .ac-nav-item__arrow { transform: rotate(90deg); }
+.addonscare .ac-nav-item--expanded .ac-nav-item__arrow { transform: rotate(90deg); }
 
-.addons-care .ac-nav-subnav {
+.addonscare .ac-nav-subnav {
   display:  none;
   padding:  var(--ac-space-1) 0;
   overflow: hidden;
 }
-.addons-care .ac-nav-subnav--open { display: block; }
+.addonscare .ac-nav-subnav--open { display: block; }
 
-.addons-care .ac-nav-subnav .ac-nav-item {
+.addonscare .ac-nav-subnav .ac-nav-item {
   padding-left: var(--ac-space-12);
   font-size:    var(--ac-text-xs);
   min-height:   34px;
 }
 
 /* --- Footer Area ----------------------------------------------------------- */
-.addons-care .ac-sidebar__footer {
+.addonscare .ac-sidebar__footer {
   padding:    var(--ac-space-3) var(--ac-space-5);
   border-top: 1px solid rgba(255,255,255,.08);
   flex-shrink: 0;
 }
-.addons-care .ac-sidebar__user {
+.addonscare .ac-sidebar__user {
   display:    flex;
   align-items: center;
   gap:        var(--ac-space-3);
   text-decoration: none;
   padding:    var(--ac-space-2) 0;
 }
-.addons-care .ac-sidebar__avatar {
+.addonscare .ac-sidebar__avatar {
   width:         36px;
   height:        36px;
   border-radius: var(--ac-radius-full);
@@ -2337,7 +2337,7 @@
   flex-shrink:   0;
   object-fit:    cover;
 }
-.addons-care .ac-sidebar__user-name {
+.addonscare .ac-sidebar__user-name {
   font-size:   var(--ac-text-sm);
   font-weight: var(--ac-font-medium);
   color:       var(--ac-neutral-100);
@@ -2345,13 +2345,13 @@
   overflow:    hidden;
   text-overflow: ellipsis;
 }
-.addons-care .ac-sidebar__user-role {
+.addonscare .ac-sidebar__user-role {
   font-size: var(--ac-text-xs);
   color:     var(--ac-neutral-500);
 }
 
 /* --- Collapse Toggle ------------------------------------------------------- */
-.addons-care .ac-sidebar__toggle {
+.addonscare .ac-sidebar__toggle {
   position:   absolute;
   top:        50%;
   right:      -12px;
@@ -2371,29 +2371,29 @@
   box-shadow: var(--ac-shadow-sm);
   transition: background var(--ac-transition-base), color var(--ac-transition-base);
 }
-.addons-care .ac-sidebar__toggle:hover {
+.addonscare .ac-sidebar__toggle:hover {
   background: var(--ac-brand);
   color:      white;
   border-color: var(--ac-brand);
 }
 
 /* --- Collapsed State ------------------------------------------------------- */
-.addons-care .ac-sidebar--collapsed {
+.addonscare .ac-sidebar--collapsed {
   width: var(--ac-sidebar-collapsed-width);
 }
-.addons-care .ac-sidebar--collapsed .ac-sidebar__brand-name { opacity: 0; width: 0; }
-.addons-care .ac-sidebar--collapsed .ac-nav-item__label      { opacity: 0; width: 0; overflow: hidden; }
-.addons-care .ac-sidebar--collapsed .ac-nav-item__badge      { display: none; }
-.addons-care .ac-sidebar--collapsed .ac-nav-item__arrow      { display: none; }
-.addons-care .ac-sidebar--collapsed .ac-nav-group__title     { opacity: 0; }
-.addons-care .ac-sidebar--collapsed .ac-nav-item { padding-left: 0; justify-content: center; }
-.addons-care .ac-sidebar--collapsed .ac-nav-subnav { display: none !important; }
-.addons-care .ac-sidebar--collapsed .ac-sidebar__user-name,
-.addons-care .ac-sidebar--collapsed .ac-sidebar__user-role { display: none; }
+.addonscare .ac-sidebar--collapsed .ac-sidebar__brand-name { opacity: 0; width: 0; }
+.addonscare .ac-sidebar--collapsed .ac-nav-item__label      { opacity: 0; width: 0; overflow: hidden; }
+.addonscare .ac-sidebar--collapsed .ac-nav-item__badge      { display: none; }
+.addonscare .ac-sidebar--collapsed .ac-nav-item__arrow      { display: none; }
+.addonscare .ac-sidebar--collapsed .ac-nav-group__title     { opacity: 0; }
+.addonscare .ac-sidebar--collapsed .ac-nav-item { padding-left: 0; justify-content: center; }
+.addonscare .ac-sidebar--collapsed .ac-nav-subnav { display: none !important; }
+.addonscare .ac-sidebar--collapsed .ac-sidebar__user-name,
+.addonscare .ac-sidebar--collapsed .ac-sidebar__user-role { display: none; }
 
 /* Tooltip on collapsed sidebar hover */
-.addons-care .ac-sidebar--collapsed .ac-nav-item { position: relative; }
-.addons-care .ac-sidebar--collapsed .ac-nav-item:hover::after {
+.addonscare .ac-sidebar--collapsed .ac-nav-item { position: relative; }
+.addonscare .ac-sidebar--collapsed .ac-nav-item:hover::after {
   content:      attr(data-tooltip);
   position:     absolute;
   left:         calc(100% + var(--ac-space-2));
@@ -2414,7 +2414,7 @@
 /*  TOPBAR HEADER                                                             */
 /* --------------------------------------------------------------------------- */
 
-.addons-care .ac-header {
+.addonscare .ac-header {
   height:          var(--ac-header-height);
   background:      var(--ac-bg-surface);
   border-bottom:   1px solid var(--ac-border-color);
@@ -2429,7 +2429,7 @@
   box-shadow:      var(--ac-shadow-sm);
 }
 
-.addons-care .ac-header__mobile-toggle {
+.addonscare .ac-header__mobile-toggle {
   display:     none;
   width:       36px;
   height:      36px;
@@ -2443,7 +2443,7 @@
   font-size:   var(--ac-text-lg);
 }
 
-.addons-care .ac-header__title {
+.addonscare .ac-header__title {
   font-size:   var(--ac-text-lg);
   font-weight: var(--ac-font-semibold);
   color:       var(--ac-text-primary);
@@ -2454,7 +2454,7 @@
   white-space: nowrap;
 }
 
-.addons-care .ac-header__actions {
+.addonscare .ac-header__actions {
   display:     flex;
   align-items: center;
   gap:         var(--ac-space-2);
@@ -2462,21 +2462,21 @@
   flex-shrink: 0;
 }
 
-.addons-care .ac-header__search {
+.addonscare .ac-header__search {
   position: relative;
 }
-.addons-care .ac-header__search .ac-form-control {
+.addonscare .ac-header__search .ac-form-control {
   width:          240px;
   padding-left:   var(--ac-space-8);
   background:     var(--ac-neutral-100);
   border-color:   transparent;
 }
-.addons-care .ac-header__search .ac-form-control:focus {
+.addonscare .ac-header__search .ac-form-control:focus {
   background: var(--ac-bg-surface);
   border-color: var(--ac-border-focus);
   width: 280px;
 }
-.addons-care .ac-header__search-icon {
+.addonscare .ac-header__search-icon {
   position: absolute;
   left:     var(--ac-space-2-5);
   top:      50%;
@@ -2486,18 +2486,18 @@
 }
 
 /* --- Mobile Drawer Overlay ------------------------------------------------- */
-.addons-care .ac-sidebar-overlay {
+.addonscare .ac-sidebar-overlay {
   display:    none;
   position:   fixed;
   inset:      0;
   background: var(--ac-bg-overlay);
   z-index:    calc(var(--ac-z-sticky) - 1);
 }
-.addons-care .ac-sidebar-overlay--visible { display: block; }
+.addonscare .ac-sidebar-overlay--visible { display: block; }
 
 /* --- Responsive ------------------------------------------------------------ */
 @media (max-width: 991px) {
-  .addons-care .ac-sidebar {
+  .addonscare .ac-sidebar {
     position:   fixed;
     top:        0;
     left:       0;
@@ -2505,16 +2505,16 @@
     transform:  translateX(-100%);
     z-index:    var(--ac-z-overlay);
   }
-  .addons-care .ac-sidebar--mobile-open {
+  .addonscare .ac-sidebar--mobile-open {
     transform: translateX(0);
   }
-  .addons-care .ac-header__mobile-toggle { display: inline-flex; }
+  .addonscare .ac-header__mobile-toggle { display: inline-flex; }
 }
 
 @media (max-width: 767px) {
-  .addons-care .ac-header { padding: 0 var(--ac-space-4); }
-  .addons-care .ac-header__search .ac-form-control { width: 180px; }
-  .addons-care .ac-header__search .ac-form-control:focus { width: 200px; }
+  .addonscare .ac-header { padding: 0 var(--ac-space-4); }
+  .addonscare .ac-header__search .ac-form-control { width: 180px; }
+  .addonscare .ac-header__search .ac-form-control:focus { width: 200px; }
 }
 
 
@@ -2524,7 +2524,7 @@
 
 /**
  * Addons Care - Alert Component
- * Scope: .addons-care
+ * Scope: .addonscare
  * -----------------------------------------------------------------------------
  * BEM: .ac-alert  /  .ac-alert--{type}  /  .ac-alert--{variant}
  *
@@ -2534,7 +2534,7 @@
  */
 
 /* --- Base Alert ------------------------------------------------------------ */
-.addons-care .ac-alert {
+.addonscare .ac-alert {
   display:       flex;
   align-items:   flex-start;
   gap:           var(--ac-space-3);
@@ -2546,7 +2546,7 @@
   position:      relative;
 }
 
-.addons-care .ac-alert__icon {
+.addonscare .ac-alert__icon {
   flex-shrink: 0;
   width:       20px;
   height:      20px;
@@ -2557,18 +2557,18 @@
   margin-top:  1px;
 }
 
-.addons-care .ac-alert__content { flex: 1; min-width: 0; }
-.addons-care .ac-alert__title {
+.addonscare .ac-alert__content { flex: 1; min-width: 0; }
+.addonscare .ac-alert__title {
   font-weight: var(--ac-font-semibold);
   margin:      0 0 var(--ac-space-1) 0;
   color:       inherit;
 }
-.addons-care .ac-alert__message {
+.addonscare .ac-alert__message {
   margin: 0;
   color:  inherit;
   opacity: 0.85;
 }
-.addons-care .ac-alert__actions {
+.addonscare .ac-alert__actions {
   display:    flex;
   align-items: center;
   gap:        var(--ac-space-2);
@@ -2576,7 +2576,7 @@
   flex-wrap:  wrap;
 }
 
-.addons-care .ac-alert__close {
+.addonscare .ac-alert__close {
   background:    transparent;
   border:        none;
   cursor:        pointer;
@@ -2593,56 +2593,56 @@
   margin-left:   auto;
   transition:    opacity var(--ac-transition-fast);
 }
-.addons-care .ac-alert__close:hover { opacity: 1; }
+.addonscare .ac-alert__close:hover { opacity: 1; }
 
 /* --- Soft Variants (default) ----------------------------------------------- */
-.addons-care .ac-alert--success {
+.addonscare .ac-alert--success {
   background:   var(--ac-color-success-light);
   border-color: rgba(34,197,94,.3);
   color:        var(--ac-color-success-dark);
 }
-.addons-care .ac-alert--warning {
+.addonscare .ac-alert--warning {
   background:   var(--ac-color-warning-light);
   border-color: rgba(234,179,8,.3);
   color:        var(--ac-color-warning-dark);
 }
-.addons-care .ac-alert--error {
+.addonscare .ac-alert--error {
   background:   var(--ac-color-error-light);
   border-color: rgba(239,68,68,.3);
   color:        var(--ac-color-error-dark);
 }
-.addons-care .ac-alert--info {
+.addonscare .ac-alert--info {
   background:   var(--ac-color-info-light);
   border-color: rgba(59,130,246,.3);
   color:        var(--ac-color-info-dark);
 }
 
 /* --- Outline Variant ------------------------------------------------------- */
-.addons-care .ac-alert--outline.ac-alert--success {
+.addonscare .ac-alert--outline.ac-alert--success {
   background: transparent; border-color: var(--ac-color-success);
   color: var(--ac-color-success-dark);
 }
-.addons-care .ac-alert--outline.ac-alert--warning {
+.addonscare .ac-alert--outline.ac-alert--warning {
   background: transparent; border-color: var(--ac-color-warning);
   color: var(--ac-color-warning-dark);
 }
-.addons-care .ac-alert--outline.ac-alert--error {
+.addonscare .ac-alert--outline.ac-alert--error {
   background: transparent; border-color: var(--ac-color-error);
   color: var(--ac-color-error-dark);
 }
-.addons-care .ac-alert--outline.ac-alert--info {
+.addonscare .ac-alert--outline.ac-alert--info {
   background: transparent; border-color: var(--ac-color-info);
   color: var(--ac-color-info-dark);
 }
 
 /* --- Solid Variant --------------------------------------------------------- */
-.addons-care .ac-alert--solid.ac-alert--success { background: var(--ac-color-success); color: #fff; border-color: transparent; }
-.addons-care .ac-alert--solid.ac-alert--warning { background: var(--ac-color-warning); color: #fff; border-color: transparent; }
-.addons-care .ac-alert--solid.ac-alert--error   { background: var(--ac-color-error);   color: #fff; border-color: transparent; }
-.addons-care .ac-alert--solid.ac-alert--info    { background: var(--ac-color-info);    color: #fff; border-color: transparent; }
+.addonscare .ac-alert--solid.ac-alert--success { background: var(--ac-color-success); color: #fff; border-color: transparent; }
+.addonscare .ac-alert--solid.ac-alert--warning { background: var(--ac-color-warning); color: #fff; border-color: transparent; }
+.addonscare .ac-alert--solid.ac-alert--error   { background: var(--ac-color-error);   color: #fff; border-color: transparent; }
+.addonscare .ac-alert--solid.ac-alert--info    { background: var(--ac-color-info);    color: #fff; border-color: transparent; }
 
 /* --- Banner ---------------------------------------------------------------- */
-.addons-care .ac-alert--banner {
+.addonscare .ac-alert--banner {
   border-radius: 0;
   border-left:   none;
   border-right:  none;
@@ -2657,7 +2657,7 @@
 /* --------------------------------------------------------------------------- */
 
 /* --- Base Badge ------------------------------------------------------------ */
-.addons-care .ac-badge {
+.addonscare .ac-badge {
   display:         inline-flex;
   align-items:     center;
   gap:             var(--ac-space-1);
@@ -2671,32 +2671,32 @@
 }
 
 /* --- Semantic Color Badges ------------------------------------------------- */
-.addons-care .ac-badge--default { background: var(--ac-neutral-200);        color: var(--ac-neutral-700); }
-.addons-care .ac-badge--primary { background: var(--ac-color-primary-100);  color: var(--ac-color-primary-700); }
-.addons-care .ac-badge--success { background: var(--ac-color-success-light);color: var(--ac-color-success-dark); }
-.addons-care .ac-badge--warning { background: var(--ac-color-warning-light);color: var(--ac-color-warning-dark); }
-.addons-care .ac-badge--error   { background: var(--ac-color-error-light);  color: var(--ac-color-error-dark);   }
-.addons-care .ac-badge--info    { background: var(--ac-color-info-light);   color: var(--ac-color-info-dark);    }
-.addons-care .ac-badge--accent  { background: var(--ac-color-accent-100);   color: var(--ac-color-accent-700);   }
+.addonscare .ac-badge--default { background: var(--ac-neutral-200);        color: var(--ac-neutral-700); }
+.addonscare .ac-badge--primary { background: var(--ac-color-primary-100);  color: var(--ac-color-primary-700); }
+.addonscare .ac-badge--success { background: var(--ac-color-success-light);color: var(--ac-color-success-dark); }
+.addonscare .ac-badge--warning { background: var(--ac-color-warning-light);color: var(--ac-color-warning-dark); }
+.addonscare .ac-badge--error   { background: var(--ac-color-error-light);  color: var(--ac-color-error-dark);   }
+.addonscare .ac-badge--info    { background: var(--ac-color-info-light);   color: var(--ac-color-info-dark);    }
+.addonscare .ac-badge--accent  { background: var(--ac-color-accent-100);   color: var(--ac-color-accent-700);   }
 
 /* Solid badges */
-.addons-care .ac-badge--solid-primary { background: var(--ac-brand);            color: #fff; }
-.addons-care .ac-badge--solid-success { background: var(--ac-color-success);    color: #fff; }
-.addons-care .ac-badge--solid-warning { background: var(--ac-color-warning);    color: #fff; }
-.addons-care .ac-badge--solid-error   { background: var(--ac-color-error);      color: #fff; }
-.addons-care .ac-badge--solid-info    { background: var(--ac-color-info);       color: #fff; }
+.addonscare .ac-badge--solid-primary { background: var(--ac-brand);            color: #fff; }
+.addonscare .ac-badge--solid-success { background: var(--ac-color-success);    color: #fff; }
+.addonscare .ac-badge--solid-warning { background: var(--ac-color-warning);    color: #fff; }
+.addonscare .ac-badge--solid-error   { background: var(--ac-color-error);      color: #fff; }
+.addonscare .ac-badge--solid-info    { background: var(--ac-color-info);       color: #fff; }
 
 /* Outline badges */
-.addons-care .ac-badge--outline-primary { background: transparent; color: var(--ac-brand);          border: 1px solid var(--ac-brand);          }
-.addons-care .ac-badge--outline-success { background: transparent; color: var(--ac-color-success);  border: 1px solid var(--ac-color-success);  }
-.addons-care .ac-badge--outline-error   { background: transparent; color: var(--ac-color-error);    border: 1px solid var(--ac-color-error);    }
+.addonscare .ac-badge--outline-primary { background: transparent; color: var(--ac-brand);          border: 1px solid var(--ac-brand);          }
+.addonscare .ac-badge--outline-success { background: transparent; color: var(--ac-color-success);  border: 1px solid var(--ac-color-success);  }
+.addonscare .ac-badge--outline-error   { background: transparent; color: var(--ac-color-error);    border: 1px solid var(--ac-color-error);    }
 
 /* --- Size Modifiers -------------------------------------------------------- */
-.addons-care .ac-badge--sm { font-size: 10px; padding: 1px var(--ac-space-1-5); }
-.addons-care .ac-badge--lg { font-size: var(--ac-text-sm); padding: var(--ac-space-1) var(--ac-space-2-5); }
+.addonscare .ac-badge--sm { font-size: 10px; padding: 1px var(--ac-space-1-5); }
+.addonscare .ac-badge--lg { font-size: var(--ac-text-sm); padding: var(--ac-space-1) var(--ac-space-2-5); }
 
 /* --- Dot Indicator --------------------------------------------------------- */
-.addons-care .ac-badge__dot {
+.addonscare .ac-badge__dot {
   width:         6px;
   height:        6px;
   border-radius: var(--ac-radius-full);
@@ -2705,11 +2705,11 @@
 }
 
 /* --- Notification Dot (absolute on icon) ---------------------------------- */
-.addons-care .ac-badge-wrap {
+.addonscare .ac-badge-wrap {
   position:   relative;
   display:    inline-flex;
 }
-.addons-care .ac-badge-wrap .ac-badge--dot-only {
+.addonscare .ac-badge-wrap .ac-badge--dot-only {
   position:    absolute;
   top:         -3px;
   right:       -3px;
@@ -2721,7 +2721,7 @@
 }
 
 /* --- Status Badge ---------------------------------------------------------- */
-.addons-care .ac-status {
+.addonscare .ac-status {
   display:      inline-flex;
   align-items:  center;
   gap:          var(--ac-space-1-5);
@@ -2729,23 +2729,23 @@
   font-weight:  var(--ac-font-medium);
   white-space:  nowrap;
 }
-.addons-care .ac-status__dot {
+.addonscare .ac-status__dot {
   width:         8px;
   height:        8px;
   border-radius: var(--ac-radius-full);
   flex-shrink:   0;
 }
-.addons-care .ac-status--active  .ac-status__dot { background: var(--ac-color-success); }
-.addons-care .ac-status--pending .ac-status__dot { background: var(--ac-color-warning); }
-.addons-care .ac-status--error   .ac-status__dot { background: var(--ac-color-error);   }
-.addons-care .ac-status--inactive .ac-status__dot{ background: var(--ac-neutral-400);   }
-.addons-care .ac-status--active  { color: var(--ac-color-success-dark); }
-.addons-care .ac-status--pending { color: var(--ac-color-warning-dark); }
-.addons-care .ac-status--error   { color: var(--ac-color-error-dark);   }
-.addons-care .ac-status--inactive{ color: var(--ac-text-muted);         }
+.addonscare .ac-status--active  .ac-status__dot { background: var(--ac-color-success); }
+.addonscare .ac-status--pending .ac-status__dot { background: var(--ac-color-warning); }
+.addonscare .ac-status--error   .ac-status__dot { background: var(--ac-color-error);   }
+.addonscare .ac-status--inactive .ac-status__dot{ background: var(--ac-neutral-400);   }
+.addonscare .ac-status--active  { color: var(--ac-color-success-dark); }
+.addonscare .ac-status--pending { color: var(--ac-color-warning-dark); }
+.addonscare .ac-status--error   { color: var(--ac-color-error-dark);   }
+.addonscare .ac-status--inactive{ color: var(--ac-text-muted);         }
 
 /* Pulsing dot for "live" */
-.addons-care .ac-status--live .ac-status__dot {
+.addonscare .ac-status--live .ac-status__dot {
   background: var(--ac-color-success);
   animation:  ac-pulse 1.8s ease-in-out infinite;
 }
@@ -2761,21 +2761,21 @@
 
 /**
  * Addons Care - Pagination Component
- * Scope: .addons-care
+ * Scope: .addonscare
  * -----------------------------------------------------------------------------
  * BEM: .ac-pagination  /  .ac-pagination__*
  * Variants: default | compact | simple (prev/next only)
  * -----------------------------------------------------------------------------
  */
 
-.addons-care .ac-pagination {
+.addonscare .ac-pagination {
   display:     flex;
   align-items: center;
   gap:         var(--ac-space-1);
   flex-wrap:   wrap;
 }
 
-.addons-care .ac-pagination__item {
+.addonscare .ac-pagination__item {
   display:          inline-flex;
   align-items:      center;
   justify-content:  center;
@@ -2793,22 +2793,22 @@
   transition:       all var(--ac-transition-base);
   user-select:      none;
 }
-.addons-care .ac-pagination__item:hover:not(.ac-pagination__item--active):not(.ac-pagination__item--disabled) {
+.addonscare .ac-pagination__item:hover:not(.ac-pagination__item--active):not(.ac-pagination__item--disabled) {
   background:   var(--ac-neutral-100);
   border-color: var(--ac-border-color);
   color:        var(--ac-text-primary);
 }
-.addons-care .ac-pagination__item--active {
+.addonscare .ac-pagination__item--active {
   background:   var(--ac-brand);
   border-color: var(--ac-brand);
   color:        white;
   cursor:       default;
 }
-.addons-care .ac-pagination__item--disabled {
+.addonscare .ac-pagination__item--disabled {
   opacity: 0.4;
   cursor:  not-allowed;
 }
-.addons-care .ac-pagination__ellipsis {
+.addonscare .ac-pagination__ellipsis {
   width:     36px;
   text-align: center;
   color:     var(--ac-text-muted);
@@ -2817,14 +2817,14 @@
 }
 
 /* Info text (e.g., "Showing 1-10 of 240") */
-.addons-care .ac-pagination__info {
+.addonscare .ac-pagination__info {
   font-size:  var(--ac-text-sm);
   color:      var(--ac-text-secondary);
   white-space: nowrap;
 }
 
 /* Wrapper with info + pagination side by side */
-.addons-care .ac-pagination-bar {
+.addonscare .ac-pagination-bar {
   display:         flex;
   align-items:     center;
   justify-content: space-between;
@@ -2835,8 +2835,8 @@
 
 /* --- Responsive ------------------------------------------------------------ */
 @media (max-width: 767px) {
-  .addons-care .ac-pagination-bar { flex-direction: column; align-items: center; }
-  .addons-care .ac-pagination__item { width: 40px; height: 40px; min-width: 40px; }
+  .addonscare .ac-pagination-bar { flex-direction: column; align-items: center; }
+  .addonscare .ac-pagination__item { width: 40px; height: 40px; min-width: 40px; }
 }
 
 
@@ -2849,10 +2849,10 @@
  *      .ac-dropdown__item  /  .ac-dropdown__divider
  */
 
-.addons-care .ac-dropdown { position: relative; display: inline-flex; }
+.addonscare .ac-dropdown { position: relative; display: inline-flex; }
 
 /* --- Menu ------------------------------------------------------------------ */
-.addons-care .ac-dropdown__menu {
+.addonscare .ac-dropdown__menu {
   position:      absolute;
   top:           calc(100% + var(--ac-space-1));
   left:          0;
@@ -2867,17 +2867,17 @@
   display:       none;
   animation:     ac-dropdown-in var(--ac-transition-base) ease forwards;
 }
-.addons-care .ac-dropdown__menu--right  { left: auto; right: 0; }
-.addons-care .ac-dropdown__menu--top    { top: auto; bottom: calc(100% + var(--ac-space-1)); }
-.addons-care .ac-dropdown__menu--wide   { min-width: 240px; }
+.addonscare .ac-dropdown__menu--right  { left: auto; right: 0; }
+.addonscare .ac-dropdown__menu--top    { top: auto; bottom: calc(100% + var(--ac-space-1)); }
+.addonscare .ac-dropdown__menu--wide   { min-width: 240px; }
 
-.addons-care .ac-dropdown--open .ac-dropdown__menu { display: block; }
-.addons-care .ac-dropdown__menu.ac-is-closing {
+.addonscare .ac-dropdown--open .ac-dropdown__menu { display: block; }
+.addonscare .ac-dropdown__menu.ac-is-closing {
   animation: ac-dropdown-out var(--ac-transition-fast) ease forwards;
 }
 
 /* --- Items ----------------------------------------------------------------- */
-.addons-care .ac-dropdown__item {
+.addonscare .ac-dropdown__item {
   display:         flex;
   align-items:     center;
   gap:             var(--ac-space-2-5);
@@ -2894,43 +2894,43 @@
   user-select:     none;
   min-height:      36px;
 }
-.addons-care .ac-dropdown__item:hover,
-.addons-care .ac-dropdown__item:focus {
+.addonscare .ac-dropdown__item:hover,
+.addonscare .ac-dropdown__item:focus {
   background: var(--ac-neutral-50);
   outline: none;
 }
-.addons-care .ac-dropdown__item--active {
+.addonscare .ac-dropdown__item--active {
   background: var(--ac-color-primary-50);
   color:      var(--ac-brand);
   font-weight: var(--ac-font-medium);
 }
-.addons-care .ac-dropdown__item--danger {
+.addonscare .ac-dropdown__item--danger {
   color: var(--ac-color-error);
 }
-.addons-care .ac-dropdown__item--danger:hover { background: var(--ac-color-error-light); }
+.addonscare .ac-dropdown__item--danger:hover { background: var(--ac-color-error-light); }
 
-.addons-care .ac-dropdown__item--disabled {
+.addonscare .ac-dropdown__item--disabled {
   opacity: 0.4; cursor: not-allowed; pointer-events: none;
 }
-.addons-care .ac-dropdown__item__icon {
+.addonscare .ac-dropdown__item__icon {
   width: 16px; height: 16px; flex-shrink: 0;
   display: inline-flex; align-items: center;
 }
-.addons-care .ac-dropdown__item__shortcut {
+.addonscare .ac-dropdown__item__shortcut {
   margin-left: auto;
   font-size:   var(--ac-text-xs);
   color:       var(--ac-text-muted);
 }
 
 /* --- Divider --------------------------------------------------------------- */
-.addons-care .ac-dropdown__divider {
+.addonscare .ac-dropdown__divider {
   height:     1px;
   background: var(--ac-border-color);
   margin:     var(--ac-space-1) 0;
 }
 
 /* --- Header inside dropdown ------------------------------------------------ */
-.addons-care .ac-dropdown__header {
+.addonscare .ac-dropdown__header {
   padding:        var(--ac-space-2) var(--ac-space-4);
   font-size:      var(--ac-text-xs);
   font-weight:    var(--ac-font-semibold);
@@ -2949,7 +2949,7 @@
 
 /**
  * Addons Care - Loader & Skeleton Components
- * Scope: .addons-care
+ * Scope: .addonscare
  * -----------------------------------------------------------------------------
  * 1. Spinner Loaders (.ac-spinner)
  * 2. Full-page / section overlay loaders (.ac-loader-overlay)
@@ -2961,7 +2961,7 @@
 /*  1. SPINNER                                                                 */
 /* --------------------------------------------------------------------------- */
 
-.addons-care .ac-spinner {
+.addonscare .ac-spinner {
   display:      inline-block;
   border:       2px solid var(--ac-neutral-200);
   border-top-color: var(--ac-brand);
@@ -2971,19 +2971,19 @@
 }
 
 /* Sizes */
-.addons-care .ac-spinner--xs  { width: 14px; height: 14px; border-width: 2px; }
-.addons-care .ac-spinner--sm  { width: 18px; height: 18px; border-width: 2px; }
-.addons-care .ac-spinner--md  { width: 28px; height: 28px; border-width: 3px; } /* default */
-.addons-care .ac-spinner--lg  { width: 40px; height: 40px; border-width: 3px; }
-.addons-care .ac-spinner--xl  { width: 56px; height: 56px; border-width: 4px; }
+.addonscare .ac-spinner--xs  { width: 14px; height: 14px; border-width: 2px; }
+.addonscare .ac-spinner--sm  { width: 18px; height: 18px; border-width: 2px; }
+.addonscare .ac-spinner--md  { width: 28px; height: 28px; border-width: 3px; } /* default */
+.addonscare .ac-spinner--lg  { width: 40px; height: 40px; border-width: 3px; }
+.addonscare .ac-spinner--xl  { width: 56px; height: 56px; border-width: 4px; }
 
 /* Color variants */
-.addons-care .ac-spinner--white    { border-color: rgba(255,255,255,.3); border-top-color: white; }
-.addons-care .ac-spinner--success  { border-top-color: var(--ac-color-success); }
-.addons-care .ac-spinner--error    { border-top-color: var(--ac-color-error);   }
+.addonscare .ac-spinner--white    { border-color: rgba(255,255,255,.3); border-top-color: white; }
+.addonscare .ac-spinner--success  { border-top-color: var(--ac-color-success); }
+.addonscare .ac-spinner--error    { border-top-color: var(--ac-color-error);   }
 
 /* Center wrapper */
-.addons-care .ac-spinner-center {
+.addonscare .ac-spinner-center {
   display:         flex;
   align-items:     center;
   justify-content: center;
@@ -2994,7 +2994,7 @@
 /*  2. OVERLAY LOADER                                                          */
 /* --------------------------------------------------------------------------- */
 
-.addons-care .ac-loader-overlay {
+.addonscare .ac-loader-overlay {
   position:        absolute;
   inset:           0;
   display:         flex;
@@ -3007,17 +3007,17 @@
   z-index:         var(--ac-z-overlay);
   border-radius:   inherit;
 }
-.addons-care .ac-loader-overlay--dark {
+.addonscare .ac-loader-overlay--dark {
   background: rgba(15,23,42,.6);
 }
-.addons-care .ac-loader-overlay__text {
+.addonscare .ac-loader-overlay__text {
   font-size:   var(--ac-text-sm);
   color:       var(--ac-text-secondary);
   font-weight: var(--ac-font-medium);
 }
 
 /* Full screen loader */
-.addons-care .ac-loader-overlay--fullscreen {
+.addonscare .ac-loader-overlay--fullscreen {
   position: fixed;
 }
 
@@ -3026,7 +3026,7 @@
 /* --------------------------------------------------------------------------- */
 
 /* Base skeleton shimmer */
-.addons-care .ac-skeleton {
+.addonscare .ac-skeleton {
   background:      linear-gradient(
     90deg,
     var(--ac-neutral-200) 25%,
@@ -3040,63 +3040,63 @@
 }
 
 /* --- Preset Shapes --------------------------------------------------------- */
-.addons-care .ac-skeleton--text {
+.addonscare .ac-skeleton--text {
   height:  14px;
   width:   100%;
   margin-bottom: var(--ac-space-2);
 }
-.addons-care .ac-skeleton--text-sm { height: 12px; }
-.addons-care .ac-skeleton--text-lg { height: 18px; }
+.addonscare .ac-skeleton--text-sm { height: 12px; }
+.addonscare .ac-skeleton--text-lg { height: 18px; }
 
-.addons-care .ac-skeleton--title {
+.addonscare .ac-skeleton--title {
   height: 22px;
   width:  60%;
   margin-bottom: var(--ac-space-3);
   border-radius: var(--ac-radius-md);
 }
 
-.addons-care .ac-skeleton--circle {
+.addonscare .ac-skeleton--circle {
   border-radius: var(--ac-radius-full);
 }
-.addons-care .ac-skeleton--avatar {
+.addonscare .ac-skeleton--avatar {
   width:         40px;
   height:        40px;
   border-radius: var(--ac-radius-full);
   flex-shrink:   0;
 }
-.addons-care .ac-skeleton--thumb {
+.addonscare .ac-skeleton--thumb {
   width:         80px;
   height:        80px;
   border-radius: var(--ac-radius-lg);
   flex-shrink:   0;
 }
 
-.addons-care .ac-skeleton--btn {
+.addonscare .ac-skeleton--btn {
   height: 36px;
   width:  100px;
   border-radius: var(--ac-radius-md);
 }
-.addons-care .ac-skeleton--badge {
+.addonscare .ac-skeleton--badge {
   height: 22px;
   width:  64px;
   border-radius: var(--ac-radius-full);
 }
-.addons-care .ac-skeleton--card {
+.addonscare .ac-skeleton--card {
   height: 120px;
   width:  100%;
   border-radius: var(--ac-radius-xl);
 }
 
 /* --- Widths ---------------------------------------------------------------- */
-.addons-care .ac-skeleton--w-full  { width: 100%; }
-.addons-care .ac-skeleton--w-3-4   { width: 75%;  }
-.addons-care .ac-skeleton--w-2-3   { width: 67%;  }
-.addons-care .ac-skeleton--w-1-2   { width: 50%;  }
-.addons-care .ac-skeleton--w-1-3   { width: 33%;  }
-.addons-care .ac-skeleton--w-1-4   { width: 25%;  }
+.addonscare .ac-skeleton--w-full  { width: 100%; }
+.addonscare .ac-skeleton--w-3-4   { width: 75%;  }
+.addonscare .ac-skeleton--w-2-3   { width: 67%;  }
+.addonscare .ac-skeleton--w-1-2   { width: 50%;  }
+.addonscare .ac-skeleton--w-1-3   { width: 33%;  }
+.addonscare .ac-skeleton--w-1-4   { width: 25%;  }
 
 /* --- Card Skeleton preset -------------------------------------------------- */
-.addons-care .ac-skeleton-card {
+.addonscare .ac-skeleton-card {
   background:    var(--ac-bg-surface);
   border:        1px solid var(--ac-border-color);
   border-radius: var(--ac-radius-xl);
@@ -3105,14 +3105,14 @@
   flex-direction: column;
   gap:           var(--ac-space-3);
 }
-.addons-care .ac-skeleton-card__header {
+.addonscare .ac-skeleton-card__header {
   display:     flex;
   align-items: center;
   gap:         var(--ac-space-3);
 }
 
 /* --- Table Row Skeleton ---------------------------------------------------- */
-.addons-care .ac-skeleton-row {
+.addonscare .ac-skeleton-row {
   display:       grid;
   grid-template-columns: 1fr 1fr 1fr 80px;
   gap:           var(--ac-space-4);
@@ -3120,7 +3120,7 @@
   padding:       var(--ac-space-3) var(--ac-space-4);
   border-bottom: 1px solid var(--ac-border-color);
 }
-.addons-care .ac-skeleton-row:last-child { border-bottom: none; }
+.addonscare .ac-skeleton-row:last-child { border-bottom: none; }
 
 /* --- Shimmer Animation ----------------------------------------------------- */
 @keyframes ac-shimmer {
@@ -3130,8 +3130,8 @@
 
 /* --- Reduced motion -------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
-  .addons-care .ac-skeleton { animation: none; }
-  .addons-care .ac-spinner  { animation-duration: 1.5s; }
+  .addonscare .ac-skeleton { animation: none; }
+  .addonscare .ac-spinner  { animation-duration: 1.5s; }
 }
 
 
@@ -3141,7 +3141,7 @@
 
 /**
  * Addons Care - Toast Notification
- * Scope: .addons-care
+ * Scope: .addonscare
  * -----------------------------------------------------------------------------
  * BEM: .ac-toast-container  /  .ac-toast  /  .ac-toast--{type}
  *
@@ -3152,7 +3152,7 @@
  */
 
 /* --- Container ------------------------------------------------------------- */
-.addons-care .ac-toast-container {
+.addonscare .ac-toast-container {
   position:         fixed;
   z-index:          var(--ac-z-toast);
   display:          flex;
@@ -3164,15 +3164,15 @@
 }
 
 /* Positions */
-.addons-care .ac-toast-container--top-right    { top: var(--ac-space-5); right: var(--ac-space-5); }
-.addons-care .ac-toast-container--top-left     { top: var(--ac-space-5); left:  var(--ac-space-5); }
-.addons-care .ac-toast-container--bottom-right { bottom: var(--ac-space-5); right: var(--ac-space-5); flex-direction: column-reverse; }
-.addons-care .ac-toast-container--bottom-left  { bottom: var(--ac-space-5); left:  var(--ac-space-5); flex-direction: column-reverse; }
-.addons-care .ac-toast-container--top-center   { top: var(--ac-space-5); left: 50%; transform: translateX(-50%); }
-.addons-care .ac-toast-container--bottom-center{ bottom: var(--ac-space-5); left: 50%; transform: translateX(-50%); flex-direction: column-reverse; }
+.addonscare .ac-toast-container--top-right    { top: var(--ac-space-5); right: var(--ac-space-5); }
+.addonscare .ac-toast-container--top-left     { top: var(--ac-space-5); left:  var(--ac-space-5); }
+.addonscare .ac-toast-container--bottom-right { bottom: var(--ac-space-5); right: var(--ac-space-5); flex-direction: column-reverse; }
+.addonscare .ac-toast-container--bottom-left  { bottom: var(--ac-space-5); left:  var(--ac-space-5); flex-direction: column-reverse; }
+.addonscare .ac-toast-container--top-center   { top: var(--ac-space-5); left: 50%; transform: translateX(-50%); }
+.addonscare .ac-toast-container--bottom-center{ bottom: var(--ac-space-5); left: 50%; transform: translateX(-50%); flex-direction: column-reverse; }
 
 /* --- Toast ----------------------------------------------------------------- */
-.addons-care .ac-toast {
+.addonscare .ac-toast {
   display:        flex;
   align-items:    flex-start;
   gap:            var(--ac-space-3);
@@ -3189,12 +3189,12 @@
   overflow:       hidden;
 }
 
-.addons-care .ac-toast.ac-toast--exit {
+.addonscare .ac-toast.ac-toast--exit {
   animation: ac-toast-out var(--ac-transition-base) ease forwards;
 }
 
 /* --- Toast Icon ------------------------------------------------------------ */
-.addons-care .ac-toast__icon {
+.addonscare .ac-toast__icon {
   width:        20px;
   height:       20px;
   flex-shrink:  0;
@@ -3207,15 +3207,15 @@
 }
 
 /* --- Toast Content --------------------------------------------------------- */
-.addons-care .ac-toast__content { flex: 1; min-width: 0; }
-.addons-care .ac-toast__title {
+.addonscare .ac-toast__content { flex: 1; min-width: 0; }
+.addonscare .ac-toast__title {
   font-size:   var(--ac-text-sm);
   font-weight: var(--ac-font-semibold);
   color:       var(--ac-neutral-0);
   margin:      0 0 var(--ac-space-0-5) 0;
   line-height: var(--ac-leading-tight);
 }
-.addons-care .ac-toast__message {
+.addonscare .ac-toast__message {
   font-size:   var(--ac-text-xs);
   color:       var(--ac-neutral-400);
   margin:      0;
@@ -3223,7 +3223,7 @@
 }
 
 /* --- Close Button ---------------------------------------------------------- */
-.addons-care .ac-toast__close {
+.addonscare .ac-toast__close {
   background:    transparent;
   border:        none;
   cursor:        pointer;
@@ -3239,10 +3239,10 @@
   flex-shrink:   0;
   transition:    color var(--ac-transition-fast), background var(--ac-transition-fast);
 }
-.addons-care .ac-toast__close:hover { color: var(--ac-neutral-0); background: rgba(255,255,255,.1); }
+.addonscare .ac-toast__close:hover { color: var(--ac-neutral-0); background: rgba(255,255,255,.1); }
 
 /* --- Progress Bar ---------------------------------------------------------- */
-.addons-care .ac-toast__progress {
+.addonscare .ac-toast__progress {
   position:      absolute;
   bottom:        0;
   left:          0;
@@ -3253,29 +3253,29 @@
 }
 
 /* --- Type Variants --------------------------------------------------------- */
-.addons-care .ac-toast--success { border-left-color: var(--ac-color-success); }
-.addons-care .ac-toast--success .ac-toast__icon { color: var(--ac-color-success); }
+.addonscare .ac-toast--success { border-left-color: var(--ac-color-success); }
+.addonscare .ac-toast--success .ac-toast__icon { color: var(--ac-color-success); }
 
-.addons-care .ac-toast--error { border-left-color: var(--ac-color-error); }
-.addons-care .ac-toast--error .ac-toast__icon { color: var(--ac-color-error); }
+.addonscare .ac-toast--error { border-left-color: var(--ac-color-error); }
+.addonscare .ac-toast--error .ac-toast__icon { color: var(--ac-color-error); }
 
-.addons-care .ac-toast--warning { border-left-color: var(--ac-color-warning); }
-.addons-care .ac-toast--warning .ac-toast__icon { color: var(--ac-color-warning); }
+.addonscare .ac-toast--warning { border-left-color: var(--ac-color-warning); }
+.addonscare .ac-toast--warning .ac-toast__icon { color: var(--ac-color-warning); }
 
-.addons-care .ac-toast--info { border-left-color: var(--ac-color-info); }
-.addons-care .ac-toast--info .ac-toast__icon { color: var(--ac-color-info); }
+.addonscare .ac-toast--info { border-left-color: var(--ac-color-info); }
+.addonscare .ac-toast--info .ac-toast__icon { color: var(--ac-color-info); }
 
 /* --- Light variant --------------------------------------------------------- */
-.addons-care .ac-toast--light {
+.addonscare .ac-toast--light {
   background: var(--ac-bg-surface);
   color:      var(--ac-text-primary);
   box-shadow: var(--ac-shadow-xl);
   border:     1px solid var(--ac-border-color);
 }
-.addons-care .ac-toast--light .ac-toast__title   { color: var(--ac-text-primary);   }
-.addons-care .ac-toast--light .ac-toast__message { color: var(--ac-text-secondary); }
-.addons-care .ac-toast--light .ac-toast__close   { color: var(--ac-text-muted);     }
-.addons-care .ac-toast--light .ac-toast__close:hover { color: var(--ac-text-primary); background: var(--ac-neutral-100); }
+.addonscare .ac-toast--light .ac-toast__title   { color: var(--ac-text-primary);   }
+.addonscare .ac-toast--light .ac-toast__message { color: var(--ac-text-secondary); }
+.addonscare .ac-toast--light .ac-toast__close   { color: var(--ac-text-muted);     }
+.addonscare .ac-toast--light .ac-toast__close:hover { color: var(--ac-text-primary); background: var(--ac-neutral-100); }
 
 /* --- Animations ------------------------------------------------------------ */
 @keyframes ac-toast-in {
@@ -3293,7 +3293,7 @@
 
 /* --- Responsive ------------------------------------------------------------ */
 @media (max-width: 767px) {
-  .addons-care .ac-toast-container {
+  .addonscare .ac-toast-container {
     left: var(--ac-space-3);
     right: var(--ac-space-3);
     top:   var(--ac-space-3);
@@ -3301,8 +3301,8 @@
     width: auto;
     transform: none;
   }
-  .addons-care .ac-toast-container--top-center,
-  .addons-care .ac-toast-container--bottom-center {
+  .addonscare .ac-toast-container--top-center,
+  .addonscare .ac-toast-container--bottom-center {
     left:      var(--ac-space-3);
     right:     var(--ac-space-3);
     transform: none;
@@ -3316,7 +3316,7 @@
 
 /**
  * Addons Care - UI Patterns
- * Scope: .addons-care
+ * Scope: .addonscare
  * -----------------------------------------------------------------------------
  * 1. Empty State     (.ac-empty-state)
  * 2. Error State     (.ac-error-state)
@@ -3329,7 +3329,7 @@
 /*  1. EMPTY STATE                                                             */
 /* --------------------------------------------------------------------------- */
 
-.addons-care .ac-empty-state {
+.addonscare .ac-empty-state {
   display:         flex;
   flex-direction:  column;
   align-items:     center;
@@ -3339,7 +3339,7 @@
   min-height:      280px;
 }
 
-.addons-care .ac-empty-state__art {
+.addonscare .ac-empty-state__art {
   width:           80px;
   height:          80px;
   border-radius:   var(--ac-radius-2xl);
@@ -3352,31 +3352,31 @@
   color:           var(--ac-neutral-400);
   flex-shrink:     0;
 }
-.addons-care .ac-empty-state__art img {
+.addonscare .ac-empty-state__art img {
   width: 80px; height: 80px; object-fit: contain;
 }
 
 /* Custom SVG illustration slot */
-.addons-care .ac-empty-state__illustration {
+.addonscare .ac-empty-state__illustration {
   max-width:      160px;
   margin-bottom:  var(--ac-space-5);
   opacity:        0.8;
 }
 
-.addons-care .ac-empty-state__title {
+.addonscare .ac-empty-state__title {
   font-size:   var(--ac-text-xl);
   font-weight: var(--ac-font-semibold);
   color:       var(--ac-text-primary);
   margin:      0 0 var(--ac-space-2) 0;
 }
-.addons-care .ac-empty-state__desc {
+.addonscare .ac-empty-state__desc {
   font-size:   var(--ac-text-sm);
   color:       var(--ac-text-secondary);
   max-width:   380px;
   margin:      0 auto var(--ac-space-6) auto;
   line-height: var(--ac-leading-relaxed);
 }
-.addons-care .ac-empty-state__actions {
+.addonscare .ac-empty-state__actions {
   display:     flex;
   align-items: center;
   gap:         var(--ac-space-3);
@@ -3385,18 +3385,18 @@
 }
 
 /* --- Compact (inside a table / card) -------------------------------------- */
-.addons-care .ac-empty-state--compact {
+.addonscare .ac-empty-state--compact {
   padding:    var(--ac-space-8) var(--ac-space-4);
   min-height: 160px;
 }
-.addons-care .ac-empty-state--compact .ac-empty-state__art { width: 48px; height: 48px; font-size: 24px; }
-.addons-care .ac-empty-state--compact .ac-empty-state__title { font-size: var(--ac-text-base); }
+.addonscare .ac-empty-state--compact .ac-empty-state__art { width: 48px; height: 48px; font-size: 24px; }
+.addonscare .ac-empty-state--compact .ac-empty-state__title { font-size: var(--ac-text-base); }
 
 /* --------------------------------------------------------------------------- */
 /*  2. ERROR STATE                                                             */
 /* --------------------------------------------------------------------------- */
 
-.addons-care .ac-error-state {
+.addonscare .ac-error-state {
   display:         flex;
   flex-direction:  column;
   align-items:     center;
@@ -3406,7 +3406,7 @@
   min-height:      280px;
 }
 
-.addons-care .ac-error-state__icon {
+.addonscare .ac-error-state__icon {
   width:           72px;
   height:          72px;
   border-radius:   var(--ac-radius-full);
@@ -3419,20 +3419,20 @@
   margin-bottom:   var(--ac-space-5);
   flex-shrink:     0;
 }
-.addons-care .ac-error-state__title {
+.addonscare .ac-error-state__title {
   font-size:   var(--ac-text-xl);
   font-weight: var(--ac-font-semibold);
   color:       var(--ac-text-primary);
   margin:      0 0 var(--ac-space-2) 0;
 }
-.addons-care .ac-error-state__message {
+.addonscare .ac-error-state__message {
   font-size:  var(--ac-text-sm);
   color:      var(--ac-text-secondary);
   max-width:  360px;
   margin:     0 auto var(--ac-space-5) auto;
   line-height: var(--ac-leading-relaxed);
 }
-.addons-care .ac-error-state__code {
+.addonscare .ac-error-state__code {
   font-family:   var(--ac-font-mono);
   font-size:     var(--ac-text-xs);
   background:    var(--ac-neutral-100);
@@ -3445,7 +3445,7 @@
   text-align:    left;
   width:         100%;
 }
-.addons-care .ac-error-state__actions {
+.addonscare .ac-error-state__actions {
   display:     flex;
   align-items: center;
   gap:         var(--ac-space-3);
@@ -3457,7 +3457,7 @@
 /*  3. LOADING STATE (full section / page)                                     */
 /* --------------------------------------------------------------------------- */
 
-.addons-care .ac-loading-state {
+.addonscare .ac-loading-state {
   display:         flex;
   flex-direction:  column;
   align-items:     center;
@@ -3468,9 +3468,9 @@
   gap:             var(--ac-space-4);
 }
 
-.addons-care .ac-loading-state__spinner { /* inherits .ac-spinner sizing */ }
+.addonscare .ac-loading-state__spinner { /* inherits .ac-spinner sizing */ }
 
-.addons-care .ac-loading-state__label {
+.addonscare .ac-loading-state__label {
   font-size:   var(--ac-text-sm);
   color:       var(--ac-text-secondary);
   font-weight: var(--ac-font-medium);
@@ -3478,20 +3478,20 @@
 }
 
 /* Progress bar loading (indeterminate) */
-.addons-care .ac-progress-bar {
+.addonscare .ac-progress-bar {
   width:         100%;
   height:        4px;
   background:    var(--ac-neutral-200);
   border-radius: var(--ac-radius-full);
   overflow:      hidden;
 }
-.addons-care .ac-progress-bar__fill {
+.addonscare .ac-progress-bar__fill {
   height:        100%;
   background:    var(--ac-brand);
   border-radius: var(--ac-radius-full);
   transition:    width 0.3s ease;
 }
-.addons-care .ac-progress-bar--indeterminate .ac-progress-bar__fill {
+.addonscare .ac-progress-bar--indeterminate .ac-progress-bar__fill {
   width:     40% !important;
   animation: ac-progress-indeterminate 1.4s ease infinite;
 }
@@ -3510,7 +3510,7 @@
  * Already handled via modal variant.
  * Additional inline variant:
  */
-.addons-care .ac-confirm-inline {
+.addonscare .ac-confirm-inline {
   background:    var(--ac-color-error-light);
   border:        1px solid rgba(239,68,68,.3);
   border-radius: var(--ac-radius-lg);
@@ -3519,33 +3519,33 @@
   align-items:   flex-start;
   gap:           var(--ac-space-3);
 }
-.addons-care .ac-confirm-inline__icon {
+.addonscare .ac-confirm-inline__icon {
   color:      var(--ac-color-error);
   font-size:  var(--ac-text-xl);
   flex-shrink: 0;
   margin-top: 1px;
 }
-.addons-care .ac-confirm-inline__content { flex: 1; }
-.addons-care .ac-confirm-inline__title {
+.addonscare .ac-confirm-inline__content { flex: 1; }
+.addonscare .ac-confirm-inline__title {
   font-size:   var(--ac-text-sm);
   font-weight: var(--ac-font-semibold);
   color:       var(--ac-color-error-dark);
   margin:      0 0 var(--ac-space-1) 0;
 }
-.addons-care .ac-confirm-inline__text {
+.addonscare .ac-confirm-inline__text {
   font-size: var(--ac-text-sm);
   color:     var(--ac-color-error-dark);
   margin:    0 0 var(--ac-space-3) 0;
   opacity:   0.8;
 }
-.addons-care .ac-confirm-inline__actions {
+.addonscare .ac-confirm-inline__actions {
   display: flex; gap: var(--ac-space-2); flex-wrap: wrap;
 }
 
 /* --- Responsive ------------------------------------------------------------ */
 @media (max-width: 767px) {
-  .addons-care .ac-empty-state { padding: var(--ac-space-8) var(--ac-space-4); }
-  .addons-care .ac-error-state { padding: var(--ac-space-8) var(--ac-space-4); }
-  .addons-care .ac-loading-state { padding: var(--ac-space-8) var(--ac-space-4); }
+  .addonscare .ac-empty-state { padding: var(--ac-space-8) var(--ac-space-4); }
+  .addonscare .ac-error-state { padding: var(--ac-space-8) var(--ac-space-4); }
+  .addonscare .ac-loading-state { padding: var(--ac-space-8) var(--ac-space-4); }
 }
 

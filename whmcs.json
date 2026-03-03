@@ -7,7 +7,7 @@
     "description": {
         "name": "Addons Care",
         "tagline": "Addons Care component system showcase for WHMCS admin.",
-        "long": "This Addons Care component system showcase integrates seamlessly into the WHMCS admin panel. It provides a comprehensive UI demonstration for the addons-care framework.",
+        "long": "This Addons Care component system showcase integrates seamlessly into the WHMCS admin panel. It provides a comprehensive UI demonstration for the addonscare framework.",
         "features": [
             "Demonstrate a beautifully styled admin area module",
             "Showcase scalable statistics and services UI"

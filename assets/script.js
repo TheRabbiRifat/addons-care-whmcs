@@ -2,7 +2,7 @@
  * Addons Care - Module-Specific Script
  * =============================================================================
  * Boots the AC engine and wires up all demo interactions on this page.
- * Depends on: assets/addons-care.js (loaded before this file).
+ * Depends on: assets/addonscare.js (loaded before this file).
  * =============================================================================
  */
 
@@ -13,7 +13,7 @@
     // Boot: called after DOM is ready
     // -------------------------------------------------------------------------
     function boot() {
-        var root = document.querySelector('.addons-care');
+        var root = document.querySelector('.addonscare');
         if (!root) return;
 
         // Initialise all AC components (idempotent - safe to call multiple times)

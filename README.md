@@ -2,12 +2,12 @@
 
 ## Structure
 
-This repo root IS the module root (/modules/addons/addons-care/).
+This repo root IS the module root (/modules/addons/addonscare/).
 
-    addons-care.php          - WHMCS module entry point
+    addonscare.php          - WHMCS module entry point
     assets/
-        addons-care.css      - Framework CSS (16 components)
-        addons-care.js       - Framework JS  (10 AC modules)
+        addonscare.css      - Framework CSS (16 components)
+        addonscare.js       - Framework JS  (10 AC modules)
         style.css            - Module-specific CSS overrides
         script.js            - Module-specific JS
     templates/
@@ -16,7 +16,7 @@ This repo root IS the module root (/modules/addons/addons-care/).
 
 ## Install
 
-Copy the entire repo to /whmcs/modules/addons/addons-care/ then activate
+Copy the entire repo to /whmcs/modules/addons/addonscare/ then activate
 via WHMCS Admin > Setup > Addon Modules > Addons Care > Activate.
 
 ## Encoding

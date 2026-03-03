@@ -1,8 +1,8 @@
 {* =============================================================================
    Addons Care - Admin Panel Template
-   Showcases every component from addons-care.css
+   Showcases every component from addonscare.css
    ============================================================================= *}
-<div class="addons-care" id="ac-app">
+<div class="addonscare" id="ac-app">
 
   {* =========================================================================
      LAYOUT: Sidebar + Main wrapper
@@ -934,4 +934,4 @@
      ========================================================================== *}
   <div class="ac-toast-container ac-toast-container--top-right" id="ac-toast-container" aria-live="polite"></div>
 
-</div>{* end .addons-care *}
+</div>{* end .addonscare *}

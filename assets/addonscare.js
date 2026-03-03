@@ -2,7 +2,7 @@
  * ==========================================================================
  * *   ADDONS CARE - Master JavaScript Engine                                *
  * *   Version : 1.0.0                                                       *
- * *   Scope   : All .addons-care containers on the page                    *
+ * *   Scope   : All .addonscare containers on the page                    *
  * *   Deps    : NONE - vanilla JS only, no jQuery required                 *
  * *   Target  : ES2017+ (safe for WHMCS bundled environments)              *
  * ==========================================================================
@@ -33,7 +33,7 @@
   /*  UTILS                                                                   */
   /* ------------------------------------------------------------------------ */
 
-  const SCOPE = '.addons-care';
+  const SCOPE = '.addonscare';
 
   function qsa(sel, ctx) { return Array.from((ctx || document).querySelectorAll(sel)); }
   function qs(sel, ctx)  { return (ctx || document).querySelector(sel); }
@@ -365,7 +365,7 @@
       if (!c) {
         const wrapper = (scope || document.body);
         c = document.createElement('div');
-        c.className = 'addons-care ac-toast-container ac-toast-container--top-right';
+        c.className = 'addonscare ac-toast-container ac-toast-container--top-right';
         c.setAttribute('aria-live', 'polite');
         c.setAttribute('aria-atomic', 'false');
         (document.body || wrapper).appendChild(c);

@@ -3,20 +3,20 @@
  * Addons Care - WHMCS Addon Module
  * =============================================================================
  * Showcases the complete Addons Care component system inside WHMCS admin.
- * Every UI component from addons-care.css is demonstrated in admin.tpl.
+ * Every UI component from addonscare.css is demonstrated in admin.tpl.
  *
- * Module directory: /modules/addons/addons-care/
+ * Module directory: /modules/addons/addonscare/
  *
  * Files:
- *   addons-care.php        - This file (module descriptor + output hook)
- *   assets/addons-care.css - Bundled AC framework CSS (all components)
- *   assets/addons-care.js  - Bundled AC framework JS
+ *   addonscare.php        - This file (module descriptor + output hook)
+ *   assets/addonscare.css - Bundled AC framework CSS (all components)
+ *   assets/addonscare.js  - Bundled AC framework JS
  *   assets/style.css       - Module-specific CSS overrides
  *   assets/script.js       - Module-specific JS (wires demo interactions)
  *   templates/admin.tpl    - Smarty template (admin panel UI)
  *
  * Install:
- *   1. Copy /addons-care/ into /whmcs/modules/addons/addons-care/
+ *   1. Copy /addonscare/ into /whmcs/modules/addons/addonscare/
  *   2. Setup > Addon Modules > Addons Care > Activate
  *   3. Addons > Addons Care
  *
@@ -94,7 +94,7 @@ function addonscare_output(array $vars)
     $settings  = $vars['_raw'] ?? [];
 
     // Base URL for all module assets (CSS, JS, images)
-    $assetUrl = $whmcsUrl . '/modules/addons/addons-care/assets/';
+    $assetUrl = $whmcsUrl . '/modules/addons/addonscare/assets/';
 
     // Sample data - in a real module this comes from the database
     $services = [
@@ -159,7 +159,7 @@ function addonscare_output(array $vars)
     $brandOverride = '';
     if (!empty($settings['brand_color'])) {
         $color = htmlspecialchars($settings['brand_color'], ENT_QUOTES, 'UTF-8');
-        $brandOverride = '<style>.addons-care{--ac-primary:' . $color . ';--ac-primary-dark:' . $color . ';}</style>';
+        $brandOverride = '<style>.addonscare{--ac-primary:' . $color . ';--ac-primary-dark:' . $color . ';}</style>';
     }
 
     // Inject CSS
@@ -167,7 +167,7 @@ function addonscare_output(array $vars)
     echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
     echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
     echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">';
-    echo '<link rel="stylesheet" href="' . htmlspecialchars($assetUrl, ENT_QUOTES, 'UTF-8') . 'addons-care.css">';
+    echo '<link rel="stylesheet" href="' . htmlspecialchars($assetUrl, ENT_QUOTES, 'UTF-8') . 'addonscare.css">';
     echo '<link rel="stylesheet" href="' . htmlspecialchars($assetUrl, ENT_QUOTES, 'UTF-8') . 'style.css">';
 
     // Render Smarty template
@@ -181,7 +181,7 @@ function addonscare_output(array $vars)
     $smarty->display('admin.tpl');
 
     // Inject JS after content
-    echo '<script src="' . htmlspecialchars($assetUrl, ENT_QUOTES, 'UTF-8') . 'addons-care.js"></script>';
+    echo '<script src="' . htmlspecialchars($assetUrl, ENT_QUOTES, 'UTF-8') . 'addonscare.js"></script>';
     echo '<script src="' . htmlspecialchars($assetUrl, ENT_QUOTES, 'UTF-8') . 'script.js"></script>';
 }
 

@@ -19,4 +19,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }} # Use 'username' instead of 'ftp-username'
         password: ${{ secrets.FTP_PASSWORD }} # Use 'password' instead of 'ftp-password'
         local-dir: ./                         # This is the directory of your project that you want to upload
-        server-dir: /modules/addons/addons-care/  # The target directory on your server
+        server-dir: /modules/addons/addonscare/  # The target directory on your server
