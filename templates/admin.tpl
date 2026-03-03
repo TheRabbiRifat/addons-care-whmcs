@@ -1,325 +1,455 @@
 {* =============================================================================
-   AddonsCare UI System — Admin Panel Template (Real Module Layout)
-   Using tabs as main navigation holding component combinations.
+   AddonsCare UI System — Admin Panel Template v3.1
+   Tab-based navigation · Glassmorphism cards · Teal/Emerald palette
    ============================================================================= *}
 <div class="addonscare" id="ac-app">
   <div class="ac-container">
 
     {* =========================================================================
-       PAGE HEADER
+       PAGE HEADER + TAB NAVIGATION
        ========================================================================= *}
     <div class="ac-header">
-      <h1>AddonsCare</h1>
-      <p>Module management and configuration dashboard.</p>
+      <div class="ac-header__top">
+        <div>
+          <h1>AddonsCare</h1>
+          <p>Management and configuration dashboard.</p>
+        </div>
+        <button class="ac-btn ac-btn--accent ac-btn--sm" data-ac-modal="#modal-sync">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0120.49 15"/></svg>
+          Sync Now
+        </button>
+      </div>
+
+      {* Tab Navigation *}
+      <nav class="ac-tabs" role="tablist">
+        <button class="ac-tab ac-tab--active" role="tab" aria-selected="true" aria-controls="panel-overview" data-ac-tab="panel-overview">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          <span>Overview</span>
+        </button>
+        <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-services" data-ac-tab="panel-services">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <span>Services</span>
+        </button>
+        <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-settings" data-ac-tab="panel-settings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          <span>Settings</span>
+        </button>
+        <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-toolkit" data-ac-tab="panel-toolkit">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          <span>Toolkit</span>
+        </button>
+      </nav>
     </div>
 
-    {* =========================================================================
-       MAIN NAVIGATION (Tabs)
-       ========================================================================= *}
-    <div class="ac-tabs" role="tablist">
-      <div class="ac-tabs__nav">
-        <button class="ac-tabs__tab ac-tabs__tab--active" role="tab" aria-selected="true" aria-controls="panel-dashboard">Dashboard</button>
-        <button class="ac-tabs__tab" role="tab" aria-selected="false" aria-controls="panel-services">Services</button>
-        <button class="ac-tabs__tab" role="tab" aria-selected="false" aria-controls="panel-settings">Settings</button>
-        <button class="ac-tabs__tab" role="tab" aria-selected="false" aria-controls="panel-components">Components Library</button>
-      </div>
-      
-      <div class="ac-tabs__panels ac-mt-6">
+    <div class="ac-content">
 
-        {* =====================================================================
-           TAB 1: DASHBOARD
-           Contains: Cards, Alert, Modal
-           ===================================================================== *}
-        <div class="ac-tabs__panel ac-tabs__panel--active" id="panel-dashboard" role="tabpanel">
-          
-          <div class="ac-alert ac-alert--info ac-mb-6" role="alert">
-            <strong>System Status:</strong> All services are operating normally. Version 2.1.0 is active.
-            <button class="ac-alert__close" data-ac-dismiss="alert">&times;</button>
+      {* PANEL 1: OVERVIEW *}
+      <section class="ac-panel ac-panel--active" id="panel-overview">
+
+        {* Alert Banner *}
+        <div class="ac-banner ac-banner--ok" role="alert">
+          <div class="ac-banner__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
-
-          <div class="ac-grid">
-            <div class="ac-card">
-              <div class="ac-card__header">
-                <h3>Active Licenses</h3>
-              </div>
-              <div class="ac-card__body ac-text-center">
-                <div style="font-size: 2.5rem; font-weight: 700; color: var(--ac-primary);">{$services|count}</div>
-                <p class="ac-text-muted">Total managed services</p>
-              </div>
-            </div>
-
-            <div class="ac-card">
-              <div class="ac-card__header">
-                <h3>Revenue Impact</h3>
-                <span class="ac-badge ac-badge--success">+12%</span>
-              </div>
-              <div class="ac-card__body ac-text-center">
-                <div style="font-size: 2.5rem; font-weight: 700; color: var(--ac-neutral-800);">$4,250</div>
-                <p class="ac-text-muted">This month</p>
-              </div>
-            </div>
-            
-            <div class="ac-card">
-              <div class="ac-card__header">
-                <h3>Quick Actions</h3>
-              </div>
-              <div class="ac-card__body ac-flex ac-flex-col ac-gap-3">
-                <button class="ac-btn ac-btn--primary" data-ac-modal="#modal-sync">Sync Database</button>
-                <button class="ac-btn ac-btn--secondary ac-btn--sm">View Audit Logs</button>
-              </div>
-            </div>
+          <div class="ac-banner__text">
+            <strong>All systems operational</strong> &mdash; Last checked 2 minutes ago
           </div>
-          
+          <button class="ac-banner__dismiss" data-ac-dismiss="alert">&times;</button>
         </div>
 
-        {* =====================================================================
-           TAB 2: SERVICES
-           Contains: Table, Pagination, Badge, Empty State
-           ===================================================================== *}
-        <div class="ac-tabs__panel" id="panel-services" role="tabpanel">
-          
-          {if $services|count > 0}
-            <div class="ac-card">
-              <div class="ac-card__header">
-                <h3>Managed Services</h3>
-                <div class="ac-flex ac-gap-2">
-                  <span class="ac-badge ac-badge--primary">{$services|count} total</span>
-                  <button class="ac-btn ac-btn--secondary ac-btn--sm">Export CSV</button>
-                </div>
-              </div>
-              <div class="ac-card__body" style="padding: 0;">
-                <div class="ac-table-wrap">
-                  <table class="ac-table">
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Client</th>
-                        <th>Product</th>
-                        <th>Status</th>
-                        <th>Amount</th>
-                        <th>Next Due</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {foreach $services as $svc}
-                      <tr>
-                        <td><code>#{$svc.id}</code></td>
-                        <td>{$svc.client}</td>
-                        <td>{$svc.product}</td>
-                        <td>
-                          {if $svc.status == 'active'}
-                            <span class="ac-badge ac-badge--success">Active</span>
-                          {elseif $svc.status == 'pending'}
-                            <span class="ac-badge ac-badge--warning">Pending</span>
-                          {elseif $svc.status == 'suspended'}
-                            <span class="ac-badge ac-badge--danger">Suspended</span>
-                          {else}
-                            <span class="ac-badge ac-badge--neutral">Inactive</span>
-                          {/if}
-                        </td>
-                        <td>{$svc.amount}</td>
-                        <td>{$svc.next_due}</td>
-                      </tr>
-                      {/foreach}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div class="ac-card__footer ac-justify-center">
-                <nav class="ac-pagination" aria-label="Page navigation">
-                  <button class="ac-pagination__btn" disabled>&lsaquo; Prev</button>
-                  <button class="ac-pagination__btn ac-pagination__btn--active">1</button>
-                  <button class="ac-pagination__btn">2</button>
-                  <button class="ac-pagination__btn">3</button>
-                  <span class="ac-pagination__ellipsis">&hellip;</span>
-                  <button class="ac-pagination__btn">8</button>
-                  <button class="ac-pagination__btn">Next &rsaquo;</button>
-                </nav>
-              </div>
+        {* Stat row *}
+        <div class="ac-stat-row">
+          <div class="ac-stat-card ac-stat-card--teal">
+            <div class="ac-stat-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
             </div>
-          {else}
-            <div class="ac-card">
-              <div class="ac-card__body">
-                <div class="ac-empty-state">
-                  <div class="ac-empty-state__icon">&#128230;</div>
-                  <h3 class="ac-empty-state__title">No services found</h3>
-                  <p class="ac-empty-state__desc">There are no services currently managed by this module.</p>
-                  <button class="ac-btn ac-btn--primary">Refresh Sync</button>
-                </div>
-              </div>
+            <div class="ac-stat-card__data">
+              <span class="ac-stat-card__value">{$services|count}</span>
+              <span class="ac-stat-card__label">Active Services</span>
             </div>
-          {/if}
+            <span class="ac-stat-card__trend ac-stat-card__trend--up">+14</span>
+          </div>
 
+          <div class="ac-stat-card ac-stat-card--emerald">
+            <div class="ac-stat-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <div class="ac-stat-card__data">
+              <span class="ac-stat-card__value">$12,840</span>
+              <span class="ac-stat-card__label">Total Revenue</span>
+            </div>
+            <span class="ac-stat-card__trend ac-stat-card__trend--up">+8.2%</span>
+          </div>
+
+          <div class="ac-stat-card ac-stat-card--amber">
+            <div class="ac-stat-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div class="ac-stat-card__data">
+              <span class="ac-stat-card__value">17</span>
+              <span class="ac-stat-card__label">Open Tickets</span>
+            </div>
+            <span class="ac-stat-card__trend ac-stat-card__trend--down">-3</span>
+          </div>
+
+          <div class="ac-stat-card ac-stat-card--rose">
+            <div class="ac-stat-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="ac-stat-card__data">
+              <span class="ac-stat-card__value">28</span>
+              <span class="ac-stat-card__label">Pending Renewals</span>
+            </div>
+            <span class="ac-stat-card__trend ac-stat-card__trend--up">+5</span>
+          </div>
         </div>
 
-        {* =====================================================================
-           TAB 3: SETTINGS
-           Contains: Forms, Buttons, Toast (trigger)
-           ===================================================================== *}
-        <div class="ac-tabs__panel" id="panel-settings" role="tabpanel">
-          
-          <div class="ac-card">
-            <div class="ac-card__header">
-              <h3>Module Configuration</h3>
+        {* Two-column: Recent Activity + Quick Actions *}
+        <div class="ac-duo">
+          <div class="ac-card ac-card--glass">
+            <div class="ac-card__top">
+              <h3 class="ac-card__title">Recent Activity</h3>
+              <span class="ac-pill">Live</span>
             </div>
-            <div class="ac-card__body">
-              <form id="ac-settings-form" novalidate>
-    
-                <div class="ac-form-section" style="margin-top: 0;">
-                  <h4 class="ac-form-section__title">General Settings</h4>
-                  <p class="ac-form-section__desc">Basic parameters for the module operation.</p>
+            <div class="ac-card__inner">
+              <ul class="ac-timeline">
+                <li class="ac-timeline__item ac-timeline__item--success">
+                  <div class="ac-timeline__dot"></div>
+                  <div class="ac-timeline__body">
+                    <strong>Service #1001</strong> renewed successfully
+                    <span class="ac-timeline__time">2 min ago</span>
+                  </div>
+                </li>
+                <li class="ac-timeline__item ac-timeline__item--warning">
+                  <div class="ac-timeline__dot"></div>
+                  <div class="ac-timeline__body">
+                    <strong>Service #1006</strong> payment overdue
+                    <span class="ac-timeline__time">18 min ago</span>
+                  </div>
+                </li>
+                <li class="ac-timeline__item ac-timeline__item--info">
+                  <div class="ac-timeline__dot"></div>
+                  <div class="ac-timeline__body">
+                    New client <strong>Eva Brown</strong> registered
+                    <span class="ac-timeline__time">1 hr ago</span>
+                  </div>
+                </li>
+                <li class="ac-timeline__item ac-timeline__item--neutral">
+                  <div class="ac-timeline__dot"></div>
+                  <div class="ac-timeline__body">
+                    Database sync completed — 342 records
+                    <span class="ac-timeline__time">3 hrs ago</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="ac-card ac-card--glass">
+            <div class="ac-card__top">
+              <h3 class="ac-card__title">Quick Actions</h3>
+            </div>
+            <div class="ac-card__inner">
+              <div class="ac-action-grid">
+                <button class="ac-action-tile" data-ac-modal="#modal-sync">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0120.49 15"/></svg>
+                  <span>Sync DB</span>
+                </button>
+                <button class="ac-action-tile" data-demo-toast="info">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                  <span>Export</span>
+                </button>
+                <button class="ac-action-tile" data-demo-toast="success">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                  <span>Audit Log</span>
+                </button>
+                <button class="ac-action-tile" data-demo-toast="warning">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <span>Notify</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      {* PANEL 2: SERVICES *}
+      <section class="ac-panel" id="panel-services">
+
+        {if $services|count > 0}
+        <div class="ac-card ac-card--glass">
+          <div class="ac-card__top">
+            <h3 class="ac-card__title">Managed Services</h3>
+            <div class="ac-card__toolbar">
+              <span class="ac-pill ac-pill--count">{$services|count} records</span>
+              <button class="ac-btn ac-btn--outline ac-btn--sm" data-demo-toast="info">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Export
+              </button>
+            </div>
+          </div>
+          <div class="ac-card__inner ac-card__inner--flush">
+            <div class="ac-table-wrap">
+              <table class="ac-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Client</th>
+                    <th>Product</th>
+                    <th>Status</th>
+                    <th>Amount</th>
+                    <th>Next Due</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {foreach $services as $svc}
+                  <tr>
+                    <td><span class="ac-mono">#{$svc.id}</span></td>
+                    <td>
+                      <div class="ac-user-cell">
+                        <div class="ac-avatar">{$svc.client|substr:0:1}</div>
+                        <span>{$svc.client}</span>
+                      </div>
+                    </td>
+                    <td>{$svc.product}</td>
+                    <td>
+                      {if $svc.status == 'active'}
+                        <span class="ac-chip ac-chip--success">
+                          <span class="ac-chip__dot"></span> Active
+                        </span>
+                      {elseif $svc.status == 'pending'}
+                        <span class="ac-chip ac-chip--warning">
+                          <span class="ac-chip__dot"></span> Pending
+                        </span>
+                      {elseif $svc.status == 'suspended'}
+                        <span class="ac-chip ac-chip--danger">
+                          <span class="ac-chip__dot"></span> Suspended
+                        </span>
+                      {else}
+                        <span class="ac-chip ac-chip--neutral">
+                          <span class="ac-chip__dot"></span> Inactive
+                        </span>
+                      {/if}
+                    </td>
+                    <td><strong>{$svc.amount}</strong></td>
+                    <td class="ac-text-dim">{$svc.next_due}</td>
+                  </tr>
+                  {/foreach}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="ac-card__bottom">
+            <nav class="ac-pager" aria-label="Page navigation">
+              <button class="ac-pager__btn" disabled>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="ac-pager__btn ac-pager__btn--current">1</button>
+              <button class="ac-pager__btn">2</button>
+              <button class="ac-pager__btn">3</button>
+              <span class="ac-pager__dots">&hellip;</span>
+              <button class="ac-pager__btn">8</button>
+              <button class="ac-pager__btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        {else}
+        <div class="ac-card ac-card--glass">
+          <div class="ac-card__inner">
+            <div class="ac-empty">
+              <div class="ac-empty__visual">
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".35"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              </div>
+              <h3 class="ac-empty__title">No services found</h3>
+              <p class="ac-empty__desc">There are no services currently managed by this module.</p>
+              <button class="ac-btn ac-btn--accent">Refresh Sync</button>
+            </div>
+          </div>
+        </div>
+        {/if}
+
+      </section>
+
+      {* PANEL 3: SETTINGS *}
+      <section class="ac-panel" id="panel-settings">
+
+        <div class="ac-card ac-card--glass">
+          <div class="ac-card__top">
+            <h3 class="ac-card__title">Module Configuration</h3>
+          </div>
+          <div class="ac-card__inner">
+            <form id="ac-settings-form" novalidate>
+
+              <fieldset class="ac-fieldset">
+                <legend class="ac-fieldset__legend">General Settings</legend>
+                <p class="ac-fieldset__hint">Basic parameters for module operation.</p>
+
+                <div class="ac-field">
+                  <label class="ac-field__label" for="f-name">Display Name</label>
+                  <input class="ac-input" type="text" id="f-name" value="Addons Care" placeholder="Module name">
                 </div>
-    
-                <div class="ac-form-group">
-                  <label class="ac-label" for="f-name">Display Name</label>
-                  <input class="ac-form-control" type="text" id="f-name" value="Addons Care" placeholder="Module name">
+
+                <div class="ac-field">
+                  <label class="ac-field__label" for="f-license">License Key</label>
+                  <div class="ac-input-wrap ac-input-wrap--valid">
+                    <input class="ac-input" type="text" id="f-license" value="AC-DEMO-123456" placeholder="AC-XXXX-XXXX">
+                    <svg class="ac-input-wrap__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  </div>
+                  <span class="ac-field__msg ac-field__msg--ok">License is active and valid.</span>
                 </div>
-    
-                <div class="ac-form-group">
-                  <label class="ac-label" for="f-license">License Key</label>
-                  <input class="ac-form-control ac-is-valid" type="text" id="f-license" value="AC-DEMO-123456" placeholder="AC-XXXX-XXXX">
-                  <span class="ac-form-feedback ac-form-feedback--valid">License is active and valid.</span>
+
+                <div class="ac-field">
+                  <label class="ac-field__label" for="f-email">Admin Warning Email</label>
+                  <input class="ac-input" type="email" id="f-email" placeholder="admin@example.com">
                 </div>
-                
-                <div class="ac-form-group">
-                  <label class="ac-label" for="f-email">Admin Warning Email</label>
-                  <input class="ac-form-control" type="email" id="f-email" placeholder="admin@example.com">
-                </div>
-    
-                <div class="ac-form-section">
-                  <h4 class="ac-form-section__title">Display Options</h4>
-                </div>
-    
-                <div class="ac-form-group">
-                  <label class="ac-toggle">
-                    <input type="checkbox" class="ac-toggle__input" checked>
-                    <span class="ac-toggle__track"></span>
-                    <span class="ac-toggle__label">Enable client area widget</span>
+              </fieldset>
+
+              <fieldset class="ac-fieldset">
+                <legend class="ac-fieldset__legend">Display Options</legend>
+
+                <div class="ac-field">
+                  <label class="ac-switch">
+                    <input type="checkbox" class="ac-switch__input" checked>
+                    <span class="ac-switch__slider"></span>
+                    <span class="ac-switch__text">Enable client area widget</span>
                   </label>
                 </div>
-                
-                <div class="ac-form-group">
-                  <label class="ac-label">Widget Location</label>
-                  <div class="ac-flex ac-flex-col ac-gap-2">
-                    <label class="ac-radio">
-                      <input type="radio" name="widget_loc" class="ac-radio__input" checked>
-                      <span class="ac-radio__label">Dashboard Home</span>
+
+                <div class="ac-field">
+                  <span class="ac-field__label">Widget Location</span>
+                  <div class="ac-radio-group">
+                    <label class="ac-radio-card">
+                      <input type="radio" name="widget_loc" class="ac-radio-card__input" checked>
+                      <span class="ac-radio-card__box">
+                        <span class="ac-radio-card__dot"></span>
+                        Dashboard Home
+                      </span>
                     </label>
-                    <label class="ac-radio">
-                      <input type="radio" name="widget_loc" class="ac-radio__input">
-                      <span class="ac-radio__label">Service Details Sidebar</span>
+                    <label class="ac-radio-card">
+                      <input type="radio" name="widget_loc" class="ac-radio-card__input">
+                      <span class="ac-radio-card__box">
+                        <span class="ac-radio-card__dot"></span>
+                        Service Details Sidebar
+                      </span>
                     </label>
                   </div>
                 </div>
 
-                <div class="ac-form-group ac-mt-4">
-                  <label class="ac-label">Notification Events</label>
-                  <div class="ac-flex ac-flex-col ac-gap-2">
-                    <label class="ac-checkbox">
-                      <input type="checkbox" class="ac-checkbox__input" checked>
-                      <span class="ac-checkbox__label">Service Creation</span>
+                <div class="ac-field">
+                  <span class="ac-field__label">Notification Events</span>
+                  <div class="ac-check-list">
+                    <label class="ac-check">
+                      <input type="checkbox" class="ac-check__input" checked>
+                      <span class="ac-check__box"></span>
+                      <span class="ac-check__text">Service Creation</span>
                     </label>
-                    <label class="ac-checkbox">
-                      <input type="checkbox" class="ac-checkbox__input" checked>
-                      <span class="ac-checkbox__label">Service Auto-Suspension</span>
+                    <label class="ac-check">
+                      <input type="checkbox" class="ac-check__input" checked>
+                      <span class="ac-check__box"></span>
+                      <span class="ac-check__text">Service Auto-Suspension</span>
                     </label>
-                    <label class="ac-checkbox">
-                      <input type="checkbox" class="ac-checkbox__input">
-                      <span class="ac-checkbox__label">Daily Sync Report</span>
+                    <label class="ac-check">
+                      <input type="checkbox" class="ac-check__input">
+                      <span class="ac-check__box"></span>
+                      <span class="ac-check__text">Daily Sync Report</span>
                     </label>
                   </div>
                 </div>
-    
-              </form>
+              </fieldset>
+
+            </form>
+          </div>
+          <div class="ac-card__bottom ac-card__bottom--actions">
+            <button class="ac-btn ac-btn--ghost">Discard Changes</button>
+            <button type="submit" form="ac-settings-form" class="ac-btn ac-btn--accent">Save Configuration</button>
+          </div>
+        </div>
+
+      </section>
+
+      {* PANEL 4: TOOLKIT *}
+      <section class="ac-panel" id="panel-toolkit">
+
+        <div class="ac-trio">
+
+          {* Loaders *}
+          <div class="ac-card ac-card--glass">
+            <div class="ac-card__top">
+              <h3 class="ac-card__title">Loaders</h3>
             </div>
-            <div class="ac-card__footer">
-              <button class="ac-btn ac-btn--secondary">Discard Changes</button>
-              <button type="submit" form="ac-settings-form" class="ac-btn ac-btn--primary">Save Configuration</button>
+            <div class="ac-card__inner">
+              <div class="ac-flex ac-items-center ac-gap-4 ac-mb-4">
+                <div class="ac-ring ac-ring--sm"></div>
+                <div class="ac-ring"></div>
+                <div class="ac-ring ac-ring--lg"></div>
+              </div>
+              <div class="ac-loading-state">
+                <div class="ac-ring"></div>
+                <span>Connecting to API&hellip;</span>
+              </div>
+            </div>
+          </div>
+
+          {* Buttons *}
+          <div class="ac-card ac-card--glass">
+            <div class="ac-card__top">
+              <h3 class="ac-card__title">Action States</h3>
+            </div>
+            <div class="ac-card__inner ac-flex ac-flex-col ac-gap-3">
+              <button class="ac-btn ac-btn--danger">Force Delete</button>
+              <button class="ac-btn ac-btn--accent ac-btn--loading" disabled>Processing&hellip;</button>
+              <button class="ac-btn ac-btn--outline">Secondary Action</button>
+            </div>
+          </div>
+
+          {* Toasts *}
+          <div class="ac-card ac-card--glass">
+            <div class="ac-card__top">
+              <h3 class="ac-card__title">Toast Triggers</h3>
+            </div>
+            <div class="ac-card__inner ac-flex ac-flex-col ac-gap-3">
+              <button class="ac-btn ac-btn--outline" data-demo-toast="warning">Test Warning</button>
+              <button class="ac-btn ac-btn--outline" data-demo-toast="error">Test Error</button>
+              <button class="ac-btn ac-btn--outline" data-demo-toast="success">Test Success</button>
+              <div class="ac-notice ac-notice--error">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                <div><strong>Connection Failed</strong><br>API endpoint unreachable.</div>
+              </div>
             </div>
           </div>
 
         </div>
 
-        {* =====================================================================
-           TAB 4: COMPONENTS LIBRARY
-           Contains: Loaders, UI States (Misc leftovers)
-           ===================================================================== *}
-        <div class="ac-tabs__panel" id="panel-components" role="tabpanel">
-          
-          <div class="ac-grid">
-            
-            {* Loaders *}
-            <div class="ac-card">
-              <div class="ac-card__header">
-                <h3>Loaders</h3>
-              </div>
-              <div class="ac-card__body">
-                <div class="ac-flex ac-items-center ac-gap-4 ac-mb-4">
-                  <div class="ac-spinner ac-spinner--sm"></div>
-                  <div class="ac-spinner"></div>
-                  <div class="ac-spinner ac-spinner--lg"></div>
-                </div>
-                <div class="ac-loader">
-                  <div class="ac-spinner"></div>
-                  <span class="ac-mt-2">Connecting to API&hellip;</span>
-                </div>
-              </div>
-            </div>
+      </section>
 
-            {* Button States *}
-            <div class="ac-card">
-              <div class="ac-card__header">
-                <h3>Action States</h3>
-              </div>
-              <div class="ac-card__body ac-flex ac-flex-col ac-gap-3">
-                <button class="ac-btn ac-btn--danger">Force Delete</button>
-                <button class="ac-btn ac-btn--primary ac-btn--loading" disabled>Processing...</button>
-                <button class="ac-btn ac-btn--ghost">Secondary Action</button>
-              </div>
-            </div>
-            
-            {* System Alerts *}
-            <div class="ac-card">
-              <div class="ac-card__header">
-                <h3>Toast Triggers</h3>
-              </div>
-              <div class="ac-card__body ac-flex ac-flex-col ac-gap-3">
-                <button class="ac-btn ac-btn--secondary" data-demo-toast="warning">Test Warning Toast</button>
-                <button class="ac-btn ac-btn--secondary" data-demo-toast="error">Test Error Toast</button>
-                <div class="ac-alert ac-alert--error ac-mt-4" role="alert">
-                  <strong>Connection Failed</strong><br>
-                  API endpoint unreachable.
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div> {* end .ac-tabs__panels *}
-    </div> {* end .ac-tabs *}
+    </div>{* end .ac-content *}
 
   </div>{* end .ac-container *}
 
   {* ==========================================================================
-     MODAL OVERLAY (Used by Dashboard Action)
+     MODAL OVERLAY
      ========================================================================== *}
-  <div class="ac-modal-overlay" id="modal-sync" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="ac-modal">
-      <div class="ac-modal__header">
+  <div class="ac-overlay" id="modal-sync" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="ac-dialog">
+      <div class="ac-dialog__head">
         <h3 id="modal-title">Confirm Database Sync</h3>
-        <button class="ac-modal__close" data-ac-close aria-label="Close">&times;</button>
+        <button class="ac-dialog__x" data-ac-close aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
       </div>
-      <div class="ac-modal__body">
-        <p>This will synchronize all local service records with the remote API. This process may take a few minutes depending on the volume of records.</p>
-        <div class="ac-alert ac-alert--warning ac-mt-4" role="alert">
-          Warning: Ensure no billing runs are currently active before proceeding.
+      <div class="ac-dialog__body">
+        <p>This will synchronize all local service records with the remote API. The process may take several minutes depending on record volume.</p>
+        <div class="ac-notice ac-notice--warning ac-mt-4">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>Ensure no billing runs are currently active before proceeding.</span>
         </div>
       </div>
-      <div class="ac-modal__footer">
-        <button class="ac-btn ac-btn--secondary" data-ac-close>Cancel</button>
-        <button class="ac-btn ac-btn--primary" data-ac-close data-demo-toast="success">Start Sync</button>
+      <div class="ac-dialog__foot">
+        <button class="ac-btn ac-btn--ghost" data-ac-close>Cancel</button>
+        <button class="ac-btn ac-btn--accent" data-ac-close data-demo-toast="success">Start Sync</button>
       </div>
     </div>
   </div>
@@ -327,6 +457,6 @@
   {* ==========================================================================
      TOAST CONTAINER
      ========================================================================== *}
-  <div class="ac-toast-container" id="ac-toast-container" aria-live="polite"></div>
+  <div class="ac-toast-rack" id="ac-toast-container" aria-live="polite"></div>
 
 </div>{* end .addonscare *}

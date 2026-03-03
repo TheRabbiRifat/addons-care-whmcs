@@ -1,7 +1,7 @@
 /**
- * AddonsCare UI System — Vanilla JS
+ * AddonsCare UI System v3.1 — Vanilla JS
  * =============================================================================
- * Lightweight interactions: Tabs, Modal, Toast, Alert dismiss.
+ * Tab-based navigation, modal, toast, alert dismiss, pagination, settings form.
  * No jQuery. No external dependencies.
  * =============================================================================
  */
@@ -26,98 +26,94 @@
     }
 
     // ---------------------------------------------------------------------------
-    // 1. TABS — click handler toggles active tab + panel
+    // 1. TAB NAVIGATION — switches panels
     // ---------------------------------------------------------------------------
     function initTabs() {
-        root.querySelectorAll('.ac-tabs').forEach(function (tabGroup) {
-            var nav = tabGroup.querySelector('.ac-tabs__nav');
-            if (!nav) return;
+        var tabButtons = root.querySelectorAll('[data-ac-tab]');
 
-            nav.addEventListener('click', function (e) {
-                var tab = e.target.closest('.ac-tabs__tab');
-                if (!tab) return;
+        tabButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var panelId = btn.getAttribute('data-ac-tab');
 
-                // Deactivate siblings
-                nav.querySelectorAll('.ac-tabs__tab').forEach(function (t) {
-                    t.classList.remove('ac-tabs__tab--active');
-                    t.setAttribute('aria-selected', 'false');
+                // Deactivate all tabs
+                tabButtons.forEach(function (b) {
+                    b.classList.remove('ac-tab--active');
+                    b.setAttribute('aria-selected', 'false');
                 });
 
                 // Activate clicked tab
-                tab.classList.add('ac-tabs__tab--active');
-                tab.setAttribute('aria-selected', 'true');
+                btn.classList.add('ac-tab--active');
+                btn.setAttribute('aria-selected', 'true');
 
-                // Toggle panels
-                var panelId = tab.getAttribute('aria-controls');
-                var panels = tabGroup.querySelector('.ac-tabs__panels');
-                if (panels) {
-                    panels.querySelectorAll('.ac-tabs__panel').forEach(function (p) {
-                        p.classList.remove('ac-tabs__panel--active');
-                    });
-                    var target = panels.querySelector('#' + panelId);
-                    if (target) target.classList.add('ac-tabs__panel--active');
-                }
+                // Switch panel
+                root.querySelectorAll('.ac-panel').forEach(function (p) {
+                    p.classList.remove('ac-panel--active');
+                });
+                var target = root.querySelector('#' + panelId);
+                if (target) target.classList.add('ac-panel--active');
             });
         });
     }
-
-    // ---------------------------------------------------------------------------
-    // 2. MODALS — open via data-ac-modal, close via data-ac-close / overlay / ESC
-    // ---------------------------------------------------------------------------
-    function initModals() {
         // Open triggers
         root.querySelectorAll('[data-ac-modal]').forEach(function (btn) {
             btn.addEventListener('click', function (e) {
                 e.preventDefault();
                 var id = btn.getAttribute('data-ac-modal');
                 var overlay = root.querySelector(id);
-                if (overlay) overlay.classList.add('ac-modal-overlay--visible');
+                if (overlay) overlay.classList.add('ac-overlay--visible');
             });
         });
 
-        // Close triggers (buttons inside modal)
+        // Close triggers
         root.querySelectorAll('[data-ac-close]').forEach(function (btn) {
             btn.addEventListener('click', function () {
-                var overlay = btn.closest('.ac-modal-overlay');
-                if (overlay) overlay.classList.remove('ac-modal-overlay--visible');
+                var overlay = btn.closest('.ac-overlay');
+                if (overlay) overlay.classList.remove('ac-overlay--visible');
             });
         });
 
-        // Close on overlay click (outside modal box)
-        root.querySelectorAll('.ac-modal-overlay').forEach(function (overlay) {
+        // Close on overlay background click
+        root.querySelectorAll('.ac-overlay').forEach(function (overlay) {
             overlay.addEventListener('click', function (e) {
                 if (e.target === overlay) {
-                    overlay.classList.remove('ac-modal-overlay--visible');
+                    overlay.classList.remove('ac-overlay--visible');
                 }
             });
         });
 
-        // Close on ESC key
+        // Close on ESC
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
-                var visible = root.querySelector('.ac-modal-overlay--visible');
-                if (visible) visible.classList.remove('ac-modal-overlay--visible');
+                var visible = root.querySelector('.ac-overlay--visible');
+                if (visible) visible.classList.remove('ac-overlay--visible');
             }
         });
     }
 
     // ---------------------------------------------------------------------------
-    // 3. TOAST — AC.toast(message, type) API
+    // 4. TOAST — AC.toast(message, type)
     // ---------------------------------------------------------------------------
     function showToast(message, type) {
         var container = root.querySelector('#ac-toast-container');
         if (!container) return;
 
-        var icons = { success: '\u2713', warning: '\u26A0', error: '\u2717', info: '\u2139' };
+        var icons = {
+            success: '\u2713',
+            warning: '\u26A0',
+            error: '\u2717',
+            info: '\u2139'
+        };
 
         var toast = document.createElement('div');
         toast.className = 'ac-toast ac-toast--' + (type || 'info');
-        toast.innerHTML = '<span>' + (icons[type] || icons.info) + '</span><span>' + message + '</span>';
+        toast.innerHTML =
+            '<span style="font-size:1.1em">' + (icons[type] || icons.info) + '</span>' +
+            '<span>' + message + '</span>';
         container.appendChild(toast);
 
-        // Auto-remove after 4 seconds
+        // Auto-remove after 4s
         setTimeout(function () {
-            toast.classList.add('ac-toast--fade-out');
+            toast.classList.add('ac-toast--out');
             setTimeout(function () {
                 if (toast.parentNode) toast.parentNode.removeChild(toast);
             }, 300);
@@ -129,23 +125,23 @@
     window.AC.toast = showToast;
 
     // ---------------------------------------------------------------------------
-    // 4. ALERT DISMISS — data-ac-dismiss="alert"
+    // 5. ALERT / BANNER DISMISS
     // ---------------------------------------------------------------------------
     function initAlertDismiss() {
         root.querySelectorAll('[data-ac-dismiss="alert"]').forEach(function (btn) {
             btn.addEventListener('click', function () {
-                var alert = btn.closest('.ac-alert');
-                if (!alert) return;
-                alert.classList.add('ac-alert--fade-out');
+                var banner = btn.closest('.ac-banner');
+                if (!banner) return;
+                banner.classList.add('ac-banner--hide');
                 setTimeout(function () {
-                    if (alert.parentNode) alert.parentNode.removeChild(alert);
+                    if (banner.parentNode) banner.parentNode.removeChild(banner);
                 }, 200);
             });
         });
     }
 
     // ---------------------------------------------------------------------------
-    // Demo: toast trigger buttons
+    // 6. DEMO TOAST TRIGGERS
     // ---------------------------------------------------------------------------
     function initToastButtons() {
         var messages = {
@@ -164,7 +160,7 @@
     }
 
     // ---------------------------------------------------------------------------
-    // Demo: settings form fake save
+    // 7. SETTINGS FORM — fake save with loading state
     // ---------------------------------------------------------------------------
     function initSettingsForm() {
         var form = root.querySelector('#ac-settings-form');
@@ -184,26 +180,26 @@
                 btn.classList.remove('ac-btn--loading');
                 btn.disabled = false;
                 btn.textContent = label;
-                showToast('Settings saved successfully.', 'success');
-            }, 1400);
+                showToast('Configuration saved successfully.', 'success');
+            }, 1200);
         });
     }
 
     // ---------------------------------------------------------------------------
-    // Demo: pagination highlight
+    // 8. PAGINATION
     // ---------------------------------------------------------------------------
     function initPagination() {
-        root.querySelectorAll('.ac-pagination__btn').forEach(function (btn) {
+        root.querySelectorAll('.ac-pager__btn').forEach(function (btn) {
             btn.addEventListener('click', function () {
                 if (btn.disabled) return;
                 var text = btn.textContent.trim();
                 if (isNaN(parseInt(text, 10))) return;
 
-                root.querySelectorAll('.ac-pagination__btn--active').forEach(function (a) {
-                    a.classList.remove('ac-pagination__btn--active');
+                root.querySelectorAll('.ac-pager__btn--current').forEach(function (a) {
+                    a.classList.remove('ac-pager__btn--current');
                 });
-                btn.classList.add('ac-pagination__btn--active');
-                showToast('Loading page ' + text, 'info');
+                btn.classList.add('ac-pager__btn--current');
+                showToast('Loading page ' + text + '...', 'info');
             });
         });
     }

@@ -1,8 +1,8 @@
 /**
- * AddonsCare UI System — Scoped Design System
+ * AddonsCare UI System v3.0 — Scoped Design System
  * =============================================================================
- * ALL styles scoped under .addonscare — no globals, no resets, no WHMCS leaks.
- * 12 components · 8px spacing · responsive · collision-safe
+ * Dark sidebar · Glassmorphism cards · Teal/Emerald palette
+ * ALL styles scoped under .addonscare — no globals, no WHMCS leaks.
  * =============================================================================
  */
 
@@ -10,66 +10,87 @@
    1. CSS VARIABLES
    ============================================================================= */
 .addonscare {
-    /* --- Colors --- */
-    --ac-primary: #6366f1;
-    --ac-primary-hover: #4f46e5;
-    --ac-primary-light: #eef2ff;
+    /* --- Brand / Accent --- */
+    --ac-accent: #14b8a6;
+    --ac-accent-hover: #0d9488;
+    --ac-accent-soft: rgba(20, 184, 166, 0.12);
+    --ac-accent-glow: rgba(20, 184, 166, 0.25);
 
-    --ac-success: #10b981;
-    --ac-success-light: #ecfdf5;
+    /* --- Semantic --- */
+    --ac-success: #22c55e;
+    --ac-success-soft: rgba(34, 197, 94, 0.12);
     --ac-warning: #f59e0b;
-    --ac-warning-light: #fffbeb;
+    --ac-warning-soft: rgba(245, 158, 11, 0.12);
     --ac-danger: #ef4444;
-    --ac-danger-light: #fef2f2;
+    --ac-danger-soft: rgba(239, 68, 68, 0.12);
     --ac-info: #3b82f6;
-    --ac-info-light: #eff6ff;
+    --ac-info-soft: rgba(59, 130, 246, 0.12);
 
-    --ac-neutral-50: #f9fafb;
-    --ac-neutral-100: #f3f4f6;
-    --ac-neutral-200: #e5e7eb;
-    --ac-neutral-300: #d1d5db;
-    --ac-neutral-400: #9ca3af;
-    --ac-neutral-500: #6b7280;
-    --ac-neutral-600: #4b5563;
-    --ac-neutral-700: #374151;
-    --ac-neutral-800: #1f2937;
-    --ac-neutral-900: #111827;
+    /* --- Neutrals --- */
+    --ac-slate-50: #f8fafc;
+    --ac-slate-100: #f1f5f9;
+    --ac-slate-200: #e2e8f0;
+    --ac-slate-300: #cbd5e1;
+    --ac-slate-400: #94a3b8;
+    --ac-slate-500: #64748b;
+    --ac-slate-600: #475569;
+    --ac-slate-700: #334155;
+    --ac-slate-800: #1e293b;
+    --ac-slate-900: #0f172a;
+    --ac-slate-950: #020617;
 
-    --ac-white: #ffffff;
-    --ac-body-bg: #f9fafb;
-    --ac-card-bg: #ffffff;
-    --ac-text: #1f2937;
-    --ac-text-muted: #6b7280;
-    --ac-border: #e5e7eb;
+    /* --- Surfaces --- */
+    --ac-sidebar-bg: var(--ac-slate-900);
+    --ac-sidebar-hover: rgba(255, 255, 255, 0.06);
+    --ac-sidebar-active: rgba(20, 184, 166, 0.15);
+    --ac-body-bg: var(--ac-slate-100);
+    --ac-card-bg: rgba(255, 255, 255, 0.82);
+    --ac-card-border: rgba(255, 255, 255, 0.6);
+    --ac-card-shadow: 0 4px 24px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+    --ac-glass-blur: 16px;
 
-    /* --- Spacing (8px base) --- */
-    --ac-space-1: 4px;
-    --ac-space-2: 8px;
-    --ac-space-3: 12px;
-    --ac-space-4: 16px;
-    --ac-space-5: 20px;
-    --ac-space-6: 24px;
-    --ac-space-8: 32px;
-    --ac-space-10: 40px;
-    --ac-space-12: 48px;
+    /* --- Text --- */
+    --ac-text: #1e293b;
+    --ac-text-dim: #64748b;
+    --ac-text-inv: #f8fafc;
 
-    /* --- Border radius --- */
-    --ac-radius: 8px;
-    --ac-radius-sm: 6px;
-    --ac-radius-full: 9999px;
+    /* --- Spacing (4px base) --- */
+    --ac-sp-1: 4px;
+    --ac-sp-2: 8px;
+    --ac-sp-3: 12px;
+    --ac-sp-4: 16px;
+    --ac-sp-5: 20px;
+    --ac-sp-6: 24px;
+    --ac-sp-8: 32px;
+    --ac-sp-10: 40px;
+    --ac-sp-12: 48px;
 
-    /* --- Shadow --- */
-    --ac-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
-    --ac-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.06);
+    /* --- Radii --- */
+    --ac-r: 12px;
+    --ac-r-sm: 8px;
+    --ac-r-lg: 16px;
+    --ac-r-full: 9999px;
 
-    /* --- Font scale --- */
-    --ac-font-h1: 1.75rem;
-    --ac-font-h2: 1.25rem;
-    --ac-font-body: 0.875rem;
-    --ac-font-small: 0.75rem;
+    /* --- Shadows --- */
+    --ac-shadow-sm: 0 1px 2px rgba(0,0,0,.05);
+    --ac-shadow: 0 4px 12px rgba(0,0,0,.07);
+    --ac-shadow-lg: 0 12px 40px rgba(0,0,0,.12);
 
-    /* --- Transitions --- */
-    --ac-transition: 150ms ease;
+    /* --- Type --- */
+    --ac-font-xs: 0.6875rem;
+    --ac-font-sm: 0.75rem;
+    --ac-font-base: 0.875rem;
+    --ac-font-lg: 1rem;
+    --ac-font-xl: 1.25rem;
+    --ac-font-2xl: 1.625rem;
+
+    /* --- Motion --- */
+    --ac-ease: cubic-bezier(.4,0,.2,1);
+    --ac-dur: 180ms;
+
+    /* --- Sidebar width --- */
+    --ac-sidebar-w: 240px;
+    --ac-sidebar-w-collapsed: 0px;
 }
 
 /* =============================================================================
@@ -77,8 +98,8 @@
    ============================================================================= */
 .addonscare {
     box-sizing: border-box;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: var(--ac-font-body);
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-size: var(--ac-font-base);
     color: var(--ac-text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -91,154 +112,733 @@
     box-sizing: inherit;
 }
 
-.addonscare h1,
-.addonscare h2,
-.addonscare h3,
-.addonscare h4 {
-    margin: 0 0 var(--ac-space-2) 0;
+.addonscare h1, .addonscare h2, .addonscare h3, .addonscare h4 {
+    margin: 0;
     font-weight: 600;
     line-height: 1.3;
-    color: var(--ac-neutral-900);
+    color: var(--ac-slate-900);
 }
 
-.addonscare h1 {
-    font-size: var(--ac-font-h1);
-}
-
-.addonscare h2 {
-    font-size: var(--ac-font-h2);
-}
-
-.addonscare p {
-    margin: 0 0 var(--ac-space-2) 0;
-}
+.addonscare p { margin: 0 0 var(--ac-sp-2) 0; }
 
 /* =============================================================================
-   3. LAYOUT
+   3. LAYOUT — Container with Header + Tabs + Content
    ============================================================================= */
 .addonscare .ac-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--ac-space-6);
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+    background: var(--ac-body-bg);
+    border-radius: var(--ac-r-lg);
+    overflow: hidden;
+    border: 1px solid var(--ac-slate-200);
+    box-shadow: var(--ac-shadow);
 }
 
+/* --- Header with title --- */
 .addonscare .ac-header {
-    margin-bottom: var(--ac-space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--ac-sp-4);
+    padding: var(--ac-sp-6);
+    background: rgba(255,255,255,.65);
+    backdrop-filter: blur(var(--ac-glass-blur));
+    -webkit-backdrop-filter: blur(var(--ac-glass-blur));
+    border-bottom: 1px solid var(--ac-slate-200);
+}
+
+.addonscare .ac-header__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--ac-sp-4);
 }
 
 .addonscare .ac-header h1 {
-    margin-bottom: var(--ac-space-1);
-}
-
-.addonscare .ac-header p {
-    color: var(--ac-text-muted);
+    font-size: var(--ac-font-2xl);
+    font-weight: 700;
+    color: var(--ac-slate-900);
     margin: 0;
 }
 
-.addonscare .ac-section {
-    margin-bottom: var(--ac-space-10);
+.addonscare .ac-header p {
+    color: var(--ac-slate-500);
+    font-size: var(--ac-font-base);
+    margin: var(--ac-sp-1) 0 0 0;
 }
 
-.addonscare .ac-section__title {
-    font-size: var(--ac-font-h2);
-    margin-bottom: var(--ac-space-4);
-    padding-bottom: var(--ac-space-2);
-    border-bottom: 1px solid var(--ac-border);
+/* --- Tab Navigation --- */
+.addonscare .ac-tabs {
+    display: flex;
+    gap: var(--ac-sp-1);
+    border-bottom: 2px solid var(--ac-slate-200);
+    padding: 0;
+    margin: 0;
+    background: transparent;
 }
 
-.addonscare .ac-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--ac-space-6);
+.addonscare .ac-tab {
+    display: flex;
+    align-items: center;
+    gap: var(--ac-sp-2);
+    padding: var(--ac-sp-3) var(--ac-sp-5);
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--ac-slate-500);
+    font-size: var(--ac-font-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--ac-dur) var(--ac-ease);
+    position: relative;
+    white-space: nowrap;
+}
+
+.addonscare .ac-tab:hover {
+    color: var(--ac-slate-700);
+}
+
+.addonscare .ac-tab--active {
+    color: var(--ac-accent);
+    border-bottom-color: var(--ac-accent);
+}
+
+.addonscare .ac-tab svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* --- Content area --- */
+.addonscare .ac-content {
+    flex: 1;
+    padding: var(--ac-sp-6);
+    overflow-y: auto;
 }
 
 /* =============================================================================
-   4. BUTTON — .ac-btn
+   4. PANELS (routed pages)
+   ============================================================================= */
+.addonscare .ac-panel {
+    display: none;
+    animation: ac-fadeUp .3s var(--ac-ease);
+}
+
+.addonscare .ac-panel--active {
+    display: block;
+}
+
+@keyframes ac-fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================================================
+   5. GLASS CARD — .ac-card--glass
+   ============================================================================= */
+.addonscare .ac-card {
+    background: var(--ac-card-bg);
+    backdrop-filter: blur(var(--ac-glass-blur));
+    -webkit-backdrop-filter: blur(var(--ac-glass-blur));
+    border: 1px solid var(--ac-card-border);
+    border-radius: var(--ac-r);
+    box-shadow: var(--ac-card-shadow);
+    overflow: hidden;
+}
+
+.addonscare .ac-card--glass {
+    background: var(--ac-card-bg);
+}
+
+.addonscare .ac-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--ac-sp-5) var(--ac-sp-6);
+    border-bottom: 1px solid var(--ac-slate-200);
+}
+
+.addonscare .ac-card__title {
+    font-size: var(--ac-font-xl);
+    font-weight: 600;
+    color: var(--ac-slate-800);
+    margin: 0;
+}
+
+.addonscare .ac-card__toolbar {
+    display: flex;
+    align-items: center;
+    gap: var(--ac-sp-3);
+}
+
+.addonscare .ac-card__inner {
+    padding: var(--ac-sp-5) var(--ac-sp-6);
+}
+
+.addonscare .ac-card__inner--flush {
+    padding: 0;
+}
+
+.addonscare .ac-card__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--ac-sp-4) var(--ac-sp-6);
+    border-top: 1px solid var(--ac-slate-200);
+    background: var(--ac-slate-50);
+}
+
+.addonscare .ac-card__bottom--actions {
+    justify-content: flex-end;
+    gap: var(--ac-sp-3);
+}
+
+/* =============================================================================
+   6. BANNER (top alert bar)
+   ============================================================================= */
+.addonscare .ac-banner {
+    display: flex;
+    align-items: center;
+    gap: var(--ac-sp-3);
+    padding: var(--ac-sp-3) var(--ac-sp-5);
+    border-radius: var(--ac-r);
+    margin-bottom: var(--ac-sp-6);
+    font-size: var(--ac-font-base);
+    transition: opacity var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-banner--ok {
+    background: var(--ac-success-soft);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    color: #166534;
+}
+
+.addonscare .ac-banner--warn {
+    background: var(--ac-warning-soft);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    color: #92400e;
+}
+
+.addonscare .ac-banner--err {
+    background: var(--ac-danger-soft);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #991b1b;
+}
+
+.addonscare .ac-banner__icon { flex-shrink: 0; display: flex; }
+.addonscare .ac-banner__text { flex: 1; }
+
+.addonscare .ac-banner__dismiss {
+    margin-left: auto;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    color: inherit;
+    opacity: .5;
+    padding: 0;
+}
+
+.addonscare .ac-banner__dismiss:hover { opacity: 1; }
+
+.addonscare .ac-banner--hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* =============================================================================
+   7. STAT CARDS
+   ============================================================================= */
+.addonscare .ac-stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--ac-sp-5);
+    margin-bottom: var(--ac-sp-6);
+}
+
+.addonscare .ac-stat-card {
+    display: flex;
+    align-items: center;
+    gap: var(--ac-sp-4);
+    padding: var(--ac-sp-5);
+    background: var(--ac-card-bg);
+    backdrop-filter: blur(var(--ac-glass-blur));
+    -webkit-backdrop-filter: blur(var(--ac-glass-blur));
+    border: 1px solid var(--ac-card-border);
+    border-radius: var(--ac-r);
+    box-shadow: var(--ac-card-shadow);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--ac-dur) var(--ac-ease), box-shadow var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ac-shadow-lg);
+}
+
+.addonscare .ac-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 4px 0 0 4px;
+}
+
+.addonscare .ac-stat-card--teal::before   { background: var(--ac-accent); }
+.addonscare .ac-stat-card--emerald::before { background: var(--ac-success); }
+.addonscare .ac-stat-card--amber::before   { background: var(--ac-warning); }
+.addonscare .ac-stat-card--rose::before    { background: var(--ac-danger); }
+
+.addonscare .ac-stat-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--ac-r);
+    flex-shrink: 0;
+}
+
+.addonscare .ac-stat-card--teal .ac-stat-card__icon   { background: var(--ac-accent-soft); color: var(--ac-accent); }
+.addonscare .ac-stat-card--emerald .ac-stat-card__icon { background: var(--ac-success-soft); color: var(--ac-success); }
+.addonscare .ac-stat-card--amber .ac-stat-card__icon   { background: var(--ac-warning-soft); color: var(--ac-warning); }
+.addonscare .ac-stat-card--rose .ac-stat-card__icon    { background: var(--ac-danger-soft); color: var(--ac-danger); }
+
+.addonscare .ac-stat-card__data {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.addonscare .ac-stat-card__value {
+    font-size: var(--ac-font-2xl);
+    font-weight: 700;
+    color: var(--ac-slate-900);
+    line-height: 1.2;
+}
+
+.addonscare .ac-stat-card__label {
+    font-size: var(--ac-font-sm);
+    color: var(--ac-slate-500);
+    margin-top: 2px;
+}
+
+.addonscare .ac-stat-card__trend {
+    margin-left: auto;
+    font-size: var(--ac-font-sm);
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: var(--ac-r-full);
+}
+
+.addonscare .ac-stat-card__trend--up {
+    background: var(--ac-success-soft);
+    color: #16a34a;
+}
+
+.addonscare .ac-stat-card__trend--down {
+    background: var(--ac-danger-soft);
+    color: #dc2626;
+}
+
+/* =============================================================================
+   8. DUO / TRIO GRID
+   ============================================================================= */
+.addonscare .ac-duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--ac-sp-6);
+}
+
+.addonscare .ac-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--ac-sp-6);
+}
+
+/* =============================================================================
+   9. TIMELINE (Activity feed)
+   ============================================================================= */
+.addonscare .ac-timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.addonscare .ac-timeline__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--ac-sp-3);
+    padding: var(--ac-sp-3) 0;
+    position: relative;
+}
+
+.addonscare .ac-timeline__item:not(:last-child) {
+    border-bottom: 1px solid var(--ac-slate-100);
+}
+
+.addonscare .ac-timeline__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+.addonscare .ac-timeline__item--success .ac-timeline__dot { background: var(--ac-success); }
+.addonscare .ac-timeline__item--warning .ac-timeline__dot { background: var(--ac-warning); }
+.addonscare .ac-timeline__item--info .ac-timeline__dot    { background: var(--ac-info); }
+.addonscare .ac-timeline__item--neutral .ac-timeline__dot { background: var(--ac-slate-300); }
+
+.addonscare .ac-timeline__body {
+    font-size: var(--ac-font-base);
+    color: var(--ac-slate-600);
+    line-height: 1.5;
+}
+
+.addonscare .ac-timeline__body strong {
+    color: var(--ac-slate-800);
+}
+
+.addonscare .ac-timeline__time {
+    display: block;
+    font-size: var(--ac-font-xs);
+    color: var(--ac-slate-400);
+    margin-top: 2px;
+}
+
+/* =============================================================================
+   10. ACTION TILES (Quick actions grid)
+   ============================================================================= */
+.addonscare .ac-action-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--ac-sp-3);
+}
+
+.addonscare .ac-action-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--ac-sp-2);
+    padding: var(--ac-sp-5) var(--ac-sp-3);
+    background: var(--ac-slate-50);
+    border: 1px solid var(--ac-slate-200);
+    border-radius: var(--ac-r);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: var(--ac-font-sm);
+    font-weight: 500;
+    color: var(--ac-slate-600);
+    transition: all var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-action-tile:hover {
+    background: var(--ac-accent-soft);
+    border-color: var(--ac-accent);
+    color: var(--ac-accent-hover);
+    transform: translateY(-1px);
+}
+
+.addonscare .ac-action-tile svg {
+    color: var(--ac-slate-400);
+    transition: color var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-action-tile:hover svg {
+    color: var(--ac-accent);
+}
+
+/* =============================================================================
+   11. PILL (inline badge)
+   ============================================================================= */
+.addonscare .ac-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 10px;
+    font-size: var(--ac-font-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    border-radius: var(--ac-r-full);
+    background: var(--ac-accent-soft);
+    color: var(--ac-accent-hover);
+}
+
+.addonscare .ac-pill--count {
+    background: var(--ac-slate-100);
+    color: var(--ac-slate-600);
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 500;
+}
+
+/* =============================================================================
+   12. CHIP (table status badge)
+   ============================================================================= */
+.addonscare .ac-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 12px;
+    font-size: var(--ac-font-sm);
+    font-weight: 500;
+    border-radius: var(--ac-r-full);
+    white-space: nowrap;
+}
+
+.addonscare .ac-chip__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.addonscare .ac-chip--success { background: var(--ac-success-soft); color: #16a34a; }
+.addonscare .ac-chip--success .ac-chip__dot { background: var(--ac-success); }
+
+.addonscare .ac-chip--warning { background: var(--ac-warning-soft); color: #b45309; }
+.addonscare .ac-chip--warning .ac-chip__dot { background: var(--ac-warning); }
+
+.addonscare .ac-chip--danger { background: var(--ac-danger-soft); color: #dc2626; }
+.addonscare .ac-chip--danger .ac-chip__dot { background: var(--ac-danger); }
+
+.addonscare .ac-chip--neutral { background: var(--ac-slate-100); color: var(--ac-slate-500); }
+.addonscare .ac-chip--neutral .ac-chip__dot { background: var(--ac-slate-400); }
+
+/* =============================================================================
+   13. TABLE
+   ============================================================================= */
+.addonscare .ac-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.addonscare .ac-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--ac-font-base);
+}
+
+.addonscare .ac-table th {
+    padding: var(--ac-sp-3) var(--ac-sp-5);
+    text-align: left;
+    font-weight: 600;
+    font-size: var(--ac-font-xs);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--ac-slate-400);
+    background: var(--ac-slate-50);
+    border-bottom: 1px solid var(--ac-slate-200);
+    white-space: nowrap;
+}
+
+.addonscare .ac-table td {
+    padding: var(--ac-sp-3) var(--ac-sp-5);
+    border-bottom: 1px solid var(--ac-slate-100);
+    color: var(--ac-text);
+    vertical-align: middle;
+}
+
+.addonscare .ac-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.addonscare .ac-table tbody tr {
+    transition: background var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-table tbody tr:hover {
+    background: rgba(20, 184, 166, .04);
+}
+
+.addonscare .ac-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: var(--ac-font-sm);
+    color: var(--ac-slate-500);
+}
+
+.addonscare .ac-text-dim {
+    color: var(--ac-slate-400);
+}
+
+/* User cell with avatar */
+.addonscare .ac-user-cell {
+    display: flex;
+    align-items: center;
+    gap: var(--ac-sp-3);
+}
+
+.addonscare .ac-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--ac-accent), var(--ac-accent-hover));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--ac-font-sm);
+    font-weight: 600;
+    flex-shrink: 0;
+    text-transform: uppercase;
+}
+
+/* =============================================================================
+   14. PAGER (pagination)
+   ============================================================================= */
+.addonscare .ac-pager {
+    display: flex;
+    align-items: center;
+    gap: var(--ac-sp-1);
+}
+
+.addonscare .ac-pager__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    min-height: 34px;
+    padding: var(--ac-sp-1) var(--ac-sp-2);
+    font-family: inherit;
+    font-size: var(--ac-font-sm);
+    font-weight: 500;
+    color: var(--ac-slate-500);
+    background: white;
+    border: 1px solid var(--ac-slate-200);
+    border-radius: var(--ac-r-sm);
+    cursor: pointer;
+    transition: all var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-pager__btn:hover:not(:disabled) {
+    border-color: var(--ac-accent);
+    color: var(--ac-accent);
+}
+
+.addonscare .ac-pager__btn--current {
+    background: var(--ac-accent);
+    color: white;
+    border-color: var(--ac-accent);
+}
+
+.addonscare .ac-pager__btn--current:hover {
+    background: var(--ac-accent-hover) !important;
+    color: white !important;
+}
+
+.addonscare .ac-pager__btn:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+.addonscare .ac-pager__dots {
+    display: inline-flex;
+    align-items: center;
+    min-width: 34px;
+    justify-content: center;
+    color: var(--ac-slate-300);
+}
+
+/* =============================================================================
+   15. BUTTONS
    ============================================================================= */
 .addonscare .ac-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: var(--ac-space-2);
-    padding: 10px var(--ac-space-5);
+    gap: var(--ac-sp-2);
+    padding: 10px var(--ac-sp-5);
     font-family: inherit;
-    font-size: var(--ac-font-body);
+    font-size: var(--ac-font-base);
     font-weight: 500;
     line-height: 1.4;
-    min-height: 44px;
+    min-height: 40px;
     border: 1px solid transparent;
-    border-radius: var(--ac-radius);
+    border-radius: var(--ac-r-sm);
     cursor: pointer;
-    transition: background var(--ac-transition), border-color var(--ac-transition), box-shadow var(--ac-transition), opacity var(--ac-transition);
+    transition: all var(--ac-dur) var(--ac-ease);
     text-decoration: none;
     white-space: nowrap;
     user-select: none;
 }
 
 .addonscare .ac-btn:focus-visible {
-    outline: 2px solid var(--ac-primary);
+    outline: 2px solid var(--ac-accent);
     outline-offset: 2px;
 }
 
-/* Primary */
-.addonscare .ac-btn--primary {
-    background: var(--ac-primary);
-    color: var(--ac-white);
+/* Accent (teal) */
+.addonscare .ac-btn--accent {
+    background: var(--ac-accent);
+    color: white;
+    box-shadow: 0 2px 8px rgba(20, 184, 166, .3);
 }
 
-.addonscare .ac-btn--primary:hover {
-    background: var(--ac-primary-hover);
+.addonscare .ac-btn--accent:hover {
+    background: var(--ac-accent-hover);
+    box-shadow: 0 4px 16px rgba(20, 184, 166, .35);
+    transform: translateY(-1px);
 }
 
-/* Secondary */
-.addonscare .ac-btn--secondary {
-    background: var(--ac-white);
-    color: var(--ac-neutral-700);
-    border-color: var(--ac-border);
+/* Outline */
+.addonscare .ac-btn--outline {
+    background: white;
+    color: var(--ac-slate-600);
+    border-color: var(--ac-slate-200);
 }
 
-.addonscare .ac-btn--secondary:hover {
-    background: var(--ac-neutral-50);
-    border-color: var(--ac-neutral-300);
+.addonscare .ac-btn--outline:hover {
+    border-color: var(--ac-accent);
+    color: var(--ac-accent);
+    background: var(--ac-accent-soft);
+}
+
+/* Ghost */
+.addonscare .ac-btn--ghost {
+    background: transparent;
+    color: var(--ac-slate-500);
+}
+
+.addonscare .ac-btn--ghost:hover {
+    background: var(--ac-slate-100);
+    color: var(--ac-slate-700);
 }
 
 /* Danger */
 .addonscare .ac-btn--danger {
     background: var(--ac-danger);
-    color: var(--ac-white);
+    color: white;
 }
 
 .addonscare .ac-btn--danger:hover {
     background: #dc2626;
 }
 
-/* Ghost */
-.addonscare .ac-btn--ghost {
-    background: transparent;
-    color: var(--ac-neutral-600);
-}
-
-.addonscare .ac-btn--ghost:hover {
-    background: var(--ac-neutral-100);
-}
-
 /* Sizes */
 .addonscare .ac-btn--sm {
-    padding: 6px var(--ac-space-3);
-    font-size: var(--ac-font-small);
+    padding: 6px var(--ac-sp-3);
+    font-size: var(--ac-font-sm);
     min-height: 32px;
+    border-radius: 6px;
 }
 
 .addonscare .ac-btn--lg {
-    padding: 14px var(--ac-space-8);
-    font-size: 1rem;
-    min-height: 52px;
+    padding: 14px var(--ac-sp-8);
+    font-size: var(--ac-font-lg);
+    min-height: 48px;
 }
 
 /* States */
 .addonscare .ac-btn:disabled,
 .addonscare .ac-btn[disabled] {
-    opacity: 0.5;
+    opacity: .5;
     cursor: not-allowed;
     pointer-events: none;
 }
@@ -254,903 +854,606 @@
     position: absolute;
     width: 18px;
     height: 18px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-top-color: var(--ac-white);
+    border: 2px solid rgba(255,255,255,.3);
+    border-top-color: white;
     border-radius: 50%;
-    animation: ac-spin 0.6s linear infinite;
+    animation: ac-spin .6s linear infinite;
 }
 
 @keyframes ac-spin {
-    to {
-        transform: rotate(360deg);
-    }
+    to { transform: rotate(360deg); }
 }
 
 /* =============================================================================
-   5. TABS — .ac-tabs
+   16. NOTICE (inline alert)
    ============================================================================= */
-.addonscare .ac-tabs__nav {
-    display: flex;
-    gap: 0;
-    border-bottom: 2px solid var(--ac-border);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-
-.addonscare .ac-tabs__nav::-webkit-scrollbar {
-    display: none;
-}
-
-.addonscare .ac-tabs__tab {
-    flex-shrink: 0;
-    padding: var(--ac-space-3) var(--ac-space-5);
-    font-family: inherit;
-    font-size: var(--ac-font-body);
-    font-weight: 500;
-    color: var(--ac-text-muted);
-    background: none;
-    border: none;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -2px;
-    cursor: pointer;
-    transition: color var(--ac-transition), border-color var(--ac-transition);
-    white-space: nowrap;
-    min-height: 44px;
-}
-
-.addonscare .ac-tabs__tab:hover {
-    color: var(--ac-neutral-700);
-}
-
-.addonscare .ac-tabs__tab--active {
-    color: var(--ac-primary);
-    border-bottom-color: var(--ac-primary);
-}
-
-.addonscare .ac-tabs__panel {
-    display: none;
-    padding: var(--ac-space-5) 0;
-}
-
-.addonscare .ac-tabs__panel--active {
-    display: block;
-}
-
-/* =============================================================================
-   6. CARD — .ac-card
-   ============================================================================= */
-.addonscare .ac-card {
-    background: var(--ac-card-bg);
-    border: 1px solid var(--ac-border);
-    border-radius: var(--ac-radius);
-    box-shadow: var(--ac-shadow);
-    overflow: hidden;
-}
-
-.addonscare .ac-card__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--ac-space-4) var(--ac-space-5);
-    border-bottom: 1px solid var(--ac-border);
-}
-
-.addonscare .ac-card__header h2,
-.addonscare .ac-card__header h3 {
-    margin: 0;
-    font-size: var(--ac-font-h2);
-}
-
-.addonscare .ac-card__body {
-    padding: var(--ac-space-5);
-}
-
-.addonscare .ac-card__footer {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: var(--ac-space-3);
-    padding: var(--ac-space-4) var(--ac-space-5);
-    border-top: 1px solid var(--ac-border);
-    background: var(--ac-neutral-50);
-}
-
-/* =============================================================================
-   7. ALERT — .ac-alert
-   ============================================================================= */
-.addonscare .ac-alert {
+.addonscare .ac-notice {
     display: flex;
     align-items: flex-start;
-    gap: var(--ac-space-3);
-    padding: var(--ac-space-3) var(--ac-space-4);
-    border-radius: var(--ac-radius-sm);
-    border-left: 4px solid;
-    font-size: var(--ac-font-body);
-    transition: opacity var(--ac-transition);
+    gap: var(--ac-sp-3);
+    padding: var(--ac-sp-3) var(--ac-sp-4);
+    border-radius: var(--ac-r-sm);
+    font-size: var(--ac-font-base);
 }
 
-.addonscare .ac-alert--success {
-    background: var(--ac-success-light);
-    border-left-color: var(--ac-success);
-    color: #065f46;
+.addonscare .ac-notice--success {
+    background: var(--ac-success-soft);
+    color: #166534;
 }
 
-.addonscare .ac-alert--warning {
-    background: var(--ac-warning-light);
-    border-left-color: var(--ac-warning);
+.addonscare .ac-notice--warning {
+    background: var(--ac-warning-soft);
     color: #92400e;
 }
 
-.addonscare .ac-alert--error {
-    background: var(--ac-danger-light);
-    border-left-color: var(--ac-danger);
+.addonscare .ac-notice--error {
+    background: var(--ac-danger-soft);
     color: #991b1b;
 }
 
-.addonscare .ac-alert--info {
-    background: var(--ac-info-light);
-    border-left-color: var(--ac-info);
+.addonscare .ac-notice--info {
+    background: var(--ac-info-soft);
     color: #1e40af;
 }
 
-.addonscare .ac-alert__close {
-    margin-left: auto;
+.addonscare .ac-notice svg {
     flex-shrink: 0;
-    background: none;
-    border: none;
-    font-size: 1.25rem;
-    line-height: 1;
-    cursor: pointer;
-    opacity: 0.6;
-    color: inherit;
-    padding: 0;
-}
-
-.addonscare .ac-alert__close:hover {
-    opacity: 1;
-}
-
-.addonscare .ac-alert--fade-out {
-    opacity: 0;
+    margin-top: 2px;
 }
 
 /* =============================================================================
-   8. MODAL — .ac-modal
+   17. MODAL / DIALOG
    ============================================================================= */
-.addonscare .ac-modal-overlay {
+.addonscare .ac-overlay {
     display: none;
     position: fixed;
     inset: 0;
     z-index: 10000;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(15, 23, 42, .55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     align-items: center;
     justify-content: center;
-    padding: var(--ac-space-4);
-    backdrop-filter: blur(2px);
+    padding: var(--ac-sp-6);
 }
 
-.addonscare .ac-modal-overlay--visible {
+.addonscare .ac-overlay--visible {
     display: flex;
 }
 
-.addonscare .ac-modal {
-    background: var(--ac-card-bg);
-    border-radius: var(--ac-radius);
+.addonscare .ac-dialog {
+    background: white;
+    border-radius: var(--ac-r-lg);
     box-shadow: var(--ac-shadow-lg);
     width: 100%;
-    max-width: 540px;
-    max-height: 90vh;
+    max-width: 500px;
+    max-height: 85vh;
     display: flex;
     flex-direction: column;
-    animation: ac-modal-in 0.2s ease-out;
+    animation: ac-dialogIn .25s var(--ac-ease);
 }
 
-@keyframes ac-modal-in {
-    from {
-        opacity: 0;
-        transform: scale(0.95) translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
+@keyframes ac-dialogIn {
+    from { opacity: 0; transform: scale(.96) translateY(12px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-.addonscare .ac-modal__header {
+.addonscare .ac-dialog__head {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--ac-space-4) var(--ac-space-5);
-    border-bottom: 1px solid var(--ac-border);
+    padding: var(--ac-sp-5) var(--ac-sp-6);
+    border-bottom: 1px solid var(--ac-slate-200);
 }
 
-.addonscare .ac-modal__header h3 {
+.addonscare .ac-dialog__head h3 {
+    font-size: var(--ac-font-xl);
     margin: 0;
 }
 
-.addonscare .ac-modal__close {
+.addonscare .ac-dialog__x {
     background: none;
     border: none;
-    font-size: 1.5rem;
-    line-height: 1;
+    color: var(--ac-slate-400);
     cursor: pointer;
-    color: var(--ac-neutral-400);
-    padding: 0;
+    padding: var(--ac-sp-1);
+    border-radius: var(--ac-r-sm);
+    display: flex;
 }
 
-.addonscare .ac-modal__close:hover {
-    color: var(--ac-neutral-700);
+.addonscare .ac-dialog__x:hover {
+    background: var(--ac-slate-100);
+    color: var(--ac-slate-700);
 }
 
-.addonscare .ac-modal__body {
-    padding: var(--ac-space-5);
+.addonscare .ac-dialog__body {
+    padding: var(--ac-sp-5) var(--ac-sp-6);
     overflow-y: auto;
     flex: 1;
 }
 
-.addonscare .ac-modal__footer {
+.addonscare .ac-dialog__foot {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: var(--ac-space-3);
-    padding: var(--ac-space-4) var(--ac-space-5);
-    border-top: 1px solid var(--ac-border);
-    background: var(--ac-neutral-50);
+    gap: var(--ac-sp-3);
+    padding: var(--ac-sp-4) var(--ac-sp-6);
+    border-top: 1px solid var(--ac-slate-100);
+    background: var(--ac-slate-50);
+    border-radius: 0 0 var(--ac-r-lg) var(--ac-r-lg);
 }
 
 /* =============================================================================
-   9. TOAST — .ac-toast
+   18. TOAST
    ============================================================================= */
-.addonscare .ac-toast-container {
+.addonscare .ac-toast-rack {
     position: fixed;
-    top: var(--ac-space-5);
-    right: var(--ac-space-5);
+    bottom: var(--ac-sp-6);
+    right: var(--ac-sp-6);
     z-index: 10001;
     display: flex;
-    flex-direction: column;
-    gap: var(--ac-space-2);
+    flex-direction: column-reverse;
+    gap: var(--ac-sp-2);
     pointer-events: none;
 }
 
 .addonscare .ac-toast {
     display: flex;
     align-items: center;
-    gap: var(--ac-space-3);
-    padding: var(--ac-space-3) var(--ac-space-4);
-    background: var(--ac-neutral-800);
-    color: var(--ac-white);
-    border-radius: var(--ac-radius-sm);
+    gap: var(--ac-sp-3);
+    padding: var(--ac-sp-3) var(--ac-sp-5);
+    background: var(--ac-slate-900);
+    color: var(--ac-text-inv);
+    border-radius: var(--ac-r);
     box-shadow: var(--ac-shadow-lg);
-    font-size: var(--ac-font-body);
-    min-width: 280px;
-    max-width: 420px;
+    font-size: var(--ac-font-base);
+    min-width: 300px;
+    max-width: 440px;
     pointer-events: auto;
-    animation: ac-toast-in 0.3s ease-out;
+    animation: ac-toastIn .35s var(--ac-ease);
 }
 
-.addonscare .ac-toast--success {
-    border-left: 4px solid var(--ac-success);
+.addonscare .ac-toast--success { border-left: 4px solid var(--ac-success); }
+.addonscare .ac-toast--warning { border-left: 4px solid var(--ac-warning); }
+.addonscare .ac-toast--error   { border-left: 4px solid var(--ac-danger); }
+.addonscare .ac-toast--info    { border-left: 4px solid var(--ac-info); }
+
+.addonscare .ac-toast--out {
+    animation: ac-toastOut .3s var(--ac-ease) forwards;
 }
 
-.addonscare .ac-toast--warning {
-    border-left: 4px solid var(--ac-warning);
+@keyframes ac-toastIn {
+    from { opacity: 0; transform: translateY(16px) scale(.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.addonscare .ac-toast--error {
-    border-left: 4px solid var(--ac-danger);
-}
-
-.addonscare .ac-toast--info {
-    border-left: 4px solid var(--ac-info);
-}
-
-.addonscare .ac-toast--fade-out {
-    animation: ac-toast-out 0.3s ease-in forwards;
-}
-
-@keyframes ac-toast-in {
-    from {
-        opacity: 0;
-        transform: translateX(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes ac-toast-out {
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateX(40px);
-    }
+@keyframes ac-toastOut {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(16px); }
 }
 
 /* =============================================================================
-   10. FORM — .ac-form
+   19. FORMS
    ============================================================================= */
-.addonscare .ac-form-group {
-    margin-bottom: var(--ac-space-4);
+.addonscare .ac-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 var(--ac-sp-6) 0;
 }
 
-.addonscare .ac-label {
+.addonscare .ac-fieldset__legend {
     display: block;
-    font-size: var(--ac-font-body);
-    font-weight: 500;
-    color: var(--ac-neutral-700);
-    margin-bottom: var(--ac-space-1);
+    font-size: var(--ac-font-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--ac-slate-400);
+    padding: 0;
+    margin-bottom: var(--ac-sp-1);
 }
 
-.addonscare .ac-form-control {
+.addonscare .ac-fieldset__hint {
+    font-size: var(--ac-font-sm);
+    color: var(--ac-slate-400);
+    margin: 0 0 var(--ac-sp-5) 0;
+}
+
+.addonscare .ac-field {
+    margin-bottom: var(--ac-sp-5);
+}
+
+.addonscare .ac-field__label {
+    display: block;
+    font-size: var(--ac-font-sm);
+    font-weight: 500;
+    color: var(--ac-slate-600);
+    margin-bottom: var(--ac-sp-2);
+}
+
+.addonscare .ac-input {
     display: block;
     width: 100%;
-    padding: 10px var(--ac-space-3);
+    padding: 10px var(--ac-sp-4);
     font-family: inherit;
-    font-size: var(--ac-font-body);
+    font-size: var(--ac-font-base);
     color: var(--ac-text);
-    background: var(--ac-white);
-    border: 1px solid var(--ac-neutral-300);
-    border-radius: var(--ac-radius-sm);
-    transition: border-color var(--ac-transition), box-shadow var(--ac-transition);
-    min-height: 44px;
+    background: white;
+    border: 1px solid var(--ac-slate-300);
+    border-radius: var(--ac-r-sm);
+    transition: border-color var(--ac-dur) var(--ac-ease), box-shadow var(--ac-dur) var(--ac-ease);
+    min-height: 42px;
     line-height: 1.4;
 }
 
-.addonscare .ac-form-control:focus {
+.addonscare .ac-input:focus {
     outline: none;
-    border-color: var(--ac-primary);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    border-color: var(--ac-accent);
+    box-shadow: 0 0 0 3px var(--ac-accent-glow);
 }
 
-.addonscare .ac-form-control::placeholder {
-    color: var(--ac-neutral-400);
+.addonscare .ac-input::placeholder {
+    color: var(--ac-slate-400);
 }
 
-/* Validation states */
-.addonscare .ac-form-control.ac-is-valid {
+/* Input wrapper with icon */
+.addonscare .ac-input-wrap {
+    position: relative;
+}
+
+.addonscare .ac-input-wrap .ac-input {
+    padding-right: 40px;
+}
+
+.addonscare .ac-input-wrap__icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.addonscare .ac-input-wrap--valid .ac-input {
     border-color: var(--ac-success);
 }
 
-.addonscare .ac-form-control.ac-is-valid:focus {
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+.addonscare .ac-input-wrap--valid .ac-input:focus {
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, .15);
 }
 
-.addonscare .ac-form-control.ac-is-invalid {
-    border-color: var(--ac-danger);
-}
-
-.addonscare .ac-form-control.ac-is-invalid:focus {
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
-}
-
-.addonscare .ac-form-feedback {
-    display: block;
-    font-size: var(--ac-font-small);
-    margin-top: var(--ac-space-1);
-    color: var(--ac-danger);
-}
-
-.addonscare .ac-form-feedback--valid {
+.addonscare .ac-input-wrap--valid .ac-input-wrap__icon {
     color: var(--ac-success);
 }
 
-/* Select */
-.addonscare select.ac-form-control {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236b7280' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    padding-right: 36px;
+.addonscare .ac-field__msg {
+    display: block;
+    font-size: var(--ac-font-xs);
+    margin-top: var(--ac-sp-1);
+    color: var(--ac-danger);
 }
 
-/* Textarea */
-.addonscare textarea.ac-form-control {
-    resize: vertical;
-    min-height: 80px;
+.addonscare .ac-field__msg--ok {
+    color: var(--ac-success);
 }
 
 /* Toggle switch */
-.addonscare .ac-toggle {
+.addonscare .ac-switch {
     display: inline-flex;
     align-items: center;
-    gap: var(--ac-space-3);
+    gap: var(--ac-sp-3);
     cursor: pointer;
     user-select: none;
 }
 
-.addonscare .ac-toggle__input {
+.addonscare .ac-switch__input {
     position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-.addonscare .ac-toggle__track {
+.addonscare .ac-switch__slider {
     position: relative;
     width: 44px;
     height: 24px;
-    background: var(--ac-neutral-300);
-    border-radius: var(--ac-radius-full);
-    transition: background var(--ac-transition);
+    background: var(--ac-slate-300);
+    border-radius: var(--ac-r-full);
+    transition: background var(--ac-dur) var(--ac-ease);
     flex-shrink: 0;
 }
 
-.addonscare .ac-toggle__track::after {
+.addonscare .ac-switch__slider::after {
     content: '';
     position: absolute;
     top: 2px;
     left: 2px;
     width: 20px;
     height: 20px;
-    background: var(--ac-white);
+    background: white;
     border-radius: 50%;
-    transition: transform var(--ac-transition);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform var(--ac-dur) var(--ac-ease);
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
 }
 
-.addonscare .ac-toggle__input:checked+.ac-toggle__track {
-    background: var(--ac-primary);
+.addonscare .ac-switch__input:checked + .ac-switch__slider {
+    background: var(--ac-accent);
 }
 
-.addonscare .ac-toggle__input:checked+.ac-toggle__track::after {
+.addonscare .ac-switch__input:checked + .ac-switch__slider::after {
     transform: translateX(20px);
 }
 
-.addonscare .ac-toggle__label {
-    font-size: var(--ac-font-body);
-    color: var(--ac-neutral-700);
+.addonscare .ac-switch__text {
+    font-size: var(--ac-font-base);
+    color: var(--ac-slate-600);
+}
+
+/* Radio card */
+.addonscare .ac-radio-group {
+    display: flex;
+    gap: var(--ac-sp-3);
+}
+
+.addonscare .ac-radio-card {
+    cursor: pointer;
+    flex: 1;
+}
+
+.addonscare .ac-radio-card__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.addonscare .ac-radio-card__box {
+    display: flex;
+    align-items: center;
+    gap: var(--ac-sp-3);
+    padding: var(--ac-sp-3) var(--ac-sp-4);
+    border: 2px solid var(--ac-slate-200);
+    border-radius: var(--ac-r-sm);
+    font-size: var(--ac-font-base);
+    color: var(--ac-slate-600);
+    transition: all var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-radio-card__dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--ac-slate-300);
+    position: relative;
+    flex-shrink: 0;
+    transition: all var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-radio-card__input:checked ~ .ac-radio-card__box {
+    border-color: var(--ac-accent);
+    background: var(--ac-accent-soft);
+    color: var(--ac-accent-hover);
+}
+
+.addonscare .ac-radio-card__input:checked ~ .ac-radio-card__box .ac-radio-card__dot {
+    border-color: var(--ac-accent);
+    background: var(--ac-accent);
+    box-shadow: inset 0 0 0 3px white;
 }
 
 /* Checkbox */
-.addonscare .ac-checkbox {
+.addonscare .ac-check-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ac-sp-3);
+}
+
+.addonscare .ac-check {
     display: inline-flex;
     align-items: center;
-    gap: var(--ac-space-2);
+    gap: var(--ac-sp-3);
     cursor: pointer;
     user-select: none;
 }
 
-.addonscare .ac-checkbox__input {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--ac-primary);
-    cursor: pointer;
+.addonscare .ac-check__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-.addonscare .ac-checkbox__label {
-    font-size: var(--ac-font-body);
-    color: var(--ac-neutral-700);
-}
-
-/* Radio */
-.addonscare .ac-radio {
-    display: inline-flex;
+.addonscare .ac-check__box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ac-slate-300);
+    border-radius: 5px;
+    flex-shrink: 0;
+    display: flex;
     align-items: center;
-    gap: var(--ac-space-2);
-    cursor: pointer;
-    user-select: none;
+    justify-content: center;
+    transition: all var(--ac-dur) var(--ac-ease);
 }
 
-.addonscare .ac-radio__input {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--ac-primary);
-    cursor: pointer;
+.addonscare .ac-check__box::after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    transition: transform var(--ac-dur) var(--ac-ease);
 }
 
-.addonscare .ac-radio__label {
-    font-size: var(--ac-font-body);
-    color: var(--ac-neutral-700);
+.addonscare .ac-check__input:checked ~ .ac-check__box {
+    background: var(--ac-accent);
+    border-color: var(--ac-accent);
 }
 
-/* Form section divider */
-.addonscare .ac-form-section {
-    margin: var(--ac-space-6) 0 var(--ac-space-3);
-    padding-bottom: var(--ac-space-2);
-    border-bottom: 1px solid var(--ac-border);
+.addonscare .ac-check__input:checked ~ .ac-check__box::after {
+    transform: rotate(45deg) scale(1);
 }
 
-.addonscare .ac-form-section:first-child {
-    margin-top: 0;
-}
-
-.addonscare .ac-form-section__title {
-    font-size: var(--ac-font-body);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--ac-neutral-500);
-    margin: 0;
-}
-
-.addonscare .ac-form-section__desc {
-    font-size: var(--ac-font-small);
-    color: var(--ac-text-muted);
-    margin: var(--ac-space-1) 0 0;
+.addonscare .ac-check__text {
+    font-size: var(--ac-font-base);
+    color: var(--ac-slate-600);
 }
 
 /* =============================================================================
-   11. BADGE — .ac-badge
+   20. LOADER / SPINNER
    ============================================================================= */
-.addonscare .ac-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 2px 10px;
-    font-size: var(--ac-font-small);
-    font-weight: 500;
-    border-radius: var(--ac-radius-full);
-    line-height: 1.5;
-    white-space: nowrap;
-}
-
-.addonscare .ac-badge--primary {
-    background: var(--ac-primary-light);
-    color: var(--ac-primary);
-}
-
-.addonscare .ac-badge--success {
-    background: var(--ac-success-light);
-    color: #059669;
-}
-
-.addonscare .ac-badge--warning {
-    background: var(--ac-warning-light);
-    color: #b45309;
-}
-
-.addonscare .ac-badge--danger {
-    background: var(--ac-danger-light);
-    color: #dc2626;
-}
-
-.addonscare .ac-badge--info {
-    background: var(--ac-info-light);
-    color: #2563eb;
-}
-
-.addonscare .ac-badge--neutral {
-    background: var(--ac-neutral-100);
-    color: var(--ac-neutral-600);
-}
-
-/* =============================================================================
-   12. TABLE — .ac-table
-   ============================================================================= */
-.addonscare .ac-table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.addonscare .ac-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: var(--ac-font-body);
-}
-
-.addonscare .ac-table th {
-    padding: var(--ac-space-3) var(--ac-space-4);
-    text-align: left;
-    font-weight: 600;
-    font-size: var(--ac-font-small);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--ac-neutral-500);
-    background: var(--ac-neutral-50);
-    border-bottom: 1px solid var(--ac-border);
-    white-space: nowrap;
-}
-
-.addonscare .ac-table td {
-    padding: var(--ac-space-3) var(--ac-space-4);
-    border-bottom: 1px solid var(--ac-border);
-    color: var(--ac-text);
-}
-
-.addonscare .ac-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.addonscare .ac-table tbody tr:hover {
-    background: var(--ac-neutral-50);
-}
-
-/* =============================================================================
-   13. LOADER — .ac-spinner
-   ============================================================================= */
-.addonscare .ac-spinner {
+.addonscare .ac-ring {
     display: inline-block;
     width: 32px;
     height: 32px;
-    border: 3px solid var(--ac-neutral-200);
-    border-top-color: var(--ac-primary);
+    border: 3px solid var(--ac-slate-200);
+    border-top-color: var(--ac-accent);
     border-radius: 50%;
-    animation: ac-spin 0.7s linear infinite;
+    animation: ac-spin .7s linear infinite;
 }
 
-.addonscare .ac-spinner--sm {
-    width: 20px;
-    height: 20px;
-    border-width: 2px;
-}
+.addonscare .ac-ring--sm { width: 20px; height: 20px; border-width: 2px; }
+.addonscare .ac-ring--lg { width: 48px; height: 48px; border-width: 4px; }
 
-.addonscare .ac-spinner--lg {
-    width: 48px;
-    height: 48px;
-    border-width: 4px;
-}
-
-.addonscare .ac-loader {
+.addonscare .ac-loading-state {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--ac-space-3);
-    padding: var(--ac-space-10) 0;
-    color: var(--ac-text-muted);
+    gap: var(--ac-sp-3);
+    padding: var(--ac-sp-10) 0;
+    color: var(--ac-slate-400);
+    font-size: var(--ac-font-sm);
 }
 
 /* =============================================================================
-   14. EMPTY STATE — .ac-empty-state
+   21. EMPTY STATE
    ============================================================================= */
-.addonscare .ac-empty-state {
+.addonscare .ac-empty {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    padding: var(--ac-space-12) var(--ac-space-6);
+    padding: var(--ac-sp-12) var(--ac-sp-6);
 }
 
-.addonscare .ac-empty-state__icon {
-    font-size: 3rem;
-    margin-bottom: var(--ac-space-4);
-    opacity: 0.4;
+.addonscare .ac-empty__visual {
+    margin-bottom: var(--ac-sp-5);
+    color: var(--ac-slate-300);
 }
 
-.addonscare .ac-empty-state__title {
-    font-size: var(--ac-font-h2);
-    color: var(--ac-neutral-700);
-    margin-bottom: var(--ac-space-2);
+.addonscare .ac-empty__title {
+    font-size: var(--ac-font-xl);
+    color: var(--ac-slate-700);
+    margin-bottom: var(--ac-sp-2);
 }
 
-.addonscare .ac-empty-state__desc {
-    color: var(--ac-text-muted);
-    margin-bottom: var(--ac-space-5);
+.addonscare .ac-empty__desc {
+    color: var(--ac-slate-400);
+    margin-bottom: var(--ac-sp-6);
     max-width: 320px;
 }
 
 /* =============================================================================
-   15. PAGINATION — .ac-pagination
+   22. UTILITY CLASSES
    ============================================================================= */
-.addonscare .ac-pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--ac-space-1);
-    padding: var(--ac-space-4) 0;
-}
-
-.addonscare .ac-pagination__btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 36px;
-    min-height: 36px;
-    padding: var(--ac-space-1) var(--ac-space-2);
-    font-family: inherit;
-    font-size: var(--ac-font-body);
-    font-weight: 500;
-    color: var(--ac-neutral-600);
-    background: var(--ac-white);
-    border: 1px solid var(--ac-border);
-    border-radius: var(--ac-radius-sm);
-    cursor: pointer;
-    transition: background var(--ac-transition), color var(--ac-transition), border-color var(--ac-transition);
-}
-
-.addonscare .ac-pagination__btn:hover {
-    background: var(--ac-neutral-50);
-    border-color: var(--ac-neutral-300);
-}
-
-.addonscare .ac-pagination__btn--active {
-    background: var(--ac-primary);
-    color: var(--ac-white);
-    border-color: var(--ac-primary);
-}
-
-.addonscare .ac-pagination__btn--active:hover {
-    background: var(--ac-primary-hover);
-}
-
-.addonscare .ac-pagination__btn:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-.addonscare .ac-pagination__ellipsis {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 36px;
-    color: var(--ac-neutral-400);
-    font-size: var(--ac-font-body);
-    cursor: default;
-}
+.addonscare .ac-mt-2 { margin-top: var(--ac-sp-2); }
+.addonscare .ac-mt-4 { margin-top: var(--ac-sp-4); }
+.addonscare .ac-mt-6 { margin-top: var(--ac-sp-6); }
+.addonscare .ac-mb-2 { margin-bottom: var(--ac-sp-2); }
+.addonscare .ac-mb-4 { margin-bottom: var(--ac-sp-4); }
+.addonscare .ac-mb-6 { margin-bottom: var(--ac-sp-6); }
+.addonscare .ac-flex { display: flex; }
+.addonscare .ac-flex-col { flex-direction: column; }
+.addonscare .ac-flex-wrap { flex-wrap: wrap; }
+.addonscare .ac-items-center { align-items: center; }
+.addonscare .ac-justify-between { justify-content: space-between; }
+.addonscare .ac-gap-2 { gap: var(--ac-sp-2); }
+.addonscare .ac-gap-3 { gap: var(--ac-sp-3); }
+.addonscare .ac-gap-4 { gap: var(--ac-sp-4); }
+.addonscare .ac-text-center { text-align: center; }
 
 /* =============================================================================
-   16. UTILITY CLASSES
-   ============================================================================= */
-.addonscare .ac-mt-2 {
-    margin-top: var(--ac-space-2);
-}
-
-.addonscare .ac-mt-4 {
-    margin-top: var(--ac-space-4);
-}
-
-.addonscare .ac-mt-6 {
-    margin-top: var(--ac-space-6);
-}
-
-.addonscare .ac-mb-2 {
-    margin-bottom: var(--ac-space-2);
-}
-
-.addonscare .ac-mb-4 {
-    margin-bottom: var(--ac-space-4);
-}
-
-.addonscare .ac-mr-2 {
-    margin-right: var(--ac-space-2);
-}
-
-.addonscare .ac-p-4 {
-    padding: var(--ac-space-4);
-}
-
-.addonscare .ac-p-5 {
-    padding: var(--ac-space-5);
-}
-
-.addonscare .ac-flex {
-    display: flex;
-}
-
-.addonscare .ac-flex-wrap {
-    flex-wrap: wrap;
-}
-
-.addonscare .ac-flex-col {
-    flex-direction: column;
-}
-
-.addonscare .ac-items-center {
-    align-items: center;
-}
-
-.addonscare .ac-justify-between {
-    justify-content: space-between;
-}
-
-.addonscare .ac-justify-end {
-    justify-content: flex-end;
-}
-
-.addonscare .ac-gap-2 {
-    gap: var(--ac-space-2);
-}
-
-.addonscare .ac-gap-3 {
-    gap: var(--ac-space-3);
-}
-
-.addonscare .ac-gap-4 {
-    gap: var(--ac-space-4);
-}
-
-.addonscare .ac-text-sm {
-    font-size: var(--ac-font-small);
-}
-
-.addonscare .ac-text-muted {
-    color: var(--ac-text-muted);
-}
-
-.addonscare .ac-text-center {
-    text-align: center;
-}
-
-.addonscare .ac-text-danger {
-    color: var(--ac-danger);
-}
-
-.addonscare .ac-fw-600 {
-    font-weight: 600;
-}
-
-.addonscare .ac-sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
-
-/* Component showcase label */
-.addonscare .ac-demo-label {
-    font-size: var(--ac-font-small);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--ac-neutral-400);
-    margin-bottom: var(--ac-space-2);
-}
-
-/* =============================================================================
-   17. RESPONSIVE
+   23. RESPONSIVE
    ============================================================================= */
 
-/* Tablet ≤ 992px */
-@media (max-width: 992px) {
-    .addonscare .ac-container {
-        padding: var(--ac-space-4);
-    }
-
-    .addonscare .ac-grid {
+/* Tablet <= 1024px */
+@media (max-width: 1024px) {
+    .addonscare .ac-stat-row {
         grid-template-columns: 1fr 1fr;
     }
-}
 
-/* Mobile ≤ 768px */
-@media (max-width: 768px) {
-    .addonscare .ac-container {
-        padding: var(--ac-space-3);
-    }
-
-    .addonscare .ac-grid {
+    .addonscare .ac-trio {
         grid-template-columns: 1fr;
     }
 
-    .addonscare .ac-btn:not(.ac-btn--sm):not(.ac-btn--ghost) {
-        width: 100%;
+    .addonscare .ac-topbar__toggle {
+        display: flex;
     }
 
-    .addonscare .ac-card__header {
+    .addonscare .ac-sidebar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+        z-index: 200;
+        box-shadow: 4px 0 24px rgba(0,0,0,.2);
+    }
+
+    .addonscare .ac-sidebar--open {
+        transform: translateX(0);
+    }
+
+    .addonscare .ac-layout {
+        position: relative;
+    }
+}
+
+/* Mobile <= 768px */
+@media (max-width: 768px) {
+    .addonscare .ac-content {
+        padding: var(--ac-sp-4);
+    }
+
+    .addonscare .ac-stat-row {
+        grid-template-columns: 1fr;
+    }
+
+    .addonscare .ac-duo {
+        grid-template-columns: 1fr;
+    }
+
+    .addonscare .ac-action-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .addonscare .ac-radio-group {
+        flex-direction: column;
+    }
+
+    .addonscare .ac-card__top {
         flex-direction: column;
         align-items: flex-start;
-        gap: var(--ac-space-2);
+        gap: var(--ac-sp-3);
     }
 
-    .addonscare .ac-card__footer {
+    .addonscare .ac-card__bottom--actions {
         flex-direction: column;
     }
 
-    .addonscare .ac-card__footer .ac-btn {
+    .addonscare .ac-card__bottom--actions .ac-btn {
         width: 100%;
     }
 
-    .addonscare .ac-modal {
+    .addonscare .ac-dialog {
         max-width: 100%;
-        margin: var(--ac-space-3);
-        max-height: calc(100vh - 24px);
+        margin: var(--ac-sp-3);
     }
 
-    .addonscare .ac-toast-container {
-        left: var(--ac-space-3);
-        right: var(--ac-space-3);
+    .addonscare .ac-toast-rack {
+        left: var(--ac-sp-4);
+        right: var(--ac-sp-4);
+        bottom: var(--ac-sp-4);
     }
 
     .addonscare .ac-toast {
@@ -1158,18 +1461,26 @@
         max-width: 100%;
     }
 
-    .addonscare .ac-pagination {
+    .addonscare .ac-pager {
         flex-wrap: wrap;
+    }
+
+    .addonscare .ac-topbar {
+        padding: var(--ac-sp-3) var(--ac-sp-4);
     }
 }
 
 /* =============================================================================
-   18. PRINT
+   24. PRINT
    ============================================================================= */
 @media print {
-
-    .addonscare .ac-modal-overlay,
-    .addonscare .ac-toast-container {
+    .addonscare .ac-sidebar,
+    .addonscare .ac-overlay,
+    .addonscare .ac-toast-rack {
         display: none !important;
+    }
+
+    .addonscare .ac-main {
+        margin-left: 0;
     }
 }
