@@ -31,7 +31,7 @@ if (!defined('WHMCS')) {
 // ---------------------------------------------------------------------------
 // Module configuration
 // ---------------------------------------------------------------------------
-function addons_care_config(): array
+function addons_care_config()
 {
     return [
         'name'        => 'Addons Care',
@@ -63,7 +63,7 @@ function addons_care_config(): array
 // ---------------------------------------------------------------------------
 // Lifecycle hooks
 // ---------------------------------------------------------------------------
-function addons_care_activate(): array
+function addons_care_activate()
 {
     return [
         'status'      => 'success',
@@ -71,7 +71,7 @@ function addons_care_activate(): array
     ];
 }
 
-function addons_care_deactivate(): array
+function addons_care_deactivate()
 {
     return [
         'status'      => 'success',
@@ -79,7 +79,7 @@ function addons_care_deactivate(): array
     ];
 }
 
-function addons_care_upgrade(array $vars): void
+function addons_care_upgrade(array $vars)
 {
     // Run any DB migrations here on version upgrades.
 }
@@ -87,7 +87,7 @@ function addons_care_upgrade(array $vars): void
 // ---------------------------------------------------------------------------
 // Admin area output
 // ---------------------------------------------------------------------------
-function addons_care_output(array $vars): void
+function addons_care_output(array $vars)
 {
     $moduleDir = dirname(__FILE__);
     $whmcsUrl  = rtrim($vars['whmcsurl'] ?? '', '/');
@@ -188,7 +188,7 @@ function addons_care_output(array $vars): void
 // ---------------------------------------------------------------------------
 // Client area (disabled - admin-only module)
 // ---------------------------------------------------------------------------
-function addons_care_clientarea(array $vars): array
+function addons_care_clientarea(array $vars)
 {
     return [];
 }

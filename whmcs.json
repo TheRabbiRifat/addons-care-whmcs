@@ -1,7 +1,28 @@
 {
+    "schema": "1.0",
+    "type": "whmcs-addons",
     "name": "Addons Care",
-    "description": "Addons Care component system showcase for WHMCS admin.",
-    "version": "1.0.0",
-    "author": "Addons Care",
-    "license": "proprietary"
+    "license": "proprietary",
+    "category": "addon",
+    "description": {
+        "name": "Addons Care",
+        "tagline": "Addons Care component system showcase for WHMCS admin.",
+        "long": "This Addons Care component system showcase integrates seamlessly into the WHMCS admin panel. It provides a comprehensive UI demonstration for the addons-care framework.",
+        "features": [
+            "Demonstrate a beautifully styled admin area module",
+            "Showcase scalable statistics and services UI"
+        ]
+    },
+    "logo": {
+        "filename": "logo.png"
+    },
+    "support": {
+        "homepage": "https://addonscare.com",
+        "email": "support@addonscare.com"
+    },
+    "authors": [
+        {
+            "name": "Addons Care"
+        }
+    ]
 }
