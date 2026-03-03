@@ -1,73 +1,179 @@
 /**
- * Addons Care - Module-Specific Script
+ * AddonsCare UI System — Vanilla JS
  * =============================================================================
- * Boots the AC engine and wires up all demo interactions on this page.
- * Depends on: assets/addonscare.js (loaded before this file).
+ * Lightweight interactions: Tabs, Modal, Toast, Alert dismiss.
+ * No jQuery. No external dependencies.
  * =============================================================================
  */
-
 (function () {
     'use strict';
 
-    // -------------------------------------------------------------------------
-    // Boot: called after DOM is ready
-    // -------------------------------------------------------------------------
+    var root;
+
+    // ---------------------------------------------------------------------------
+    // Boot
+    // ---------------------------------------------------------------------------
     function boot() {
-        var root = document.querySelector('.addonscare');
+        root = document.querySelector('.addonscare');
         if (!root) return;
 
-        // Initialise all AC components (idempotent - safe to call multiple times)
-        if (window.AC && typeof window.AC.init === 'function') {
-            window.AC.init();
-        }
-
-        initToastButtons(root);
-        initSettingsForm(root);
-        initPagination(root);
-        initRowActions(root);
-        initStatCounters(root);
-        initSkeletonToggle(root);
-        initTabHashSync(root);
+        initTabs();
+        initModals();
+        initAlertDismiss();
+        initToastButtons();
+        initSettingsForm();
+        initPagination();
     }
 
-    // -------------------------------------------------------------------------
-    // Demo toast trigger buttons (data-demo-toast="success|error|warning|info")
-    // -------------------------------------------------------------------------
-    function initToastButtons(root) {
-        var messages = {
-            success: 'Operation completed successfully.',
-            error:   'Something went wrong. Please try again.',
-            warning: 'This action may have side effects.',
-            info:    'Settings are saved automatically.'
-        };
+    // ---------------------------------------------------------------------------
+    // 1. TABS — click handler toggles active tab + panel
+    // ---------------------------------------------------------------------------
+    function initTabs() {
+        root.querySelectorAll('.ac-tabs').forEach(function (tabGroup) {
+            var nav = tabGroup.querySelector('.ac-tabs__nav');
+            if (!nav) return;
 
-        root.querySelectorAll('[data-demo-toast]').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var type = btn.getAttribute('data-demo-toast') || 'success';
-                if (window.AC && window.AC.Toast) {
-                    var fn = window.AC.Toast[type];
-                    if (typeof fn === 'function') {
-                        fn.call(window.AC.Toast, messages[type] || messages.info);
-                    } else {
-                        window.AC.Toast.show(messages.info, type);
-                    }
+            nav.addEventListener('click', function (e) {
+                var tab = e.target.closest('.ac-tabs__tab');
+                if (!tab) return;
+
+                // Deactivate siblings
+                nav.querySelectorAll('.ac-tabs__tab').forEach(function (t) {
+                    t.classList.remove('ac-tabs__tab--active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+
+                // Activate clicked tab
+                tab.classList.add('ac-tabs__tab--active');
+                tab.setAttribute('aria-selected', 'true');
+
+                // Toggle panels
+                var panelId = tab.getAttribute('aria-controls');
+                var panels = tabGroup.querySelector('.ac-tabs__panels');
+                if (panels) {
+                    panels.querySelectorAll('.ac-tabs__panel').forEach(function (p) {
+                        p.classList.remove('ac-tabs__panel--active');
+                    });
+                    var target = panels.querySelector('#' + panelId);
+                    if (target) target.classList.add('ac-tabs__panel--active');
                 }
             });
         });
     }
 
-    // -------------------------------------------------------------------------
-    // Settings form: fake save with loading state -> success toast
-    // -------------------------------------------------------------------------
-    function initSettingsForm(root) {
+    // ---------------------------------------------------------------------------
+    // 2. MODALS — open via data-ac-modal, close via data-ac-close / overlay / ESC
+    // ---------------------------------------------------------------------------
+    function initModals() {
+        // Open triggers
+        root.querySelectorAll('[data-ac-modal]').forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                var id = btn.getAttribute('data-ac-modal');
+                var overlay = root.querySelector(id);
+                if (overlay) overlay.classList.add('ac-modal-overlay--visible');
+            });
+        });
+
+        // Close triggers (buttons inside modal)
+        root.querySelectorAll('[data-ac-close]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var overlay = btn.closest('.ac-modal-overlay');
+                if (overlay) overlay.classList.remove('ac-modal-overlay--visible');
+            });
+        });
+
+        // Close on overlay click (outside modal box)
+        root.querySelectorAll('.ac-modal-overlay').forEach(function (overlay) {
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) {
+                    overlay.classList.remove('ac-modal-overlay--visible');
+                }
+            });
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                var visible = root.querySelector('.ac-modal-overlay--visible');
+                if (visible) visible.classList.remove('ac-modal-overlay--visible');
+            }
+        });
+    }
+
+    // ---------------------------------------------------------------------------
+    // 3. TOAST — AC.toast(message, type) API
+    // ---------------------------------------------------------------------------
+    function showToast(message, type) {
+        var container = root.querySelector('#ac-toast-container');
+        if (!container) return;
+
+        var icons = { success: '\u2713', warning: '\u26A0', error: '\u2717', info: '\u2139' };
+
+        var toast = document.createElement('div');
+        toast.className = 'ac-toast ac-toast--' + (type || 'info');
+        toast.innerHTML = '<span>' + (icons[type] || icons.info) + '</span><span>' + message + '</span>';
+        container.appendChild(toast);
+
+        // Auto-remove after 4 seconds
+        setTimeout(function () {
+            toast.classList.add('ac-toast--fade-out');
+            setTimeout(function () {
+                if (toast.parentNode) toast.parentNode.removeChild(toast);
+            }, 300);
+        }, 4000);
+    }
+
+    // Expose globally
+    window.AC = window.AC || {};
+    window.AC.toast = showToast;
+
+    // ---------------------------------------------------------------------------
+    // 4. ALERT DISMISS — data-ac-dismiss="alert"
+    // ---------------------------------------------------------------------------
+    function initAlertDismiss() {
+        root.querySelectorAll('[data-ac-dismiss="alert"]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var alert = btn.closest('.ac-alert');
+                if (!alert) return;
+                alert.classList.add('ac-alert--fade-out');
+                setTimeout(function () {
+                    if (alert.parentNode) alert.parentNode.removeChild(alert);
+                }, 200);
+            });
+        });
+    }
+
+    // ---------------------------------------------------------------------------
+    // Demo: toast trigger buttons
+    // ---------------------------------------------------------------------------
+    function initToastButtons() {
+        var messages = {
+            success: 'Operation completed successfully.',
+            error: 'Something went wrong. Please try again.',
+            warning: 'This action may have side effects.',
+            info: 'Settings are saved automatically.'
+        };
+
+        root.querySelectorAll('[data-demo-toast]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var type = btn.getAttribute('data-demo-toast') || 'info';
+                showToast(messages[type] || messages.info, type);
+            });
+        });
+    }
+
+    // ---------------------------------------------------------------------------
+    // Demo: settings form fake save
+    // ---------------------------------------------------------------------------
+    function initSettingsForm() {
         var form = root.querySelector('#ac-settings-form');
         if (!form) return;
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-
             var btn = root.querySelector('[type="submit"][form="ac-settings-form"]')
-                   || form.querySelector('[type="submit"]');
+                || form.querySelector('[type="submit"]');
             if (!btn) return;
 
             var label = btn.textContent;
@@ -78,140 +184,33 @@
                 btn.classList.remove('ac-btn--loading');
                 btn.disabled = false;
                 btn.textContent = label;
-
-                if (window.AC && window.AC.Toast) {
-                    window.AC.Toast.success('Settings saved successfully.');
-                }
+                showToast('Settings saved successfully.', 'success');
             }, 1400);
         });
     }
 
-    // -------------------------------------------------------------------------
-    // Pagination demo: highlight clicked page number
-    // -------------------------------------------------------------------------
-    function initPagination(root) {
+    // ---------------------------------------------------------------------------
+    // Demo: pagination highlight
+    // ---------------------------------------------------------------------------
+    function initPagination() {
         root.querySelectorAll('.ac-pagination__btn').forEach(function (btn) {
             btn.addEventListener('click', function () {
-                var item = btn.closest('.ac-pagination__item');
-                if (!item || item.classList.contains('ac-pagination__item--disabled')) return;
-
-                var list = item.closest('.ac-pagination__list');
-                if (list) {
-                    list.querySelectorAll('.ac-pagination__item--active').forEach(function (a) {
-                        a.classList.remove('ac-pagination__item--active');
-                    });
-                }
-
+                if (btn.disabled) return;
                 var text = btn.textContent.trim();
-                if (!isNaN(parseInt(text, 10))) {
-                    item.classList.add('ac-pagination__item--active');
-                    if (window.AC && window.AC.Toast) {
-                        window.AC.Toast.info('Loading page ' + text);
-                    }
-                }
+                if (isNaN(parseInt(text, 10))) return;
+
+                root.querySelectorAll('.ac-pagination__btn--active').forEach(function (a) {
+                    a.classList.remove('ac-pagination__btn--active');
+                });
+                btn.classList.add('ac-pagination__btn--active');
+                showToast('Loading page ' + text, 'info');
             });
         });
     }
 
-    // -------------------------------------------------------------------------
-    // Row actions: delete triggers the confirm modal
-    // -------------------------------------------------------------------------
-    function initRowActions(root) {
-        // Open confirm modal and store target service ID
-        root.querySelectorAll('[data-action-delete]').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var id = btn.getAttribute('data-action-delete');
-                var modal = root.querySelector('#ac-confirm-modal');
-                if (modal) modal.setAttribute('data-target-id', id);
-
-                if (window.AC && window.AC.Modal) {
-                    window.AC.Modal.show('#ac-confirm-modal');
-                }
-            });
-        });
-
-        // Confirm deletion button inside modal
-        root.querySelectorAll('[data-ac-confirm-delete]').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var modal = root.querySelector('#ac-confirm-modal');
-                var id = modal ? modal.getAttribute('data-target-id') : '';
-
-                if (window.AC) {
-                    if (window.AC.Modal) window.AC.Modal.close('#ac-confirm-modal');
-                    if (window.AC.Toast) window.AC.Toast.success('Service #' + id + ' deleted.');
-                }
-            });
-        });
-
-        // Retry buttons on error state panels
-        root.querySelectorAll('[data-demo-retry]').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                if (window.AC && window.AC.Toast) {
-                    window.AC.Toast.info('Retrying...');
-                }
-            });
-        });
-    }
-
-    // -------------------------------------------------------------------------
-    // Stat card counters: animate number from 0 to displayed value
-    // -------------------------------------------------------------------------
-    function initStatCounters(root) {
-        root.querySelectorAll('.ac-stat-card__value[data-count-to]').forEach(function (el) {
-            var target = parseInt(el.getAttribute('data-count-to'), 10);
-            if (isNaN(target)) return;
-
-            var duration  = 900;
-            var interval  = 16;
-            var steps     = Math.ceil(duration / interval);
-            var increment = target / steps;
-            var current   = 0;
-
-            var timer = setInterval(function () {
-                current = Math.min(current + increment, target);
-                el.textContent = Math.round(current).toLocaleString();
-                if (current >= target) clearInterval(timer);
-            }, interval);
-        });
-    }
-
-    // -------------------------------------------------------------------------
-    // Skeleton loader toggle button
-    // -------------------------------------------------------------------------
-    function initSkeletonToggle(root) {
-        var btn  = root.querySelector('#ac-toggle-skeleton');
-        var demo = root.querySelector('#ac-skeleton-demo');
-        if (!btn || !demo) return;
-
-        btn.addEventListener('click', function () {
-            demo.classList.toggle('ac-d-none');
-            btn.textContent = demo.classList.contains('ac-d-none') ? 'Show' : 'Hide';
-        });
-    }
-
-    // -------------------------------------------------------------------------
-    // Tab URL hash sync: update hash on click, restore on page load
-    // -------------------------------------------------------------------------
-    function initTabHashSync(root) {
-        root.querySelectorAll('.ac-tabs__tab').forEach(function (tab) {
-            tab.addEventListener('click', function () {
-                var panel = tab.getAttribute('aria-controls');
-                if (panel && window.history && window.history.replaceState) {
-                    window.history.replaceState(null, '', '#' + panel);
-                }
-            });
-        });
-
-        var hash = window.location.hash.replace('#', '');
-        if (hash) {
-            var target = root.querySelector('[aria-controls="' + hash + '"]');
-            if (target) target.click();
-        }
-    }
-
-    // -------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------
     // Entry point
-    // -------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', boot);
     } else {

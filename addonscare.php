@@ -9,11 +9,9 @@
  *
  * Files:
  *   addonscare.php        - This file (module descriptor + output hook)
- *   assets/addonscare.css - Bundled AC framework CSS (all components)
- *   assets/addonscare.js  - Bundled AC framework JS
- *   assets/style.css       - Module-specific CSS overrides
- *   assets/script.js       - Module-specific JS (wires demo interactions)
- *   templates/admin.tpl    - Smarty template (admin panel UI)
+ *   assets/style.css      - Scoped AC design system CSS (all components)
+ *   assets/script.js      - Vanilla JS (tabs, modal, toast, alerts)
+ *   templates/admin.tpl   - Smarty template (admin panel UI)
  *
  * Install:
  *   1. Copy /addonscare/ into /whmcs/modules/addons/addonscare/
@@ -167,7 +165,6 @@ function addonscare_output(array $vars)
     echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
     echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
     echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">';
-    echo '<link rel="stylesheet" href="' . htmlspecialchars($assetUrl, ENT_QUOTES, 'UTF-8') . 'addonscare.css">';
     echo '<link rel="stylesheet" href="' . htmlspecialchars($assetUrl, ENT_QUOTES, 'UTF-8') . 'style.css">';
 
     // Render Smarty template
@@ -181,7 +178,6 @@ function addonscare_output(array $vars)
     $smarty->display('admin.tpl');
 
     // Inject JS after content
-    echo '<script src="' . htmlspecialchars($assetUrl, ENT_QUOTES, 'UTF-8') . 'addonscare.js"></script>';
     echo '<script src="' . htmlspecialchars($assetUrl, ENT_QUOTES, 'UTF-8') . 'script.js"></script>';
 }
 
