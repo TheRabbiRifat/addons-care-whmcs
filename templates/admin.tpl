@@ -172,6 +172,33 @@
           </div>
         </div>
 
+        {* Progress / Quota *}
+        <div class="ac-card ac-card--glass ac-mt-6">
+          <div class="ac-card__top">
+            <h3 class="ac-card__title">System Quotas</h3>
+          </div>
+          <div class="ac-card__inner ac-flex ac-flex-col ac-gap-4">
+            <div class="ac-progress-wrap">
+              <div class="ac-progress-wrap__header">
+                <span>Storage Space</span>
+                <span class="ac-progress-wrap__value">45 GB / 100 GB</span>
+              </div>
+              <div class="ac-progress">
+                <div class="ac-progress__bar" style="width: 45%;"></div>
+              </div>
+            </div>
+            <div class="ac-progress-wrap">
+              <div class="ac-progress-wrap__header">
+                <span>Bandwidth</span>
+                <span class="ac-progress-wrap__value">850 GB / 1000 GB</span>
+              </div>
+              <div class="ac-progress">
+                <div class="ac-progress__bar ac-progress__bar--warning" style="width: 85%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
       {* PANEL 2: SERVICES *}
@@ -189,6 +216,15 @@
               </button>
             </div>
           </div>
+          <div class="ac-filter-bar">
+            <div class="ac-filter-bar__search">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" class="ac-input" placeholder="Search services...">
+            </div>
+            <div class="ac-filter-bar__actions">
+              <button class="ac-btn ac-btn--outline ac-btn--sm">Filter</button>
+            </div>
+          </div>
           <div class="ac-card__inner ac-card__inner--flush">
             <div class="ac-table-wrap">
               <table class="ac-table">
@@ -200,6 +236,7 @@
                     <th>Status</th>
                     <th>Amount</th>
                     <th>Next Due</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -234,6 +271,19 @@
                     </td>
                     <td><strong>{$svc.amount}</strong></td>
                     <td class="ac-text-dim">{$svc.next_due}</td>
+                    <td style="text-align: right;">
+                      <div class="ac-dropdown">
+                        <button class="ac-btn ac-btn--ghost ac-btn--sm" data-ac-dropdown>
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+                        </button>
+                        <div class="ac-dropdown__menu">
+                          <button class="ac-dropdown__item">View Details</button>
+                          <button class="ac-dropdown__item">Edit Record</button>
+                          <div class="ac-dropdown__divider"></div>
+                          <button class="ac-dropdown__item ac-dropdown__item--danger">Suspend Service</button>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                   {/foreach}
                 </tbody>
@@ -360,6 +410,46 @@
                 </div>
               </fieldset>
 
+              <fieldset class="ac-fieldset">
+                <legend class="ac-fieldset__legend">Advanced Configuration</legend>
+                
+                <div class="ac-accordion">
+                  <div class="ac-accordion__item">
+                    <button class="ac-accordion__trigger" type="button">
+                      API Webhooks
+                      <svg class="ac-accordion__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="ac-accordion__content">
+                      <p>Configure external webhook endpoints to receive POST payloads upon service events.</p>
+                      <input class="ac-input ac-mt-2" type="text" placeholder="https://endpoint...">
+                    </div>
+                  </div>
+                  <div class="ac-accordion__item">
+                    <button class="ac-accordion__trigger" type="button">
+                      Override Templates
+                      <svg class="ac-accordion__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="ac-accordion__content">
+                      <label class="ac-switch">
+                        <input type="checkbox" class="ac-switch__input">
+                        <span class="ac-switch__slider"></span>
+                        <span class="ac-switch__text">Use custom smarty templates from theme</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="ac-fieldset">
+                <legend class="ac-fieldset__legend">Backup & Restore</legend>
+                <label class="ac-dropzone">
+                  <svg class="ac-dropzone__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <span class="ac-dropzone__text">Click to upload or drag & drop</span>
+                  <span class="ac-dropzone__hint">JSON or XML up to 5MB</span>
+                  <input type="file" accept=".json,.xml">
+                </label>
+              </fieldset>
+
             </form>
           </div>
           <div class="ac-card__bottom ac-card__bottom--actions">
@@ -421,6 +511,64 @@
             </div>
           </div>
 
+        </div>
+
+        <div class="ac-trio ac-mt-6">
+          {* Skeletons *}
+          <div class="ac-card ac-card--glass">
+            <div class="ac-card__top">
+              <h3 class="ac-card__title">Skeleton State</h3>
+            </div>
+            <div class="ac-card__inner">
+              <div class="ac-flex ac-gap-3 ac-mb-4">
+                <div class="ac-skeleton ac-skeleton--avatar"></div>
+                <div style="flex: 1;">
+                  <div class="ac-skeleton ac-skeleton--title"></div>
+                  <div class="ac-skeleton ac-skeleton--text"></div>
+                </div>
+              </div>
+              <div class="ac-skeleton ac-skeleton--text"></div>
+              <div class="ac-skeleton ac-skeleton--text" style="width: 80%;"></div>
+            </div>
+          </div>
+
+          {* Tooltips *}
+          <div class="ac-card ac-card--glass">
+            <div class="ac-card__top">
+              <h3 class="ac-card__title">Tooltips</h3>
+            </div>
+            <div class="ac-card__inner ac-flex ac-flex-col ac-gap-4 ac-items-center ac-justify-center">
+              <button class="ac-btn ac-btn--outline" type="button" data-ac-tooltip="This is an info tooltip">
+                Hover me
+              </button>
+              <span data-ac-tooltip="Additional info here">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              </span>
+            </div>
+          </div>
+
+          {* Stepper *}
+          <div class="ac-card ac-card--glass">
+            <div class="ac-card__top">
+              <h3 class="ac-card__title">Stepper</h3>
+            </div>
+            <div class="ac-card__inner">
+              <div class="ac-stepper">
+                <div class="ac-step ac-step--complete">
+                  <div class="ac-step__circle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                  <span class="ac-step__label">Setup</span>
+                </div>
+                <div class="ac-step ac-step--active">
+                  <div class="ac-step__circle">2</div>
+                  <span class="ac-step__label">Config</span>
+                </div>
+                <div class="ac-step">
+                  <div class="ac-step__circle">3</div>
+                  <span class="ac-step__label">Deploy</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </section>

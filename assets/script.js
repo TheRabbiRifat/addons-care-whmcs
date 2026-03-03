@@ -23,6 +23,8 @@
         initToastButtons();
         initSettingsForm();
         initPagination();
+        initDropdowns();
+        initAccordions();
     }
 
     // ---------------------------------------------------------------------------
@@ -54,6 +56,11 @@
             });
         });
     }
+
+    // ---------------------------------------------------------------------------
+    // 2. MODALS
+    // ---------------------------------------------------------------------------
+    function initModals() {
         // Open triggers
         root.querySelectorAll('[data-ac-modal]').forEach(function (btn) {
             btn.addEventListener('click', function (e) {
@@ -186,7 +193,42 @@
     }
 
     // ---------------------------------------------------------------------------
-    // 8. PAGINATION
+    // 8. DROPDOWNS
+    // ---------------------------------------------------------------------------
+    function initDropdowns() {
+        root.addEventListener('click', function (e) {
+            var btn = e.target.closest('[data-ac-dropdown]');
+            if (btn) {
+                var dropdown = btn.closest('.ac-dropdown');
+                if (dropdown) {
+                    var wasOpen = dropdown.classList.contains('ac-dropdown--open');
+                    root.querySelectorAll('.ac-dropdown--open').forEach(function (d) {
+                        d.classList.remove('ac-dropdown--open');
+                    });
+                    if (!wasOpen) dropdown.classList.add('ac-dropdown--open');
+                }
+            } else {
+                root.querySelectorAll('.ac-dropdown--open').forEach(function (d) {
+                    d.classList.remove('ac-dropdown--open');
+                });
+            }
+        });
+    }
+
+    // ---------------------------------------------------------------------------
+    // 9. ACCORDIONS
+    // ---------------------------------------------------------------------------
+    function initAccordions() {
+        root.querySelectorAll('.ac-accordion__trigger').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var item = btn.closest('.ac-accordion__item');
+                if (item) item.classList.toggle('ac-accordion__item--open');
+            });
+        });
+    }
+
+    // ---------------------------------------------------------------------------
+    // 10. PAGINATION
     // ---------------------------------------------------------------------------
     function initPagination() {
         root.querySelectorAll('.ac-pager__btn').forEach(function (btn) {

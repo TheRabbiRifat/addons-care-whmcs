@@ -72,9 +72,9 @@
     --ac-r-full: 9999px;
 
     /* --- Shadows --- */
-    --ac-shadow-sm: 0 1px 2px rgba(0,0,0,.05);
-    --ac-shadow: 0 4px 12px rgba(0,0,0,.07);
-    --ac-shadow-lg: 0 12px 40px rgba(0,0,0,.12);
+    --ac-shadow-sm: 0 1px 2px rgba(0, 0, 0, .05);
+    --ac-shadow: 0 4px 12px rgba(0, 0, 0, .07);
+    --ac-shadow-lg: 0 12px 40px rgba(0, 0, 0, .12);
 
     /* --- Type --- */
     --ac-font-xs: 0.6875rem;
@@ -85,7 +85,7 @@
     --ac-font-2xl: 1.625rem;
 
     /* --- Motion --- */
-    --ac-ease: cubic-bezier(.4,0,.2,1);
+    --ac-ease: cubic-bezier(.4, 0, .2, 1);
     --ac-dur: 180ms;
 
     /* --- Sidebar width --- */
@@ -112,14 +112,19 @@
     box-sizing: inherit;
 }
 
-.addonscare h1, .addonscare h2, .addonscare h3, .addonscare h4 {
+.addonscare h1,
+.addonscare h2,
+.addonscare h3,
+.addonscare h4 {
     margin: 0;
     font-weight: 600;
     line-height: 1.3;
     color: var(--ac-slate-900);
 }
 
-.addonscare p { margin: 0 0 var(--ac-sp-2) 0; }
+.addonscare p {
+    margin: 0 0 var(--ac-sp-2) 0;
+}
 
 /* =============================================================================
    3. LAYOUT — Container with Header + Tabs + Content
@@ -141,7 +146,7 @@
     flex-direction: column;
     gap: var(--ac-sp-4);
     padding: var(--ac-sp-6);
-    background: rgba(255,255,255,.65);
+    background: rgba(255, 255, 255, .65);
     backdrop-filter: blur(var(--ac-glass-blur));
     -webkit-backdrop-filter: blur(var(--ac-glass-blur));
     border-bottom: 1px solid var(--ac-slate-200);
@@ -229,8 +234,15 @@
 }
 
 @keyframes ac-fadeUp {
-    from { opacity: 0; transform: translateY(8px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* =============================================================================
@@ -325,8 +337,14 @@
     color: #991b1b;
 }
 
-.addonscare .ac-banner__icon { flex-shrink: 0; display: flex; }
-.addonscare .ac-banner__text { flex: 1; }
+.addonscare .ac-banner__icon {
+    flex-shrink: 0;
+    display: flex;
+}
+
+.addonscare .ac-banner__text {
+    flex: 1;
+}
 
 .addonscare .ac-banner__dismiss {
     margin-left: auto;
@@ -341,7 +359,9 @@
     padding: 0;
 }
 
-.addonscare .ac-banner__dismiss:hover { opacity: 1; }
+.addonscare .ac-banner__dismiss:hover {
+    opacity: 1;
+}
 
 .addonscare .ac-banner--hide {
     opacity: 0;
@@ -389,10 +409,21 @@
     border-radius: 4px 0 0 4px;
 }
 
-.addonscare .ac-stat-card--teal::before   { background: var(--ac-accent); }
-.addonscare .ac-stat-card--emerald::before { background: var(--ac-success); }
-.addonscare .ac-stat-card--amber::before   { background: var(--ac-warning); }
-.addonscare .ac-stat-card--rose::before    { background: var(--ac-danger); }
+.addonscare .ac-stat-card--teal::before {
+    background: var(--ac-accent);
+}
+
+.addonscare .ac-stat-card--emerald::before {
+    background: var(--ac-success);
+}
+
+.addonscare .ac-stat-card--amber::before {
+    background: var(--ac-warning);
+}
+
+.addonscare .ac-stat-card--rose::before {
+    background: var(--ac-danger);
+}
 
 .addonscare .ac-stat-card__icon {
     display: flex;
@@ -404,10 +435,25 @@
     flex-shrink: 0;
 }
 
-.addonscare .ac-stat-card--teal .ac-stat-card__icon   { background: var(--ac-accent-soft); color: var(--ac-accent); }
-.addonscare .ac-stat-card--emerald .ac-stat-card__icon { background: var(--ac-success-soft); color: var(--ac-success); }
-.addonscare .ac-stat-card--amber .ac-stat-card__icon   { background: var(--ac-warning-soft); color: var(--ac-warning); }
-.addonscare .ac-stat-card--rose .ac-stat-card__icon    { background: var(--ac-danger-soft); color: var(--ac-danger); }
+.addonscare .ac-stat-card--teal .ac-stat-card__icon {
+    background: var(--ac-accent-soft);
+    color: var(--ac-accent);
+}
+
+.addonscare .ac-stat-card--emerald .ac-stat-card__icon {
+    background: var(--ac-success-soft);
+    color: var(--ac-success);
+}
+
+.addonscare .ac-stat-card--amber .ac-stat-card__icon {
+    background: var(--ac-warning-soft);
+    color: var(--ac-warning);
+}
+
+.addonscare .ac-stat-card--rose .ac-stat-card__icon {
+    background: var(--ac-danger-soft);
+    color: var(--ac-danger);
+}
 
 .addonscare .ac-stat-card__data {
     display: flex;
@@ -490,10 +536,21 @@
     flex-shrink: 0;
 }
 
-.addonscare .ac-timeline__item--success .ac-timeline__dot { background: var(--ac-success); }
-.addonscare .ac-timeline__item--warning .ac-timeline__dot { background: var(--ac-warning); }
-.addonscare .ac-timeline__item--info .ac-timeline__dot    { background: var(--ac-info); }
-.addonscare .ac-timeline__item--neutral .ac-timeline__dot { background: var(--ac-slate-300); }
+.addonscare .ac-timeline__item--success .ac-timeline__dot {
+    background: var(--ac-success);
+}
+
+.addonscare .ac-timeline__item--warning .ac-timeline__dot {
+    background: var(--ac-warning);
+}
+
+.addonscare .ac-timeline__item--info .ac-timeline__dot {
+    background: var(--ac-info);
+}
+
+.addonscare .ac-timeline__item--neutral .ac-timeline__dot {
+    background: var(--ac-slate-300);
+}
 
 .addonscare .ac-timeline__body {
     font-size: var(--ac-font-base);
@@ -600,17 +657,41 @@
     display: inline-block;
 }
 
-.addonscare .ac-chip--success { background: var(--ac-success-soft); color: #16a34a; }
-.addonscare .ac-chip--success .ac-chip__dot { background: var(--ac-success); }
+.addonscare .ac-chip--success {
+    background: var(--ac-success-soft);
+    color: #16a34a;
+}
 
-.addonscare .ac-chip--warning { background: var(--ac-warning-soft); color: #b45309; }
-.addonscare .ac-chip--warning .ac-chip__dot { background: var(--ac-warning); }
+.addonscare .ac-chip--success .ac-chip__dot {
+    background: var(--ac-success);
+}
 
-.addonscare .ac-chip--danger { background: var(--ac-danger-soft); color: #dc2626; }
-.addonscare .ac-chip--danger .ac-chip__dot { background: var(--ac-danger); }
+.addonscare .ac-chip--warning {
+    background: var(--ac-warning-soft);
+    color: #b45309;
+}
 
-.addonscare .ac-chip--neutral { background: var(--ac-slate-100); color: var(--ac-slate-500); }
-.addonscare .ac-chip--neutral .ac-chip__dot { background: var(--ac-slate-400); }
+.addonscare .ac-chip--warning .ac-chip__dot {
+    background: var(--ac-warning);
+}
+
+.addonscare .ac-chip--danger {
+    background: var(--ac-danger-soft);
+    color: #dc2626;
+}
+
+.addonscare .ac-chip--danger .ac-chip__dot {
+    background: var(--ac-danger);
+}
+
+.addonscare .ac-chip--neutral {
+    background: var(--ac-slate-100);
+    color: var(--ac-slate-500);
+}
+
+.addonscare .ac-chip--neutral .ac-chip__dot {
+    background: var(--ac-slate-400);
+}
 
 /* =============================================================================
    13. TABLE
@@ -854,14 +935,16 @@
     position: absolute;
     width: 18px;
     height: 18px;
-    border: 2px solid rgba(255,255,255,.3);
+    border: 2px solid rgba(255, 255, 255, .3);
     border-top-color: white;
     border-radius: 50%;
     animation: ac-spin .6s linear infinite;
 }
 
 @keyframes ac-spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* =============================================================================
@@ -934,8 +1017,15 @@
 }
 
 @keyframes ac-dialogIn {
-    from { opacity: 0; transform: scale(.96) translateY(12px); }
-    to   { opacity: 1; transform: scale(1) translateY(0); }
+    from {
+        opacity: 0;
+        transform: scale(.96) translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 .addonscare .ac-dialog__head {
@@ -1013,23 +1103,48 @@
     animation: ac-toastIn .35s var(--ac-ease);
 }
 
-.addonscare .ac-toast--success { border-left: 4px solid var(--ac-success); }
-.addonscare .ac-toast--warning { border-left: 4px solid var(--ac-warning); }
-.addonscare .ac-toast--error   { border-left: 4px solid var(--ac-danger); }
-.addonscare .ac-toast--info    { border-left: 4px solid var(--ac-info); }
+.addonscare .ac-toast--success {
+    border-left: 4px solid var(--ac-success);
+}
+
+.addonscare .ac-toast--warning {
+    border-left: 4px solid var(--ac-warning);
+}
+
+.addonscare .ac-toast--error {
+    border-left: 4px solid var(--ac-danger);
+}
+
+.addonscare .ac-toast--info {
+    border-left: 4px solid var(--ac-info);
+}
 
 .addonscare .ac-toast--out {
     animation: ac-toastOut .3s var(--ac-ease) forwards;
 }
 
 @keyframes ac-toastIn {
-    from { opacity: 0; transform: translateY(16px) scale(.96); }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 @keyframes ac-toastOut {
-    from { opacity: 1; transform: translateY(0); }
-    to   { opacity: 0; transform: translateY(16px); }
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(16px);
+    }
 }
 
 /* =============================================================================
@@ -1171,14 +1286,14 @@
     background: white;
     border-radius: 50%;
     transition: transform var(--ac-dur) var(--ac-ease);
-    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
 }
 
-.addonscare .ac-switch__input:checked + .ac-switch__slider {
+.addonscare .ac-switch__input:checked+.ac-switch__slider {
     background: var(--ac-accent);
 }
 
-.addonscare .ac-switch__input:checked + .ac-switch__slider::after {
+.addonscare .ac-switch__input:checked+.ac-switch__slider::after {
     transform: translateX(20px);
 }
 
@@ -1227,13 +1342,13 @@
     transition: all var(--ac-dur) var(--ac-ease);
 }
 
-.addonscare .ac-radio-card__input:checked ~ .ac-radio-card__box {
+.addonscare .ac-radio-card__input:checked~.ac-radio-card__box {
     border-color: var(--ac-accent);
     background: var(--ac-accent-soft);
     color: var(--ac-accent-hover);
 }
 
-.addonscare .ac-radio-card__input:checked ~ .ac-radio-card__box .ac-radio-card__dot {
+.addonscare .ac-radio-card__input:checked~.ac-radio-card__box .ac-radio-card__dot {
     border-color: var(--ac-accent);
     background: var(--ac-accent);
     box-shadow: inset 0 0 0 3px white;
@@ -1284,12 +1399,12 @@
     transition: transform var(--ac-dur) var(--ac-ease);
 }
 
-.addonscare .ac-check__input:checked ~ .ac-check__box {
+.addonscare .ac-check__input:checked~.ac-check__box {
     background: var(--ac-accent);
     border-color: var(--ac-accent);
 }
 
-.addonscare .ac-check__input:checked ~ .ac-check__box::after {
+.addonscare .ac-check__input:checked~.ac-check__box::after {
     transform: rotate(45deg) scale(1);
 }
 
@@ -1311,8 +1426,17 @@
     animation: ac-spin .7s linear infinite;
 }
 
-.addonscare .ac-ring--sm { width: 20px; height: 20px; border-width: 2px; }
-.addonscare .ac-ring--lg { width: 48px; height: 48px; border-width: 4px; }
+.addonscare .ac-ring--sm {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+}
+
+.addonscare .ac-ring--lg {
+    width: 48px;
+    height: 48px;
+    border-width: 4px;
+}
 
 .addonscare .ac-loading-state {
     display: flex;
@@ -1354,23 +1478,519 @@
 }
 
 /* =============================================================================
-   22. UTILITY CLASSES
+   22. PROGRESS BAR
    ============================================================================= */
-.addonscare .ac-mt-2 { margin-top: var(--ac-sp-2); }
-.addonscare .ac-mt-4 { margin-top: var(--ac-sp-4); }
-.addonscare .ac-mt-6 { margin-top: var(--ac-sp-6); }
-.addonscare .ac-mb-2 { margin-bottom: var(--ac-sp-2); }
-.addonscare .ac-mb-4 { margin-bottom: var(--ac-sp-4); }
-.addonscare .ac-mb-6 { margin-bottom: var(--ac-sp-6); }
-.addonscare .ac-flex { display: flex; }
-.addonscare .ac-flex-col { flex-direction: column; }
-.addonscare .ac-flex-wrap { flex-wrap: wrap; }
-.addonscare .ac-items-center { align-items: center; }
-.addonscare .ac-justify-between { justify-content: space-between; }
-.addonscare .ac-gap-2 { gap: var(--ac-sp-2); }
-.addonscare .ac-gap-3 { gap: var(--ac-sp-3); }
-.addonscare .ac-gap-4 { gap: var(--ac-sp-4); }
-.addonscare .ac-text-center { text-align: center; }
+.addonscare .ac-progress-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ac-sp-2);
+}
+
+.addonscare .ac-progress-wrap__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--ac-font-sm);
+    color: var(--ac-slate-600);
+}
+
+.addonscare .ac-progress-wrap__value {
+    font-weight: 600;
+    color: var(--ac-slate-900);
+}
+
+.addonscare .ac-progress {
+    height: 8px;
+    background: var(--ac-slate-200);
+    border-radius: var(--ac-r-full);
+    overflow: hidden;
+}
+
+.addonscare .ac-progress__bar {
+    height: 100%;
+    background: var(--ac-accent);
+    border-radius: var(--ac-r-full);
+    transition: width .5s var(--ac-ease);
+}
+
+.addonscare .ac-progress__bar--warning {
+    background: var(--ac-warning);
+}
+
+.addonscare .ac-progress__bar--danger {
+    background: var(--ac-danger);
+}
+
+.addonscare .ac-progress__bar--success {
+    background: var(--ac-success);
+}
+
+/* =============================================================================
+   23. FILTER BAR / SEARCH
+   ============================================================================= */
+.addonscare .ac-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--ac-sp-4);
+    padding: var(--ac-sp-3) var(--ac-sp-5);
+    background: var(--ac-slate-50);
+    border-bottom: 1px solid var(--ac-slate-200);
+}
+
+.addonscare .ac-filter-bar__search {
+    flex: 1;
+    max-width: 320px;
+    position: relative;
+}
+
+.addonscare .ac-filter-bar__search .ac-input {
+    padding-left: 36px;
+    height: 36px;
+    min-height: 36px;
+    border-color: transparent;
+    background: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+
+.addonscare .ac-filter-bar__search svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ac-slate-400);
+    pointer-events: none;
+}
+
+.addonscare .ac-filter-bar__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--ac-sp-2);
+}
+
+/* =============================================================================
+   24. DROPDOWN MENU
+   ============================================================================= */
+.addonscare .ac-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.addonscare .ac-dropdown__menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 4px);
+    min-width: 180px;
+    background: white;
+    border: 1px solid var(--ac-slate-200);
+    border-radius: var(--ac-r-sm);
+    box-shadow: var(--ac-shadow);
+    padding: var(--ac-sp-1) 0;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: all var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-dropdown--open .ac-dropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.addonscare .ac-dropdown__item {
+    display: flex;
+    align-items: center;
+    gap: var(--ac-sp-2);
+    width: 100%;
+    padding: var(--ac-sp-2) var(--ac-sp-4);
+    font-family: inherit;
+    font-size: var(--ac-font-sm);
+    color: var(--ac-slate-700);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-dropdown__item svg {
+    color: var(--ac-slate-400);
+}
+
+.addonscare .ac-dropdown__item:hover {
+    background: var(--ac-slate-50);
+    color: var(--ac-slate-900);
+}
+
+.addonscare .ac-dropdown__item:hover svg {
+    color: var(--ac-slate-700);
+}
+
+.addonscare .ac-dropdown__item--danger {
+    color: #dc2626;
+}
+
+.addonscare .ac-dropdown__item--danger svg {
+    color: #dc2626;
+}
+
+.addonscare .ac-dropdown__item--danger:hover {
+    background: var(--ac-danger-soft);
+    color: #b91c1c;
+}
+
+.addonscare .ac-dropdown__divider {
+    height: 1px;
+    background: var(--ac-slate-100);
+    margin: var(--ac-sp-1) 0;
+}
+
+/* =============================================================================
+   25. ACCORDION
+   ============================================================================= */
+.addonscare .ac-accordion {
+    border: 1px solid var(--ac-slate-200);
+    border-radius: var(--ac-r-sm);
+    overflow: hidden;
+    background: white;
+}
+
+.addonscare .ac-accordion__item {
+    border-bottom: 1px solid var(--ac-slate-200);
+}
+
+.addonscare .ac-accordion__item:last-child {
+    border-bottom: none;
+}
+
+.addonscare .ac-accordion__trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--ac-sp-4) var(--ac-sp-5);
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: var(--ac-font-base);
+    font-weight: 500;
+    color: var(--ac-slate-800);
+    cursor: pointer;
+    text-align: left;
+    transition: background var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-accordion__trigger:hover {
+    background: var(--ac-slate-50);
+}
+
+.addonscare .ac-accordion__icon {
+    width: 20px;
+    height: 20px;
+    color: var(--ac-slate-400);
+    transition: transform var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-accordion__item--open .ac-accordion__icon {
+    transform: rotate(180deg);
+}
+
+.addonscare .ac-accordion__content {
+    display: none;
+    padding: 0 var(--ac-sp-5) var(--ac-sp-5) var(--ac-sp-5);
+    color: var(--ac-slate-600);
+    font-size: var(--ac-font-base);
+}
+
+.addonscare .ac-accordion__item--open .ac-accordion__content {
+    display: block;
+    animation: ac-accordionFade .2s var(--ac-ease);
+}
+
+@keyframes ac-accordionFade {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =============================================================================
+   26. DROPZONE / UPLOAD
+   ============================================================================= */
+.addonscare .ac-dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--ac-sp-8) var(--ac-sp-6);
+    border: 2px dashed var(--ac-slate-300);
+    border-radius: var(--ac-r-sm);
+    background: var(--ac-slate-50);
+    text-align: center;
+    transition: all var(--ac-dur) var(--ac-ease);
+    cursor: pointer;
+}
+
+.addonscare .ac-dropzone:hover,
+.addonscare .ac-dropzone--dragover {
+    border-color: var(--ac-accent);
+    background: var(--ac-accent-soft);
+}
+
+.addonscare .ac-dropzone__icon {
+    color: var(--ac-slate-400);
+    margin-bottom: var(--ac-sp-3);
+    transition: color var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-dropzone:hover .ac-dropzone__icon {
+    color: var(--ac-accent);
+}
+
+.addonscare .ac-dropzone__text {
+    font-size: var(--ac-font-base);
+    color: var(--ac-slate-700);
+    font-weight: 500;
+}
+
+.addonscare .ac-dropzone__hint {
+    font-size: var(--ac-font-sm);
+    color: var(--ac-slate-500);
+    margin-top: var(--ac-sp-1);
+}
+
+.addonscare .ac-dropzone input[type="file"] {
+    display: none;
+}
+
+/* =============================================================================
+   27. SKELETON LOADERS
+   ============================================================================= */
+.addonscare .ac-skeleton {
+    background: linear-gradient(90deg, var(--ac-slate-100) 25%, var(--ac-slate-200) 50%, var(--ac-slate-100) 75%);
+    background-size: 400% 100%;
+    animation: ac-skeletonLoading 1.5s infinite ease-in-out;
+    border-radius: 4px;
+}
+
+@keyframes ac-skeletonLoading {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.addonscare .ac-skeleton--text {
+    height: 16px;
+    margin-bottom: 8px;
+}
+
+.addonscare .ac-skeleton--text:last-child {
+    margin-bottom: 0;
+}
+
+.addonscare .ac-skeleton--title {
+    height: 24px;
+    width: 60%;
+    margin-bottom: 16px;
+}
+
+.addonscare .ac-skeleton--avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* =============================================================================
+   28. TOOLTIPS
+   ============================================================================= */
+.addonscare [data-ac-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+.addonscare [data-ac-tooltip]::after {
+    content: attr(data-ac-tooltip);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: var(--ac-slate-900);
+    color: white;
+    padding: 6px 10px;
+    font-size: var(--ac-font-xs);
+    font-weight: 500;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all var(--ac-dur) var(--ac-ease);
+    z-index: 1000;
+}
+
+.addonscare [data-ac-tooltip]::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 2px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: var(--ac-slate-900);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all var(--ac-dur) var(--ac-ease);
+    z-index: 1000;
+}
+
+.addonscare [data-ac-tooltip]:hover::after,
+.addonscare [data-ac-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* =============================================================================
+   29. STEPPER
+   ============================================================================= */
+.addonscare .ac-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.addonscare .ac-stepper::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: var(--ac-slate-200);
+    z-index: 0;
+}
+
+.addonscare .ac-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--ac-sp-2);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.addonscare .ac-step__circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--ac-slate-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--ac-font-sm);
+    font-weight: 600;
+    color: var(--ac-slate-500);
+    transition: all var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-step__label {
+    font-size: var(--ac-font-sm);
+    font-weight: 500;
+    color: var(--ac-slate-500);
+}
+
+.addonscare .ac-step--active .ac-step__circle {
+    border-color: var(--ac-accent);
+    color: var(--ac-accent);
+    box-shadow: 0 0 0 4px var(--ac-accent-soft);
+}
+
+.addonscare .ac-step--active .ac-step__label {
+    color: var(--ac-slate-900);
+}
+
+.addonscare .ac-step--complete .ac-step__circle {
+    background: var(--ac-accent);
+    border-color: var(--ac-accent);
+    color: white;
+}
+
+/* =============================================================================
+   30. UTILITY CLASSES
+   ============================================================================= */
+.addonscare .ac-mt-2 {
+    margin-top: var(--ac-sp-2);
+}
+
+.addonscare .ac-mt-4 {
+    margin-top: var(--ac-sp-4);
+}
+
+.addonscare .ac-mt-6 {
+    margin-top: var(--ac-sp-6);
+}
+
+.addonscare .ac-mb-2 {
+    margin-bottom: var(--ac-sp-2);
+}
+
+.addonscare .ac-mb-4 {
+    margin-bottom: var(--ac-sp-4);
+}
+
+.addonscare .ac-mb-6 {
+    margin-bottom: var(--ac-sp-6);
+}
+
+.addonscare .ac-flex {
+    display: flex;
+}
+
+.addonscare .ac-flex-col {
+    flex-direction: column;
+}
+
+.addonscare .ac-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.addonscare .ac-items-center {
+    align-items: center;
+}
+
+.addonscare .ac-justify-between {
+    justify-content: space-between;
+}
+
+.addonscare .ac-gap-2 {
+    gap: var(--ac-sp-2);
+}
+
+.addonscare .ac-gap-3 {
+    gap: var(--ac-sp-3);
+}
+
+.addonscare .ac-gap-4 {
+    gap: var(--ac-sp-4);
+}
+
+.addonscare .ac-text-center {
+    text-align: center;
+}
 
 /* =============================================================================
    23. RESPONSIVE
@@ -1397,7 +2017,7 @@
         bottom: 0;
         transform: translateX(-100%);
         z-index: 200;
-        box-shadow: 4px 0 24px rgba(0,0,0,.2);
+        box-shadow: 4px 0 24px rgba(0, 0, 0, .2);
     }
 
     .addonscare .ac-sidebar--open {
@@ -1474,6 +2094,7 @@
    24. PRINT
    ============================================================================= */
 @media print {
+
     .addonscare .ac-sidebar,
     .addonscare .ac-overlay,
     .addonscare .ac-toast-rack {
