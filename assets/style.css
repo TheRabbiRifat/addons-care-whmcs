@@ -1074,15 +1074,16 @@
 }
 
 /* =============================================================================
-   18. TOAST
+   18. TOAST — moved to TOP
    ============================================================================= */
 .addonscare .ac-toast-rack {
     position: fixed;
-    bottom: var(--ac-sp-6);
+    top: var(--ac-sp-6);
     right: var(--ac-sp-6);
+    left: auto;
     z-index: 10001;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: var(--ac-sp-2);
     pointer-events: none;
 }
@@ -1143,13 +1144,59 @@
 
     to {
         opacity: 0;
-        transform: translateY(16px);
+        transform: translateY(-16px);
     }
 }
 
 /* =============================================================================
-   19. FORMS
+   19. SKELETON LOADERS
    ============================================================================= */
+.addonscare .ac-skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(226, 232, 240, .5) 0%,
+        rgba(226, 232, 240, .8) 50%,
+        rgba(226, 232, 240, .5) 100%
+    );
+    background-size: 200% 100%;
+    animation: ac-shimmer 1.5s infinite;
+    border-radius: var(--ac-r-sm);
+    height: 12px;
+    margin-bottom: var(--ac-sp-2);
+}
+
+.addonscare .ac-skeleton--avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--ac-r-full);
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.addonscare .ac-skeleton--title {
+    width: 60%;
+    height: 16px;
+    margin-bottom: var(--ac-sp-3);
+}
+
+.addonscare .ac-skeleton--text {
+    height: 12px;
+    margin-bottom: var(--ac-sp-2);
+}
+
+.addonscare .ac-skeleton--text:last-child {
+    margin-bottom: 0;
+}
+
+@keyframes ac-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
 .addonscare .ac-fieldset {
     border: none;
     padding: 0;
@@ -1992,6 +2039,22 @@
     text-align: center;
 }
 
+.addonscare .ac-justify-center {
+    justify-content: center;
+}
+
+.addonscare .ac-space-y-2 > * + * {
+    margin-top: var(--ac-sp-2);
+}
+
+.addonscare .ac-space-y-3 > * + * {
+    margin-top: var(--ac-sp-3);
+}
+
+.addonscare .ac-mt-6 {
+    margin-top: var(--ac-sp-6);
+}
+
 /* =============================================================================
    23. RESPONSIVE
    ============================================================================= */
@@ -2071,9 +2134,9 @@
     }
 
     .addonscare .ac-toast-rack {
-        left: var(--ac-sp-4);
         right: var(--ac-sp-4);
-        bottom: var(--ac-sp-4);
+        left: auto;
+        top: var(--ac-sp-4);
     }
 
     .addonscare .ac-toast {

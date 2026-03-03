@@ -30,6 +30,22 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           <span>Services</span>
         </button>
+        <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-analytics" data-ac-tab="panel-analytics">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          <span>Analytics</span>
+        </button>
+        <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-reports" data-ac-tab="panel-reports">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="13" x2="12" y2="17"/><line x1="16" y1="15" x2="16" y2="17"/><line x1="8" y1="15" x2="8" y2="17"/></svg>
+          <span>Reports</span>
+        </button>
+        <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-notifications" data-ac-tab="panel-notifications">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span>Notifications</span>
+        </button>
+        <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-activity" data-ac-tab="panel-activity">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Activity</span>
+        </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-settings" data-ac-tab="panel-settings">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
           <span>Settings</span>
@@ -323,7 +339,157 @@
 
       </section>
 
-      {* PANEL 3: SETTINGS *}
+      {* PANEL 3: ANALYTICS *}
+      <section class="ac-panel" id="panel-analytics">
+        <div class="ac-card ac-card--glass">
+          <div class="ac-card__top">
+            <h3 class="ac-card__title">Performance Metrics</h3>
+          </div>
+          <div class="ac-card__inner">
+            <div class="ac-stat-row">
+              <div class="ac-stat-card ac-stat-card--teal">
+                <div class="ac-stat-card__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div class="ac-stat-card__data">
+                  <span class="ac-stat-card__value">99.8%</span>
+                  <span class="ac-stat-card__label">Uptime</span>
+                </div>
+              </div>
+              <div class="ac-stat-card ac-stat-card--emerald">
+                <div class="ac-stat-card__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 10 10H12z"/></svg>
+                </div>
+                <div class="ac-stat-card__data">
+                  <span class="ac-stat-card__value">2.34s</span>
+                  <span class="ac-stat-card__label">Avg Response Time</span>
+                </div>
+              </div>
+              <div class="ac-stat-card ac-stat-card--amber">
+                <div class="ac-stat-card__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div class="ac-stat-card__data">
+                  <span class="ac-stat-card__value">2,847</span>
+                  <span class="ac-stat-card__label">API Calls/Hour</span>
+                </div>
+              </div>
+              <div class="ac-stat-card ac-stat-card--rose">
+                <div class="ac-stat-card__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </div>
+                <div class="ac-stat-card__data">
+                  <span class="ac-stat-card__value">12</span>
+                  <span class="ac-stat-card__label">Active Monitors</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {* PANEL 4: REPORTS *}
+      <section class="ac-panel" id="panel-reports">
+        <div class="ac-card ac-card--glass">
+          <div class="ac-card__top">
+            <h3 class="ac-card__title">Available Reports</h3>
+            <button class="ac-btn ac-btn--outline ac-btn--sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download All
+            </button>
+          </div>
+          <div class="ac-card__inner">
+            <div class="ac-space-y-3">
+              <div style="display: flex; justify-content: space-between; padding: 12px; background: rgba(20,184,166,.08); border-radius: 8px; border: 1px solid rgba(20,184,166,.2);">
+                <div><strong>Monthly Revenue Report</strong><span style="display: block; font-size: 0.75rem; color: #64748b; margin-top: 4px;">Generated 2 days ago</span></div>
+                <button class="ac-btn ac-btn--accent ac-btn--sm">Download</button>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 12px; background: rgba(34,197,94,.08); border-radius: 8px; border: 1px solid rgba(34,197,94,.2);">
+                <div><strong>Service Usage Analytics</strong><span style="display: block; font-size: 0.75rem; color: #64748b; margin-top: 4px;">Last 30 days</span></div>
+                <button class="ac-btn ac-btn--accent ac-btn--sm">Download</button>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 12px; background: rgba(245,158,11,.08); border-radius: 8px; border: 1px solid rgba(245,158,11,.2);">
+                <div><strong>Client Activity Report</strong><span style="display: block; font-size: 0.75rem; color: #64748b; margin-top: 4px;">Custom range available</span></div>
+                <button class="ac-btn ac-btn--accent ac-btn--sm">Download</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {* PANEL 5: NOTIFICATIONS *}
+      <section class="ac-panel" id="panel-notifications">
+        <div class="ac-card ac-card--glass">
+          <div class="ac-card__top">
+            <h3 class="ac-card__title">Recent Notifications</h3>
+            <button class="ac-btn ac-btn--outline ac-btn--sm" style="font-size: 0.75rem;">Mark All Read</button>
+          </div>
+          <div class="ac-card__inner">
+            <div class="ac-space-y-2">
+              <div style="padding: 12px; background: rgba(59,130,246,.08); border-left: 4px solid #3b82f6; border-radius: 4px;">
+                <strong>Service Renewal Upcoming</strong><br><span style="font-size: 0.75rem; color: #64748b;">Service #1004 renews in 7 days</span>
+              </div>
+              <div style="padding: 12px; background: rgba(239,68,68,.08); border-left: 4px solid #ef4444; border-radius: 4px;">
+                <strong>Failed API Connection</strong><br><span style="font-size: 0.75rem; color: #64748b;">Remote API endpoint timeout</span>
+              </div>
+              <div style="padding: 12px; background: rgba(34,197,94,.08); border-left: 4px solid #22c55e; border-radius: 4px;">
+                <strong>Database Sync Complete</strong><br><span style="font-size: 0.75rem; color: #64748b;">782 records synchronized successfully</span>
+              </div>
+              <div style="padding: 12px; background: rgba(34,197,94,.08); border-left: 4px solid #22c55e; border-radius: 4px;">
+                <strong>License Updated</strong><br><span style="font-size: 0.75rem; color: #64748b;">Your license is now active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {* PANEL 6: ACTIVITY *}
+      <section class="ac-panel" id="panel-activity">
+        <div class="ac-card ac-card--glass">
+          <div class="ac-card__top">
+            <h3 class="ac-card__title">Audit Log</h3>
+          </div>
+          <div class="ac-card__inner">
+            <ul class="ac-timeline">
+              <li class="ac-timeline__item ac-timeline__item--success">
+                <div class="ac-timeline__dot"></div>
+                <div class="ac-timeline__body">
+                  <strong>Settings Updated</strong> by Admin
+                  <span class="ac-timeline__time">5 min ago</span>
+                </div>
+              </li>
+              <li class="ac-timeline__item ac-timeline__item--info">
+                <div class="ac-timeline__dot"></div>
+                <div class="ac-timeline__body">
+                  <strong>License Verification</strong> passed
+                  <span class="ac-timeline__time">2 hours ago</span>
+                </div>
+              </li>
+              <li class="ac-timeline__item ac-timeline__item--warning">
+                <div class="ac-timeline__dot"></div>
+                <div class="ac-timeline__body">
+                  <strong>API Rate Limit</strong> warning triggered
+                  <span class="ac-timeline__time">5 hours ago</span>
+                </div>
+              </li>
+              <li class="ac-timeline__item ac-timeline__item--success">
+                <div class="ac-timeline__dot"></div>
+                <div class="ac-timeline__body">
+                  <strong>Automatic Backup</strong> completed
+                  <span class="ac-timeline__time">1 day ago</span>
+                </div>
+              </li>
+              <li class="ac-timeline__item ac-timeline__item--neutral">
+                <div class="ac-timeline__dot"></div>
+                <div class="ac-timeline__body">
+                  Module <strong>initialized</strong> successfully
+                  <span class="ac-timeline__time">1 day ago</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
       <section class="ac-panel" id="panel-settings">
 
         <div class="ac-card ac-card--glass">
