@@ -642,19 +642,19 @@
             <div class="ac-card__inner ac-flex ac-flex-col ac-gap-4">
               <div class="ac-info-group">
                 <span class="ac-info-label">PHP Version</span>
-                <span class="ac-info-value">{php_version}</span>
+                <span class="ac-info-value">{$phpVersion|default:'7.4.0'}</span>
               </div>
               <div class="ac-info-group">
                 <span class="ac-info-label">WHMCS Version</span>
-                <span class="ac-info-value">8.7.2</span>
+                <span class="ac-info-value">{$whmcsVersion|default:'8.7.2'}</span>
               </div>
               <div class="ac-info-group">
                 <span class="ac-info-label">Module Version</span>
-                <span class="ac-info-value">3.1.0</span>
+                <span class="ac-info-value">{$moduleVersion|default:'3.1.0'}</span>
               </div>
               <div class="ac-info-group">
                 <span class="ac-info-label">Server Hostname</span>
-                <span class="ac-info-value">server.example.com</span>
+                <span class="ac-info-value">{$serverHostname|default:'server.example.com'}</span>
               </div>
             </div>
           </div>
@@ -671,19 +671,19 @@
             <div class="ac-card__inner ac-flex ac-flex-col ac-gap-4">
               <div class="ac-info-group">
                 <span class="ac-info-label">License Code</span>
-                <span class="ac-info-value ac-mono">AC-DEMO-123456789</span>
+                <span class="ac-info-value ac-mono">{$licenseCode|default:'AC-DEMO-123456789'}</span>
               </div>
               <div class="ac-info-group">
                 <span class="ac-info-label">Licensed To</span>
-                <span class="ac-info-value">Example Company Inc.</span>
+                <span class="ac-info-value">{$licensedTo|default:'Example Company Inc.'}</span>
               </div>
               <div class="ac-info-group">
                 <span class="ac-info-label">Licensed Domain</span>
-                <span class="ac-info-value">example.com</span>
+                <span class="ac-info-value">{$licensedDomain|default:'example.com'}</span>
               </div>
               <div class="ac-info-group">
                 <span class="ac-info-label">Expiration Date</span>
-                <span class="ac-info-value">2025-12-31</span>
+                <span class="ac-info-value">{$licenseExpiration|default:'2025-12-31'}</span>
               </div>
             </div>
             <div class="ac-card__bottom ac-card__bottom--actions">
