@@ -126,7 +126,7 @@
 
         {* Two-column: Recent Activity + Quick Actions *}
         <div class="ac-duo">
-          <div class="ac-card ac-card--glass">
+          <div class="ac-card">
             <div class="ac-card__top">
               <h3 class="ac-card__title">Recent Activity</h3>
               <span class="ac-pill">Live</span>
@@ -165,7 +165,7 @@
             </div>
           </div>
 
-          <div class="ac-card ac-card--glass">
+          <div class="ac-card">
             <div class="ac-card__top">
               <h3 class="ac-card__title">Quick Actions</h3>
             </div>
@@ -193,7 +193,7 @@
         </div>
 
         {* Progress / Quota *}
-        <div class="ac-card ac-card--glass ac-mt-6">
+        <div class="ac-card ac-mt-6">
           <div class="ac-card__top">
             <h3 class="ac-card__title">System Quotas</h3>
           </div>
@@ -225,7 +225,7 @@
       <section class="ac-panel" id="panel-services">
 
         {if $services|count > 0}
-        <div class="ac-card ac-card--glass">
+        <div class="ac-card">
           <div class="ac-card__top">
             <h3 class="ac-card__title">Managed Services</h3>
             <div class="ac-card__toolbar">
@@ -327,7 +327,7 @@
           </div>
         </div>
         {else}
-        <div class="ac-card ac-card--glass">
+        <div class="ac-card">
           <div class="ac-card__inner">
             <div class="ac-empty">
               <div class="ac-empty__visual">
@@ -345,7 +345,7 @@
 
       {* PANEL 3: ANALYTICS *}
       <section class="ac-panel" id="panel-analytics">
-        <div class="ac-card ac-card--glass">
+        <div class="ac-card">
           <div class="ac-card__top">
             <h3 class="ac-card__title">Performance Metrics</h3>
           </div>
@@ -394,7 +394,7 @@
 
       {* PANEL 4: REPORTS *}
       <section class="ac-panel" id="panel-reports">
-        <div class="ac-card ac-card--glass">
+        <div class="ac-card">
           <div class="ac-card__top">
             <h3 class="ac-card__title">Available Reports</h3>
             <button class="ac-btn ac-btn--outline ac-btn--sm">
@@ -423,7 +423,7 @@
 
       {* PANEL 5: NOTIFICATIONS *}
       <section class="ac-panel" id="panel-notifications">
-        <div class="ac-card ac-card--glass">
+        <div class="ac-card">
           <div class="ac-card__top">
             <h3 class="ac-card__title">Recent Notifications</h3>
             <button class="ac-btn ac-btn--outline ac-btn--sm" style="font-size: 0.75rem;">Mark All Read</button>
@@ -449,7 +449,7 @@
 
       {* PANEL 6: ACTIVITY *}
       <section class="ac-panel" id="panel-activity">
-        <div class="ac-card ac-card--glass">
+        <div class="ac-card">
           <div class="ac-card__top">
             <h3 class="ac-card__title">Audit Log</h3>
           </div>
@@ -496,7 +496,7 @@
       </section>
       <section class="ac-panel" id="panel-settings">
 
-        <div class="ac-card ac-card--glass">
+        <div class="ac-card">
           <div class="ac-card__top">
             <h3 class="ac-card__title">Module Configuration</h3>
           </div>
@@ -676,7 +676,7 @@
 
         {* System Info Row *}
         <div class="ac-duo ac-mt-6">
-          <div class="ac-card ac-card--glass">
+          <div class="ac-card">
             <div class="ac-card__top">
               <h3 class="ac-card__title">System Information</h3>
             </div>
@@ -706,7 +706,7 @@
           </div>
 
           {* License Card *}
-          <div class="ac-card ac-card--glass">
+          <div class="ac-card">
             <div class="ac-card__top">
               <h3 class="ac-card__title">License Information</h3>
               <span class="ac-badge ac-badge--success">
@@ -745,7 +745,7 @@
         <div class="ac-trio">
 
           {* Loaders *}
-          <div class="ac-card ac-card--glass">
+          <div class="ac-card">
             <div class="ac-card__top">
               <h3 class="ac-card__title">Loaders</h3>
             </div>
@@ -763,7 +763,7 @@
           </div>
 
           {* Buttons *}
-          <div class="ac-card ac-card--glass">
+          <div class="ac-card">
             <div class="ac-card__top">
               <h3 class="ac-card__title">Action States</h3>
             </div>
@@ -775,7 +775,7 @@
           </div>
 
           {* Toasts *}
-          <div class="ac-card ac-card--glass">
+          <div class="ac-card">
             <div class="ac-card__top">
               <h3 class="ac-card__title">Toast Triggers</h3>
             </div>
@@ -794,7 +794,7 @@
 
         <div class="ac-trio ac-mt-6">
           {* Skeletons *}
-          <div class="ac-card ac-card--glass">
+          <div class="ac-card">
             <div class="ac-card__top">
               <h3 class="ac-card__title">Skeleton State</h3>
             </div>
@@ -812,7 +812,7 @@
           </div>
 
           {* Tooltips *}
-          <div class="ac-card ac-card--glass">
+          <div class="ac-card">
             <div class="ac-card__top">
               <h3 class="ac-card__title">Tooltips</h3>
             </div>
@@ -827,7 +827,7 @@
           </div>
 
           {* Stepper *}
-          <div class="ac-card ac-card--glass">
+          <div class="ac-card">
             <div class="ac-card__top">
               <h3 class="ac-card__title">Stepper</h3>
             </div>

@@ -1,7 +1,7 @@
 /**
  * AddonsCare UI System v3.0 — Scoped Design System
  * =============================================================================
- * Dark sidebar · Glassmorphism cards · Teal/Emerald palette
+ * Dark sidebar · Clean cards · Teal/Emerald palette
  * ALL styles scoped under .addonscare — no globals, no WHMCS leaks.
  * =============================================================================
  */
@@ -44,7 +44,7 @@
     --ac-sidebar-hover: rgba(255, 255, 255, 0.06);
     --ac-sidebar-active: rgba(20, 184, 166, 0.15);
     --ac-body-bg: var(--ac-slate-100);
-    --ac-card-bg: rgba(255, 255, 255, 0.82);
+    --ac-card-bg: #ffffff;
     --ac-card-border: rgba(255, 255, 255, 0.6);
     --ac-card-shadow: 0 4px 24px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
     --ac-glass-blur: 16px;
@@ -146,9 +146,7 @@
     flex-direction: column;
     gap: var(--ac-sp-4);
     padding: var(--ac-sp-6);
-    background: rgba(255, 255, 255, .65);
-    backdrop-filter: blur(var(--ac-glass-blur));
-    -webkit-backdrop-filter: blur(var(--ac-glass-blur));
+    background: #ffffff;
     border-bottom: 1px solid var(--ac-slate-200);
 }
 
@@ -340,22 +338,20 @@
    5. GLASS CARD — .ac-card--glass
    ============================================================================= */
 .addonscare .ac-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
-    backdrop-filter: blur(var(--ac-glass-blur));
-    -webkit-backdrop-filter: blur(var(--ac-glass-blur));
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: #ffffff;
+    border: 1px solid var(--ac-slate-200);
     border-radius: var(--ac-r-lg);
-    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: var(--ac-shadow);
     overflow: hidden;
     transition: all var(--ac-dur) var(--ac-ease);
 }
 
 .addonscare .ac-card:hover {
-    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: var(--ac-shadow-lg);
 }
 
 .addonscare .ac-card--glass {
-    background: var(--ac-card-bg);
+    background: #ffffff;
 }
 
 .addonscare .ac-card__top {
@@ -363,7 +359,7 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--ac-sp-5) var(--ac-sp-6);
-    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    border-bottom: 1px solid var(--ac-slate-200);
 }
 
 .addonscare .ac-card__title {
@@ -392,8 +388,8 @@
     align-items: center;
     justify-content: center;
     padding: var(--ac-sp-4) var(--ac-sp-6);
-    border-top: 1px solid rgba(226, 232, 240, 0.6);
-    background: rgba(248, 250, 252, 0.5);
+    border-top: 1px solid var(--ac-slate-200);
+    background: #f8fafc;
 }
 
 .addonscare .ac-card__bottom--actions {
@@ -479,12 +475,10 @@
     align-items: center;
     gap: var(--ac-sp-4);
     padding: var(--ac-sp-5);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
-    backdrop-filter: blur(var(--ac-glass-blur));
-    -webkit-backdrop-filter: blur(var(--ac-glass-blur));
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: #ffffff;
+    border: 1px solid var(--ac-slate-200);
     border-radius: var(--ac-r-lg);
-    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: var(--ac-shadow);
     position: relative;
     overflow: hidden;
     transition: transform var(--ac-dur) var(--ac-ease), box-shadow var(--ac-dur) var(--ac-ease);
@@ -492,7 +486,7 @@
 
 .addonscare .ac-stat-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: var(--ac-shadow-lg);
 }
 
 .addonscare .ac-stat-card::before {
@@ -1153,9 +1147,7 @@
     position: fixed;
     inset: 0;
     z-index: 10000;
-    background: rgba(15, 23, 42, .55);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(15, 23, 42, .8);
     align-items: center;
     justify-content: center;
     padding: var(--ac-sp-6);
@@ -1264,7 +1256,6 @@
     max-width: 480px;
     pointer-events: auto;
     animation: ac-toastIn .4s var(--ac-ease);
-    backdrop-filter: blur(10px);
 }
 
 .addonscare .ac-toast svg {
