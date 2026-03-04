@@ -97,7 +97,6 @@
    2. SCOPED RESET / BASE
    ============================================================================= */
 .addonscare {
-    position: relative;
     box-sizing: border-box;
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
     font-size: var(--ac-font-base);
@@ -1087,7 +1086,7 @@
    18. TOAST — moved to TOP
    ============================================================================= */
 .addonscare .ac-toast-rack {
-    position: absolute;
+    position: fixed;
     top: var(--ac-sp-6);
     right: var(--ac-sp-6);
     left: auto;
@@ -1096,7 +1095,6 @@
     flex-direction: column;
     gap: var(--ac-sp-2);
     pointer-events: none;
-    max-width: calc(100% - var(--ac-sp-12));
 }
 
 .addonscare .ac-toast {
