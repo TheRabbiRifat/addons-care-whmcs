@@ -258,13 +258,18 @@
    5. GLASS CARD — .ac-card--glass
    ============================================================================= */
 .addonscare .ac-card {
-    background: var(--ac-card-bg);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
     backdrop-filter: blur(var(--ac-glass-blur));
     -webkit-backdrop-filter: blur(var(--ac-glass-blur));
-    border: 1px solid var(--ac-card-border);
-    border-radius: var(--ac-r);
-    box-shadow: var(--ac-card-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: var(--ac-r-lg);
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
     overflow: hidden;
+    transition: all var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-card:hover {
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .addonscare .ac-card--glass {
@@ -276,7 +281,7 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--ac-sp-5) var(--ac-sp-6);
-    border-bottom: 1px solid var(--ac-slate-200);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
 }
 
 .addonscare .ac-card__title {
@@ -305,8 +310,8 @@
     align-items: center;
     justify-content: center;
     padding: var(--ac-sp-4) var(--ac-sp-6);
-    border-top: 1px solid var(--ac-slate-200);
-    background: var(--ac-slate-50);
+    border-top: 1px solid rgba(226, 232, 240, 0.6);
+    background: rgba(248, 250, 252, 0.5);
 }
 
 .addonscare .ac-card__bottom--actions {
@@ -392,20 +397,20 @@
     align-items: center;
     gap: var(--ac-sp-4);
     padding: var(--ac-sp-5);
-    background: var(--ac-card-bg);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
     backdrop-filter: blur(var(--ac-glass-blur));
     -webkit-backdrop-filter: blur(var(--ac-glass-blur));
-    border: 1px solid var(--ac-card-border);
-    border-radius: var(--ac-r);
-    box-shadow: var(--ac-card-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: var(--ac-r-lg);
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
     position: relative;
     overflow: hidden;
     transition: transform var(--ac-dur) var(--ac-ease), box-shadow var(--ac-dur) var(--ac-ease);
 }
 
 .addonscare .ac-stat-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--ac-shadow-lg);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .addonscare .ac-stat-card::before {
@@ -438,29 +443,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: var(--ac-r);
+    width: 56px;
+    height: 56px;
+    border-radius: var(--ac-r-lg);
     flex-shrink: 0;
+    font-size: 24px;
 }
 
 .addonscare .ac-stat-card--teal .ac-stat-card__icon {
-    background: var(--ac-accent-soft);
+    background: linear-gradient(135deg, var(--ac-accent-soft) 0%, rgba(20, 184, 166, 0.08) 100%);
     color: var(--ac-accent);
 }
 
 .addonscare .ac-stat-card--emerald .ac-stat-card__icon {
-    background: var(--ac-success-soft);
+    background: linear-gradient(135deg, var(--ac-success-soft) 0%, rgba(34, 197, 94, 0.08) 100%);
     color: var(--ac-success);
 }
 
 .addonscare .ac-stat-card--amber .ac-stat-card__icon {
-    background: var(--ac-warning-soft);
+    background: linear-gradient(135deg, var(--ac-warning-soft) 0%, rgba(245, 158, 11, 0.08) 100%);
     color: var(--ac-warning);
 }
 
 .addonscare .ac-stat-card--rose .ac-stat-card__icon {
-    background: var(--ac-danger-soft);
+    background: linear-gradient(135deg, var(--ac-danger-soft) 0%, rgba(239, 68, 68, 0.08) 100%);
     color: var(--ac-danger);
 }
 
@@ -723,15 +729,15 @@
     font-size: var(--ac-font-xs);
     text-transform: uppercase;
     letter-spacing: .06em;
-    color: var(--ac-slate-400);
-    background: var(--ac-slate-50);
-    border-bottom: 1px solid var(--ac-slate-200);
+    color: var(--ac-slate-500);
+    background: rgba(248, 250, 252, 0.8);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
     white-space: nowrap;
 }
 
 .addonscare .ac-table td {
     padding: var(--ac-sp-3) var(--ac-sp-5);
-    border-bottom: 1px solid var(--ac-slate-100);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.4);
     color: var(--ac-text);
     vertical-align: middle;
 }
@@ -851,7 +857,7 @@
     line-height: 1.4;
     min-height: 40px;
     border: 1px solid transparent;
-    border-radius: var(--ac-r-sm);
+    border-radius: var(--ac-r);
     cursor: pointer;
     transition: all var(--ac-dur) var(--ac-ease);
     text-decoration: none;
@@ -866,28 +872,31 @@
 
 /* Accent (teal) */
 .addonscare .ac-btn--accent {
-    background: var(--ac-accent);
+    background: linear-gradient(135deg, var(--ac-accent) 0%, var(--ac-accent-hover) 100%);
     color: white;
-    box-shadow: 0 2px 8px rgba(20, 184, 166, .3);
+    box-shadow: 0 4px 16px rgba(20, 184, 166, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .addonscare .ac-btn--accent:hover {
-    background: var(--ac-accent-hover);
-    box-shadow: 0 4px 16px rgba(20, 184, 166, .35);
-    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(20, 184, 166, 0.45);
+    transform: translateY(-2px);
 }
 
 /* Outline */
 .addonscare .ac-btn--outline {
-    background: white;
+    background: rgba(255, 255, 255, 0.8);
     color: var(--ac-slate-600);
     border-color: var(--ac-slate-200);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .addonscare .ac-btn--outline:hover {
     border-color: var(--ac-accent);
     color: var(--ac-accent);
     background: var(--ac-accent-soft);
+    box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);
+    transform: translateY(-1px);
 }
 
 /* Ghost */
@@ -897,18 +906,21 @@
 }
 
 .addonscare .ac-btn--ghost:hover {
-    background: var(--ac-slate-100);
+    background: rgba(0, 0, 0, 0.04);
     color: var(--ac-slate-700);
 }
 
 /* Danger */
 .addonscare .ac-btn--danger {
-    background: var(--ac-danger);
+    background: linear-gradient(135deg, var(--ac-danger) 0%, #dc2626 100%);
     color: white;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .addonscare .ac-btn--danger:hover {
-    background: #dc2626;
+    box-shadow: 0 6px 24px rgba(239, 68, 68, 0.45);
+    transform: translateY(-2px);
 }
 
 /* Sizes */
@@ -916,13 +928,14 @@
     padding: 6px var(--ac-sp-3);
     font-size: var(--ac-font-sm);
     min-height: 32px;
-    border-radius: 6px;
+    border-radius: var(--ac-r-sm);
 }
 
 .addonscare .ac-btn--lg {
     padding: 14px var(--ac-sp-8);
     font-size: var(--ac-font-lg);
     min-height: 48px;
+    border-radius: var(--ac-r-lg);
 }
 
 /* States */
@@ -1093,15 +1106,15 @@
     z-index: 10001;
     display: flex;
     flex-direction: column;
-    gap: var(--ac-sp-2);
+    gap: var(--ac-sp-4);
     pointer-events: none;
 }
 
 .addonscare .ac-toast {
     display: flex;
     align-items: center;
-    gap: var(--ac-sp-3);
-    padding: var(--ac-sp-3) var(--ac-sp-5);
+    gap: var(--ac-sp-4);
+    padding: var(--ac-sp-4) var(--ac-sp-5);
     background: linear-gradient(135deg, var(--ac-slate-800) 0%, var(--ac-slate-900) 100%);
     color: var(--ac-text-inv);
     border-radius: var(--ac-r);
@@ -1111,8 +1124,15 @@
     min-width: 320px;
     max-width: 480px;
     pointer-events: auto;
-    animation: ac-toastIn .35s var(--ac-ease);
+    animation: ac-toastIn .4s var(--ac-ease);
     backdrop-filter: blur(10px);
+}
+
+.addonscare .ac-toast svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    stroke-width: 2;
 }
 
 .addonscare .ac-toast--success {
@@ -1132,20 +1152,20 @@
 }
 
 .addonscare .ac-toast--out {
-    animation: ac-toastOut .3s var(--ac-ease) forwards;
+    animation: ac-toastOut .35s var(--ac-ease) forwards;
 }
 
 @keyframes ac-toastIn {
     from {
         opacity: 0;
-        transform: translateX(24px) scale(.95);
+        transform: translateX(24px) scale(.92);
     }
 
     to {
         opacity: 1;
         transform: translateX(0) scale(1);
     }
-}
+}}
 
 @keyframes ac-toastOut {
     from {
