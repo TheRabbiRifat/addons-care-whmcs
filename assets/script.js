@@ -25,6 +25,7 @@
         initPagination();
         initDropdowns();
         initAccordions();
+        initScrollHint();
     }
 
     // ---------------------------------------------------------------------------
@@ -242,6 +243,52 @@
                 });
                 btn.classList.add('ac-pager__btn--current');
                 showToast('Loading page ' + text + '...', 'info');
+            });
+        });
+    }
+
+    // ---------------------------------------------------------------------------
+    // 8. SCROLL HINT — shows indicators when content extends beyond viewport
+    // ---------------------------------------------------------------------------
+    function initScrollHint() {
+        var contentArea = root.querySelector('.ac-content');
+        var hintVertical = root.querySelector('#ac-scroll-hint-vertical');
+        var hintHorizontal = root.querySelector('#ac-scroll-hint-horizontal');
+        if (!contentArea || !hintVertical || !hintHorizontal) return;
+
+        function checkScroll() {
+            // VERTICAL: Check if content is scrollable vertically
+            var isVerticalScrollable = contentArea.scrollHeight > contentArea.clientHeight;
+            var isNotAtBottom = contentArea.scrollTop < (contentArea.scrollHeight - contentArea.clientHeight - 20);
+            
+            if (isVerticalScrollable && isNotAtBottom) {
+                hintVertical.classList.add('ac-scroll-hint--visible');
+            } else {
+                hintVertical.classList.remove('ac-scroll-hint--visible');
+            }
+
+            // HORIZONTAL: Check if content is scrollable horizontally
+            var isHorizontalScrollable = contentArea.scrollWidth > contentArea.clientWidth;
+            var isNotAtRight = contentArea.scrollLeft < (contentArea.scrollWidth - contentArea.clientWidth - 20);
+            
+            if (isHorizontalScrollable && isNotAtRight) {
+                hintHorizontal.classList.add('ac-scroll-hint--visible');
+            } else {
+                hintHorizontal.classList.remove('ac-scroll-hint--visible');
+            }
+        }
+
+        // Check on load
+        setTimeout(checkScroll, 100);
+
+        // Check on scroll (both vertical and horizontal)
+        contentArea.addEventListener('scroll', checkScroll);
+
+        // Check when tabs change
+        var tabButtons = root.querySelectorAll('[data-ac-tab]');
+        tabButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                setTimeout(checkScroll, 300);
             });
         });
     }

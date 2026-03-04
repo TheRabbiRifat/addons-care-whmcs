@@ -50,6 +50,10 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
           <span>Settings</span>
         </button>
+        <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-utilities" data-ac-tab="panel-utilities">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4m6 0a2 2 0 012 2v14a2 2 0 01-2 2h-4m-5-7h14m-9-4v4m4-4v4"/></svg>
+          <span>Utilities</span>
+        </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-toolkit" data-ac-tab="panel-toolkit">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
           <span>Toolkit</span>
@@ -626,7 +630,70 @@
 
       </section>
 
-      {* PANEL 4: TOOLKIT *}
+      {* PANEL: UTILITIES *}
+      <section class="ac-panel" id="panel-utilities">
+
+        {* System Info Row *}
+        <div class="ac-duo">
+          <div class="ac-card ac-card--glass">
+            <div class="ac-card__top">
+              <h3 class="ac-card__title">System Information</h3>
+            </div>
+            <div class="ac-card__inner ac-flex ac-flex-col ac-gap-4">
+              <div class="ac-info-group">
+                <span class="ac-info-label">PHP Version</span>
+                <span class="ac-info-value">{php_version}</span>
+              </div>
+              <div class="ac-info-group">
+                <span class="ac-info-label">WHMCS Version</span>
+                <span class="ac-info-value">8.7.2</span>
+              </div>
+              <div class="ac-info-group">
+                <span class="ac-info-label">Module Version</span>
+                <span class="ac-info-value">3.1.0</span>
+              </div>
+              <div class="ac-info-group">
+                <span class="ac-info-label">Server Hostname</span>
+                <span class="ac-info-value">server.example.com</span>
+              </div>
+            </div>
+          </div>
+
+          {* License Card *}
+          <div class="ac-card ac-card--glass">
+            <div class="ac-card__top">
+              <h3 class="ac-card__title">License Information</h3>
+              <span class="ac-badge ac-badge--success">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                Active
+              </span>
+            </div>
+            <div class="ac-card__inner ac-flex ac-flex-col ac-gap-4">
+              <div class="ac-info-group">
+                <span class="ac-info-label">License Code</span>
+                <span class="ac-info-value ac-mono">AC-DEMO-123456789</span>
+              </div>
+              <div class="ac-info-group">
+                <span class="ac-info-label">Licensed To</span>
+                <span class="ac-info-value">Example Company Inc.</span>
+              </div>
+              <div class="ac-info-group">
+                <span class="ac-info-label">Licensed Domain</span>
+                <span class="ac-info-value">example.com</span>
+              </div>
+              <div class="ac-info-group">
+                <span class="ac-info-label">Expiration Date</span>
+                <span class="ac-info-value">2025-12-31</span>
+              </div>
+            </div>
+            <div class="ac-card__bottom ac-card__bottom--actions">
+              <button class="ac-btn ac-btn--outline ac-btn--sm">Repair License</button>
+              <button class="ac-btn ac-btn--accent ac-btn--sm" data-demo-toast="success">Force Renew</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
       <section class="ac-panel" id="panel-toolkit">
 
         <div class="ac-trio">
@@ -738,6 +805,21 @@
         </div>
 
       </section>
+
+      {* Scroll hint indicators — vertical and horizontal *}
+      <div class="ac-scroll-hint ac-scroll-hint--vertical" id="ac-scroll-hint-vertical">
+        <span class="ac-scroll-hint__text">Scroll down</span>
+        <div class="ac-scroll-hint__arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+
+      <div class="ac-scroll-hint ac-scroll-hint--horizontal" id="ac-scroll-hint-horizontal">
+        <span class="ac-scroll-hint__text">Scroll</span>
+        <div class="ac-scroll-hint__arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 6 15 12 9 18"/></svg>
+        </div>
+      </div>
 
     </div>{* end .ac-content *}
 

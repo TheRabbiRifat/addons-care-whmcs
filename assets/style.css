@@ -228,6 +228,7 @@
     flex: 1;
     padding: var(--ac-sp-6);
     overflow-y: auto;
+    position: relative;
 }
 
 /* =============================================================================
@@ -236,6 +237,87 @@
 .addonscare .ac-panel {
     display: none;
     animation: ac-fadeUp .3s var(--ac-ease);
+}
+
+/* Scroll indicator — vertical (bottom center) */
+.addonscare .ac-scroll-hint--vertical {
+    position: absolute;
+    bottom: var(--ac-sp-6);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--ac-sp-2);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-scroll-hint--vertical.ac-scroll-hint--visible {
+    opacity: 1;
+}
+
+/* Scroll indicator — horizontal (right center) */
+.addonscare .ac-scroll-hint--horizontal {
+    position: absolute;
+    right: var(--ac-sp-6);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--ac-sp-2);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--ac-dur) var(--ac-ease);
+}
+
+.addonscare .ac-scroll-hint--horizontal.ac-scroll-hint--visible {
+    opacity: 1;
+}
+
+.addonscare .ac-scroll-hint__text {
+    font-size: var(--ac-font-xs);
+    color: var(--ac-slate-400);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    writing-mode: horizontal-tb;
+}
+
+.addonscare .ac-scroll-hint__arrow {
+    color: var(--ac-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.addonscare .ac-scroll-hint--vertical .ac-scroll-hint__arrow {
+    animation: ac-scrollBounceDown 2s ease-in-out infinite;
+}
+
+.addonscare .ac-scroll-hint--horizontal .ac-scroll-hint__arrow {
+    animation: ac-scrollBounceRight 2s ease-in-out infinite;
+}
+
+@keyframes ac-scrollBounceDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes ac-scrollBounceRight {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(8px);
+    }
 }
 
 .addonscare .ac-panel--active {
@@ -709,7 +791,64 @@
 }
 
 /* =============================================================================
-   13. TABLE
+   13. BADGE & INFO GROUPS
+   ============================================================================= */
+.addonscare .ac-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ac-sp-1);
+    padding: 4px 12px;
+    font-size: var(--ac-font-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-radius: var(--ac-r-full);
+    white-space: nowrap;
+}
+
+.addonscare .ac-badge--success {
+    background: var(--ac-success-soft);
+    color: var(--ac-success);
+}
+
+.addonscare .ac-badge--warning {
+    background: var(--ac-warning-soft);
+    color: var(--ac-warning);
+}
+
+.addonscare .ac-badge--danger {
+    background: var(--ac-danger-soft);
+    color: var(--ac-danger);
+}
+
+.addonscare .ac-badge--info {
+    background: var(--ac-info-soft);
+    color: var(--ac-info);
+}
+
+.addonscare .ac-info-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ac-sp-2);
+}
+
+.addonscare .ac-info-label {
+    font-size: var(--ac-font-sm);
+    font-weight: 500;
+    color: var(--ac-slate-500);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.addonscare .ac-info-value {
+    font-size: var(--ac-font-lg);
+    font-weight: 600;
+    color: var(--ac-slate-900);
+    word-break: break-word;
+}
+
+/* =============================================================================
+   14. TABLE
    ============================================================================= */
 .addonscare .ac-table-wrap {
     overflow-x: auto;
