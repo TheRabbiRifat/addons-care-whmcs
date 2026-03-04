@@ -94,6 +94,67 @@ function addonscare_output(array $vars)
     // Base URL for all module assets (CSS, JS, images)
     $assetUrl = $whmcsUrl . '/modules/addons/addonscare/assets/';
 
+    // -----------------------------------------------------------------------
+    // Real system information
+    // -----------------------------------------------------------------------
+    $phpVersion    = phpversion();
+    $moduleVersion = '1.0.0';
+
+    // Detect WHMCS version
+    $whmcsVersion = 'Unknown';
+    if (defined('WHMCS_VERSION')) {
+        $whmcsVersion = WHMCS_VERSION;
+    } elseif (defined('WHMCS_APP_VERSION')) {
+        $whmcsVersion = WHMCS_APP_VERSION;
+    } else {
+        try {
+            if (class_exists('\WHMCS\Config\Setting')) {
+                $v = \WHMCS\Config\Setting::getValue('Version');
+                if ($v) {
+                    $whmcsVersion = $v;
+                }
+            }
+        } catch (\Exception $e) {}
+    }
+
+    $serverHostname = gethostname() ?: 'Unknown';
+
+    // -----------------------------------------------------------------------
+    // Update check via cURL
+    // -----------------------------------------------------------------------
+    $updateCheckUrl = 'https://raw.githubusercontent.com/TheRabbiRifat/addons-care-whmcs/main/checkUpdate.json';
+    $updateInfo = [
+        'update_available' => false,
+        'latest_version'   => $moduleVersion,
+        'release_date'     => '',
+        'changelog'        => '',
+        'download_url'     => '',
+        'severity'         => '',
+        'error'            => false,
+    ];
+
+    if (function_exists('curl_init')) {
+        $ch = curl_init($updateCheckUrl);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 8,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_USERAGENT      => 'AddOnsCare-WHMCS/' . $moduleVersion,
+        ]);
+        $raw = curl_exec($ch);
+        $err = curl_errno($ch);
+        curl_close($ch);
+        if (!$err && $raw) {
+            $decoded = json_decode($raw, true);
+            if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+                $updateInfo = array_merge($updateInfo, $decoded);
+            }
+        } else {
+            $updateInfo['error'] = true;
+        }
+    }
+
     // Sample data - in a real module this comes from the database
     $services = [
         [
@@ -170,11 +231,16 @@ function addonscare_output(array $vars)
     // Render Smarty template
     $smarty = new Smarty();
     $smarty->addTemplateDir($moduleDir . '/templates');
-    $smarty->assign('modulelink', $vars['modulelink'] ?? '');
-    $smarty->assign('services',   $services);
-    $smarty->assign('stats',      $stats);
-    $smarty->assign('settings',   $settings);
-    $smarty->assign('assetUrl',   $assetUrl);
+    $smarty->assign('modulelink',     $vars['modulelink'] ?? '');
+    $smarty->assign('services',       $services);
+    $smarty->assign('stats',          $stats);
+    $smarty->assign('settings',       $settings);
+    $smarty->assign('assetUrl',       $assetUrl);
+    $smarty->assign('phpVersion',     $phpVersion);
+    $smarty->assign('whmcsVersion',   $whmcsVersion);
+    $smarty->assign('moduleVersion',  $moduleVersion);
+    $smarty->assign('serverHostname', $serverHostname);
+    $smarty->assign('updateInfo',     $updateInfo);
     $smarty->display('admin.tpl');
 
     // Inject JS after content

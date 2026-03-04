@@ -633,8 +633,49 @@
       {* PANEL: UTILITIES *}
       <section class="ac-panel" id="panel-utilities">
 
+        {* Update Check Banner *}
+        {if $updateInfo.update_available}
+        <div class="ac-banner ac-banner--warn" role="alert">
+          <div class="ac-banner__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <div class="ac-banner__text">
+            <strong>Update available &mdash; v{$updateInfo.latest_version}</strong>
+            {if $updateInfo.release_date}&mdash; Released {$updateInfo.release_date}{/if}
+            {if $updateInfo.changelog}<br><span style="font-size:.8125rem;">{$updateInfo.changelog}</span>{/if}
+            {if $updateInfo.download_url}
+            &nbsp;&nbsp;<a href="{$updateInfo.download_url}" target="_blank" class="ac-btn ac-btn--accent ac-btn--sm" style="margin-top:6px;display:inline-flex;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download
+            </a>
+            {/if}
+          </div>
+          <button class="ac-banner__dismiss" data-ac-dismiss="alert">&times;</button>
+        </div>
+        {elseif $updateInfo.error}
+        <div class="ac-banner ac-banner--err" role="alert">
+          <div class="ac-banner__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="ac-banner__text">
+            <strong>Update check failed</strong> &mdash; Could not reach the update server.
+          </div>
+          <button class="ac-banner__dismiss" data-ac-dismiss="alert">&times;</button>
+        </div>
+        {else}
+        <div class="ac-banner ac-banner--ok" role="alert">
+          <div class="ac-banner__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="ac-banner__text">
+            <strong>Module is up to date</strong> &mdash; v{$moduleVersion}
+          </div>
+          <button class="ac-banner__dismiss" data-ac-dismiss="alert">&times;</button>
+        </div>
+        {/if}
+
         {* System Info Row *}
-        <div class="ac-duo">
+        <div class="ac-duo ac-mt-6">
           <div class="ac-card ac-card--glass">
             <div class="ac-card__top">
               <h3 class="ac-card__title">System Information</h3>
@@ -642,19 +683,24 @@
             <div class="ac-card__inner ac-flex ac-flex-col ac-gap-4">
               <div class="ac-info-group">
                 <span class="ac-info-label">PHP Version</span>
-                <span class="ac-info-value">{$phpVersion|default:'7.4.0'}</span>
+                <span class="ac-info-value">{$phpVersion}
+                  {if $phpVersion >= '8.0'}<span class="ac-chip ac-chip--success" style="margin-left:6px;"><span class="ac-chip__dot"></span>Optimal</span>
+                  {elseif $phpVersion >= '7.4'}<span class="ac-chip ac-chip--warning" style="margin-left:6px;"><span class="ac-chip__dot"></span>OK</span>
+                  {else}<span class="ac-chip ac-chip--danger" style="margin-left:6px;"><span class="ac-chip__dot"></span>Outdated</span>
+                  {/if}
+                </span>
               </div>
               <div class="ac-info-group">
                 <span class="ac-info-label">WHMCS Version</span>
-                <span class="ac-info-value">{$whmcsVersion|default:'8.7.2'}</span>
+                <span class="ac-info-value">{$whmcsVersion}</span>
               </div>
               <div class="ac-info-group">
                 <span class="ac-info-label">Module Version</span>
-                <span class="ac-info-value">{$moduleVersion|default:'3.1.0'}</span>
+                <span class="ac-info-value">{$moduleVersion}</span>
               </div>
               <div class="ac-info-group">
                 <span class="ac-info-label">Server Hostname</span>
-                <span class="ac-info-value">{$serverHostname|default:'server.example.com'}</span>
+                <span class="ac-info-value">{$serverHostname}</span>
               </div>
             </div>
           </div>
@@ -683,11 +729,11 @@
               </div>
               <div class="ac-info-group">
                 <span class="ac-info-label">Expiration Date</span>
-                <span class="ac-info-value">{$licenseExpiration|default:'2025-12-31'}</span>
+                <span class="ac-info-value">{$licenseExpiration|default:'2026-12-31'}</span>
               </div>
             </div>
             <div class="ac-card__bottom ac-card__bottom--actions">
-              <button class="ac-btn ac-btn--outline ac-btn--sm">Repair License</button>
+              <button class="ac-btn ac-btn--outline ac-btn--sm" data-demo-toast="warning">Repair License</button>
               <button class="ac-btn ac-btn--accent ac-btn--sm" data-demo-toast="success">Force Renew</button>
             </div>
           </div>
