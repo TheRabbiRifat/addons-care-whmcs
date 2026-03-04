@@ -640,15 +640,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           </div>
           <div class="ac-banner__text">
-            <strong>Update available &mdash; v{$updateInfo.latest_version}</strong>
-            {if $updateInfo.release_date}&mdash; Released {$updateInfo.release_date}{/if}
-            {if $updateInfo.changelog}<br><span style="font-size:.8125rem;">{$updateInfo.changelog}</span>{/if}
-            {if $updateInfo.download_url}
-            &nbsp;&nbsp;<a href="{$updateInfo.download_url}" target="_blank" class="ac-btn ac-btn--accent ac-btn--sm" style="margin-top:6px;display:inline-flex;">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download
-            </a>
-            {/if}
+            <strong>Update available!</strong> &mdash; v{$updateInfo.latest_version} is available. See the Software Update card below for details.
           </div>
           <button class="ac-banner__dismiss" data-ac-dismiss="alert">&times;</button>
         </div>
