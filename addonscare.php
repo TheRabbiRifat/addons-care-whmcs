@@ -122,7 +122,8 @@ function addonscare_output(array $vars)
     // -----------------------------------------------------------------------
     // Update check via cURL
     // -----------------------------------------------------------------------
-    $updateCheckUrl = $assetUrl . '../checkUpdate.json';
+    $systemUrl = $vars['systemurl'] ?? (class_exists('\WHMCS\Config\Setting') ? \WHMCS\Config\Setting::getValue('SystemURL') : '');
+    $updateCheckUrl = rtrim($systemUrl, '/') . '/modules/addons/addonscare/checkUpdate.json';
     $updateInfo = [
         'update_available' => false,
         'latest_version'   => $moduleVersion,
