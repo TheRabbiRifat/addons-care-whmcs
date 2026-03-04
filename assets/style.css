@@ -1102,15 +1102,17 @@
     align-items: center;
     gap: var(--ac-sp-3);
     padding: var(--ac-sp-3) var(--ac-sp-5);
-    background: var(--ac-slate-900);
+    background: linear-gradient(135deg, var(--ac-slate-800) 0%, var(--ac-slate-900) 100%);
     color: var(--ac-text-inv);
     border-radius: var(--ac-r);
-    box-shadow: var(--ac-shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     font-size: var(--ac-font-base);
-    min-width: 300px;
-    max-width: 440px;
+    min-width: 320px;
+    max-width: 480px;
     pointer-events: auto;
     animation: ac-toastIn .35s var(--ac-ease);
+    backdrop-filter: blur(10px);
 }
 
 .addonscare .ac-toast--success {
@@ -1136,24 +1138,24 @@
 @keyframes ac-toastIn {
     from {
         opacity: 0;
-        transform: translateY(16px) scale(.96);
+        transform: translateX(24px) scale(.95);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateX(0) scale(1);
     }
 }
 
 @keyframes ac-toastOut {
     from {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0) scale(1);
     }
 
     to {
         opacity: 0;
-        transform: translateY(-16px);
+        transform: translateX(24px) scale(.95);
     }
 }
 
