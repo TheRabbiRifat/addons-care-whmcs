@@ -739,6 +739,84 @@
           </div>
         </div>
 
+        {* Updates and Support *}
+        <div class="ac-duo ac-mt-6">
+          {* Check for Updates Card *}
+          <div class="ac-card">
+            <div class="ac-card__top">
+              <h3 class="ac-card__title">Software Update</h3>
+              {if $updateInfo.update_available}
+                <span class="ac-badge ac-badge--warning">Update Available</span>
+              {else}
+                <span class="ac-badge ac-badge--success">Up to Date</span>
+              {/if}
+            </div>
+            <div class="ac-card__inner">
+              {if $updateInfo.update_available}
+              <div class="ac-flex ac-items-center ac-gap-3 ac-mb-4">
+                <strong style="font-size:1.125rem;">Version {$updateInfo.latest_version|default:'v4.0.0'}</strong>
+                <span class="ac-text-dim">&mdash; Released on {$updateInfo.release_date|default:'Recently'}</span>
+              </div>
+              <div style="background:var(--ac-slate-50); border:1px solid var(--ac-slate-200); padding:var(--ac-sp-4); border-radius:var(--ac-r); max-height:160px; overflow-y:auto; line-height:1.5;">
+                <strong style="display:block; margin-bottom:8px;">Changelog:</strong>
+                {if $updateInfo.changelog}
+                  {$updateInfo.changelog|nl2br}
+                {else}
+                  <ul style="list-style:disc; padding-left:1.5rem; color:var(--ac-text-dim); margin:0;">
+                    <li>Added new dashboard widgets and reporting tools.</li>
+                    <li>Fixed API synchronization timeout issue for large data sets.</li>
+                    <li>Improved UI performance.</li>
+                  </ul>
+                {/if}
+              </div>
+              {else}
+              <div class="ac-flex ac-flex-col ac-gap-3 ac-items-center ac-justify-center" style="padding:var(--ac-sp-6) 0; color:var(--ac-text-dim);">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--ac-success)" stroke-width="1.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <p style="margin:0;">You are running the latest version of AddonsCare.</p>
+              </div>
+              {/if}
+            </div>
+            <div class="ac-card__bottom ac-card__bottom--actions">
+              {if $updateInfo.update_available && $updateInfo.download_url}
+                <a href="{$updateInfo.download_url}" target="_blank" class="ac-btn ac-btn--accent">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  &nbsp;Download Update
+                </a>
+              {else}
+                <button class="ac-btn ac-btn--outline" data-demo-toast="success">Check for Updates</button>
+              {/if}
+            </div>
+          </div>
+
+          {* Report Issue / Support *}
+          <div class="ac-card">
+            <div class="ac-card__top">
+              <h3 class="ac-card__title">Support & Troubleshooting</h3>
+            </div>
+            <div class="ac-card__inner">
+              <p class="ac-mb-4" style="color:var(--ac-text-dim); line-height:1.5;">If you are experiencing issues with the module, you can directly report them to our support team. Your system details will be attached automatically.</p>
+              
+              <div class="ac-info-group ac-mb-2">
+                <span class="ac-info-label" style="font-weight:600;">System Info Included:</span>
+              </div>
+              <div style="background:var(--ac-slate-50); border:1px solid var(--ac-slate-200); padding:var(--ac-sp-3) var(--ac-sp-4); border-radius:var(--ac-r);">
+                <ul style="list-style-type:disc; padding-left:1.5rem; margin:0; color:var(--ac-text-dim); font-size:0.875rem;">
+                  <li>PHP Version: {$phpVersion|default:'Unknown'}</li>
+                  <li>WHMCS Version: {$whmcsVersion|default:'Unknown'}</li>
+                  <li>Module Version: {$moduleVersion|default:'Unknown'}</li>
+                  <li>License Code: {$licenseCode|default:'AC-DEMO'}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="ac-card__bottom ac-card__bottom--actions">
+              <a href="mailto:support@addonscare.com?subject=Issue%20Report%20-%20{$licensedDomain|default:'example.com'|escape:'url'}&body=Hello%20Support%2C%0A%0AI%20need%20help%20with%20the%20AddonsCare%20module.%0A%0A%5B%20Please%20describe%20your%20issue%20here%20%5D%0A%0A%0A---%20System%20Info%20---%0APHP%20Version%3A%20{$phpVersion|escape:'url'}%0AWHMCS%20Version%3A%20{$whmcsVersion|escape:'url'}%0AModule%20Version%3A%20{$moduleVersion|escape:'url'}%0ALicense%20Code%3A%20{$licenseCode|default:'AC-DEMO'|escape:'url'}%0ADomain%3A%20{$licensedDomain|default:'example.com'|escape:'url'}%0A-------------------%0A" class="ac-btn ac-btn--danger">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                &nbsp;Report Issue
+              </a>
+            </div>
+          </div>
+        </div>
+
       </section>
       <section class="ac-panel" id="panel-toolkit">
 

@@ -122,7 +122,7 @@ function addonscare_output(array $vars)
     // -----------------------------------------------------------------------
     // Update check via cURL
     // -----------------------------------------------------------------------
-    $updateCheckUrl = 'https://raw.githubusercontent.com/TheRabbiRifat/addons-care-whmcs/main/checkUpdate.json';
+    $updateCheckUrl = $assetUrl . '../checkUpdate.json';
     $updateInfo = [
         'update_available' => false,
         'latest_version'   => $moduleVersion,
