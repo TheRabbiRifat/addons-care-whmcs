@@ -3,7 +3,7 @@
    Tab-based navigation · Glassmorphism cards · Teal/Emerald palette
    ============================================================================= *}
 <div class="addonscare" id="ac-app">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <div class="ac-container">
 
     {* =========================================================================
@@ -16,7 +16,7 @@
           <p>Management and configuration dashboard.</p>
         </div>
         <button class="ac-btn ac-btn--accent ac-btn--sm" data-ac-modal="#modal-sync">
-          <i class="ri-refresh-line"></i>
+          <i class="fa-solid fa-arrows-rotate fa-lg"></i>
           Sync Now
         </button>
       </div>
@@ -24,39 +24,39 @@
       {* Tab Navigation *}
       <nav class="ac-tabs" role="tablist">
         <button class="ac-tab ac-tab--active" role="tab" aria-selected="true" aria-controls="panel-overview" data-ac-tab="panel-overview">
-          <i class="ri-home-4-line"></i>
+          <i class="fa-solid fa-house fa-lg"></i>
           <span>Overview</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-services" data-ac-tab="panel-services">
-          <i class="ri-server-line"></i>
+          <i class="fa-solid fa-server fa-lg"></i>
           <span>Services</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-analytics" data-ac-tab="panel-analytics">
-          <i class="ri-pie-chart-line"></i>
+          <i class="fa-solid fa-chart-pie fa-lg"></i>
           <span>Analytics</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-reports" data-ac-tab="panel-reports">
-          <i class="ri-file-chart-line"></i>
+          <i class="fa-solid fa-file-invoice fa-lg"></i>
           <span>Reports</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-notifications" data-ac-tab="panel-notifications">
-          <i class="ri-notification-3-line"></i>
+          <i class="fa-solid fa-bell fa-lg"></i>
           <span>Notifications</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-activity" data-ac-tab="panel-activity">
-          <i class="ri-history-pulse-line"></i>
+          <i class="fa-solid fa-clock-rotate-left fa-lg"></i>
           <span>Activity</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-settings" data-ac-tab="panel-settings">
-          <i class="ri-settings-4-line"></i>
+          <i class="fa-solid fa-gear fa-lg"></i>
           <span>Settings</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-utilities" data-ac-tab="panel-utilities">
-          <i class="ri-tools-line"></i>
+          <i class="fa-solid fa-screwdriver-wrench fa-lg"></i>
           <span>Utilities</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-toolkit" data-ac-tab="panel-toolkit">
-          <i class="ri-stack-line"></i>
+          <i class="fa-solid fa-layer-group fa-lg"></i>
           <span>Toolkit</span>
         </button>
       </nav>
@@ -82,7 +82,7 @@
         <div class="ac-stat-row">
           <div class="ac-stat-card ac-stat-card--teal">
             <div class="ac-stat-card__icon">
-              <i class="ri-server-line"></i>
+              <i class="fa-solid fa-server fa-lg"></i>
             </div>
             <div class="ac-stat-card__data">
               <span class="ac-stat-card__value">{$services|count}</span>
@@ -115,7 +115,7 @@
 
           <div class="ac-stat-card ac-stat-card--rose">
             <div class="ac-stat-card__icon">
-              <i class="ri-calendar-todo-line"></i>
+              <i class="fa-solid fa-calendar-check fa-lg"></i>
             </div>
             <div class="ac-stat-card__data">
               <span class="ac-stat-card__value">28</span>
@@ -173,19 +173,19 @@
             <div class="ac-card__inner">
               <div class="ac-action-grid">
                 <button class="ac-action-tile" data-ac-modal="#modal-sync">
-                  <i class="ri-loop-right-line"></i>
+                  <i class="fa-solid fa-rotate-right fa-lg"></i>
                   <span>Sync DB</span>
                 </button>
                 <button class="ac-action-tile" data-demo-toast="info">
-                  <i class="ri-export-line"></i>
+                  <i class="fa-solid fa-file-export fa-lg"></i>
                   <span>Export</span>
                 </button>
                 <button class="ac-action-tile" data-demo-toast="success">
-                  <i class="ri-file-list-3-line"></i>
+                  <i class="fa-solid fa-clipboard-list fa-lg"></i>
                   <span>Audit Log</span>
                 </button>
                 <button class="ac-action-tile" data-demo-toast="warning">
-                  <i class="ri-send-plane-line"></i>
+                  <i class="fa-solid fa-paper-plane fa-lg"></i>
                   <span>Notify</span>
                 </button>
               </div>
@@ -232,14 +232,14 @@
             <div class="ac-card__toolbar">
               <span class="ac-pill ac-pill--count">{$services|count} records</span>
               <button class="ac-btn ac-btn--outline ac-btn--sm" data-demo-toast="info">
-                <i class="ri-file-download-line"></i>
+                <i class="fa-solid fa-file-arrow-down fa-lg"></i>
                 Export
               </button>
             </div>
           </div>
           <div class="ac-filter-bar">
             <div class="ac-filter-bar__search">
-              <i class="ri-search-line"></i>
+              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
               <input type="text" class="ac-input" placeholder="Search services...">
             </div>
             <div class="ac-filter-bar__actions">
@@ -295,7 +295,7 @@
                     <td style="text-align: right;">
                       <div class="ac-dropdown">
                         <button class="ac-btn ac-btn--ghost ac-btn--sm" data-ac-dropdown>
-                          <i class="ri-more-2-fill"></i>
+                          <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
                         </button>
                         <div class="ac-dropdown__menu">
                           <button class="ac-dropdown__item">View Details</button>
@@ -314,7 +314,7 @@
           <div class="ac-card__bottom">
             <nav class="ac-pager" aria-label="Page navigation">
               <button class="ac-pager__btn" disabled>
-                <i class="ri-arrow-left-s-line"></i>
+                <i class="fa-solid fa-chevron-left fa-lg"></i>
               </button>
               <button class="ac-pager__btn ac-pager__btn--current">1</button>
               <button class="ac-pager__btn">2</button>
@@ -322,7 +322,7 @@
               <span class="ac-pager__dots">&hellip;</span>
               <button class="ac-pager__btn">8</button>
               <button class="ac-pager__btn">
-                <i class="ri-arrow-right-s-line"></i>
+                <i class="fa-solid fa-chevron-right fa-lg"></i>
               </button>
             </nav>
           </div>
@@ -332,7 +332,7 @@
           <div class="ac-card__inner">
             <div class="ac-empty">
               <div class="ac-empty__visual">
-                <i class="ri-inbox-archive-line"></i>
+                <i class="fa-solid fa-inbox fa-lg"></i>
               </div>
               <h3 class="ac-empty__title">No services found</h3>
               <p class="ac-empty__desc">There are no services currently managed by this module.</p>
@@ -354,7 +354,7 @@
             <div class="ac-stat-row">
               <div class="ac-stat-card ac-stat-card--teal">
                 <div class="ac-stat-card__icon">
-                  <i class="ri-arrow-up-circle-line"></i>
+                  <i class="fa-solid fa-circle-up fa-lg"></i>
                 </div>
                 <div class="ac-stat-card__data">
                   <span class="ac-stat-card__value">99.8%</span>
@@ -363,7 +363,7 @@
               </div>
               <div class="ac-stat-card ac-stat-card--emerald">
                 <div class="ac-stat-card__icon">
-                  <i class="ri-timer-line"></i>
+                  <i class="fa-solid fa-stopwatch fa-lg"></i>
                 </div>
                 <div class="ac-stat-card__data">
                   <span class="ac-stat-card__value">2.34s</span>
@@ -372,7 +372,7 @@
               </div>
               <div class="ac-stat-card ac-stat-card--amber">
                 <div class="ac-stat-card__icon">
-                  <i class="ri-arrow-left-right-line"></i>
+                  <i class="fa-solid fa-arrows-left-right fa-lg"></i>
                 </div>
                 <div class="ac-stat-card__data">
                   <span class="ac-stat-card__value">2,847</span>
@@ -381,7 +381,7 @@
               </div>
               <div class="ac-stat-card ac-stat-card--rose">
                 <div class="ac-stat-card__icon">
-                  <i class="ri-heart-pulse-line"></i>
+                  <i class="fa-solid fa-heart-pulse fa-lg"></i>
                 </div>
                 <div class="ac-stat-card__data">
                   <span class="ac-stat-card__value">12</span>
@@ -399,7 +399,7 @@
           <div class="ac-card__top">
             <h3 class="ac-card__title">Available Reports</h3>
             <button class="ac-btn ac-btn--outline ac-btn--sm">
-              <i class="ri-download-2-line"></i>
+              <i class="fa-solid fa-download fa-lg"></i>
               Download All
             </button>
           </div>
@@ -517,7 +517,7 @@
                   <label class="ac-field__label" for="f-license">License Key</label>
                   <div class="ac-input-wrap ac-input-wrap--valid">
                     <input class="ac-input" type="text" id="f-license" value="AC-DEMO-123456" placeholder="AC-XXXX-XXXX">
-                    <i class="ri-checkbox-circle-line"></i>
+                    <i class="fa-solid fa-circle-check fa-lg"></i>
                   </div>
                   <span class="ac-field__msg ac-field__msg--ok">License is active and valid.</span>
                 </div>
@@ -588,7 +588,7 @@
                   <div class="ac-accordion__item">
                     <button class="ac-accordion__trigger" type="button">
                       API Webhooks
-                      <i class="ri-arrow-down-s-line"></i>
+                      <i class="fa-solid fa-chevron-down fa-lg"></i>
                     </button>
                     <div class="ac-accordion__content">
                       <p>Configure external webhook endpoints to receive POST payloads upon service events.</p>
@@ -598,7 +598,7 @@
                   <div class="ac-accordion__item">
                     <button class="ac-accordion__trigger" type="button">
                       Override Templates
-                      <i class="ri-arrow-down-s-line"></i>
+                      <i class="fa-solid fa-chevron-down fa-lg"></i>
                     </button>
                     <div class="ac-accordion__content">
                       <label class="ac-switch">
@@ -703,7 +703,7 @@
             <div class="ac-card__top">
               <h3 class="ac-card__title">License Information</h3>
               <span class="ac-badge ac-badge--success">
-                <i class="ri-checkbox-circle-fill"></i>
+                <i class="fa-solid fa-circle-check fa-lg"></i>
                 Active
               </span>
             </div>
@@ -772,7 +772,7 @@
             <div class="ac-card__bottom ac-card__bottom--actions">
               {if $updateInfo.update_available && $updateInfo.download_url}
                 <a href="{$updateInfo.download_url}" target="_blank" class="ac-btn ac-btn--accent">
-                  <i class="ri-download-cloud-2-line"></i>
+                  <i class="fa-solid fa-cloud-arrow-down fa-lg"></i>
                   &nbsp;Download Update
                 </a>
               {else}
@@ -803,7 +803,7 @@
             </div>
             <div class="ac-card__bottom ac-card__bottom--actions">
               <a href="mailto:support@addonscare.com?subject=Issue%20Report%20-%20{$licensedDomain|default:'example.com'|escape:'url'}&body=Hello%20Support%2C%0A%0AI%20need%20help%20with%20the%20AddonsCare%20module.%0A%0A%5B%20Please%20describe%20your%20issue%20here%20%5D%0A%0A%0A---%20System%20Info%20---%0APHP%20Version%3A%20{$phpVersion|escape:'url'}%0AWHMCS%20Version%3A%20{$whmcsVersion|escape:'url'}%0AModule%20Version%3A%20{$moduleVersion|escape:'url'}%0ALicense%20Code%3A%20{$licenseCode|default:'AC-DEMO'|escape:'url'}%0ADomain%3A%20{$licensedDomain|default:'example.com'|escape:'url'}%0A-------------------%0A" class="ac-btn ac-btn--danger">
-                <i class="ri-bug-line"></i>
+                <i class="fa-solid fa-bug fa-lg"></i>
                 &nbsp;Report Issue
               </a>
             </div>
@@ -855,7 +855,7 @@
               <button class="ac-btn ac-btn--outline" data-demo-toast="error">Test Error</button>
               <button class="ac-btn ac-btn--outline" data-demo-toast="success">Test Success</button>
               <div class="ac-notice ac-notice--error">
-                <i class="ri-close-circle-line"></i>
+                <i class="fa-solid fa-circle-xmark fa-lg"></i>
                 <div><strong>Connection Failed</strong><br>API endpoint unreachable.</div>
               </div>
             </div>
@@ -905,7 +905,7 @@
             <div class="ac-card__inner">
               <div class="ac-stepper">
                 <div class="ac-step ac-step--complete">
-                  <div class="ac-step__circle"><i class="ri-check-line"></i></div>
+                  <div class="ac-step__circle"><i class="fa-solid fa-check fa-lg"></i></div>
                   <span class="ac-step__label">Setup</span>
                 </div>
                 <div class="ac-step ac-step--active">
@@ -927,14 +927,14 @@
       <div class="ac-scroll-hint ac-scroll-hint--vertical" id="ac-scroll-hint-vertical">
         <span class="ac-scroll-hint__text">Scroll down</span>
         <div class="ac-scroll-hint__arrow">
-          <i class="ri-arrow-down-s-line"></i>
+          <i class="fa-solid fa-chevron-down fa-lg"></i>
         </div>
       </div>
 
       <div class="ac-scroll-hint ac-scroll-hint--horizontal" id="ac-scroll-hint-horizontal">
         <span class="ac-scroll-hint__text">Scroll</span>
         <div class="ac-scroll-hint__arrow">
-          <i class="ri-arrow-right-s-line"></i>
+          <i class="fa-solid fa-chevron-right fa-lg"></i>
         </div>
       </div>
 
@@ -950,13 +950,13 @@
       <div class="ac-dialog__head">
         <h3 id="modal-title">Confirm Database Sync</h3>
         <button class="ac-dialog__x" data-ac-close aria-label="Close">
-          <i class="ri-close-line"></i>
+          <i class="fa-solid fa-xmark fa-lg"></i>
         </button>
       </div>
       <div class="ac-dialog__body">
         <p>This will synchronize all local service records with the remote API. The process may take several minutes depending on record volume.</p>
         <div class="ac-notice ac-notice--warning ac-mt-4">
-          <i class="ri-alert-line"></i>
+          <i class="fa-solid fa-circle-exclamation fa-lg"></i>
           <span>Ensure no billing runs are currently active before proceeding.</span>
         </div>
       </div>
