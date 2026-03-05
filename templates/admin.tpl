@@ -3,7 +3,7 @@
    Tab-based navigation · Glassmorphism cards · Teal/Emerald palette
    ============================================================================= *}
 <div class="addonscare" id="ac-app">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
   <div class="ac-container">
 
     {* =========================================================================
@@ -16,7 +16,7 @@
           <p>Management and configuration dashboard.</p>
         </div>
         <button class="ac-btn ac-btn--accent ac-btn--sm" data-ac-modal="#modal-sync">
-          <i class="bi bi-arrow-repeat"></i>
+          <i class="ri-refresh-line"></i>
           Sync Now
         </button>
       </div>
@@ -24,39 +24,39 @@
       {* Tab Navigation *}
       <nav class="ac-tabs" role="tablist">
         <button class="ac-tab ac-tab--active" role="tab" aria-selected="true" aria-controls="panel-overview" data-ac-tab="panel-overview">
-          <i class="bi bi-house"></i>
+          <i class="ri-home-4-line"></i>
           <span>Overview</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-services" data-ac-tab="panel-services">
-          <i class="bi bi-hdd-network"></i>
+          <i class="ri-server-line"></i>
           <span>Services</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-analytics" data-ac-tab="panel-analytics">
-          <i class="bi bi-bar-chart-line"></i>
+          <i class="ri-pie-chart-line"></i>
           <span>Analytics</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-reports" data-ac-tab="panel-reports">
-          <i class="bi bi-file-earmark-text"></i>
+          <i class="ri-file-chart-line"></i>
           <span>Reports</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-notifications" data-ac-tab="panel-notifications">
-          <i class="bi bi-bell"></i>
+          <i class="ri-notification-3-line"></i>
           <span>Notifications</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-activity" data-ac-tab="panel-activity">
-          <i class="bi bi-activity"></i>
+          <i class="ri-history-pulse-line"></i>
           <span>Activity</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-settings" data-ac-tab="panel-settings">
-          <i class="bi bi-sliders"></i>
+          <i class="ri-settings-4-line"></i>
           <span>Settings</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-utilities" data-ac-tab="panel-utilities">
-          <i class="bi bi-wrench"></i>
+          <i class="ri-tools-line"></i>
           <span>Utilities</span>
         </button>
         <button class="ac-tab" role="tab" aria-selected="false" aria-controls="panel-toolkit" data-ac-tab="panel-toolkit">
-          <i class="bi bi-boxes"></i>
+          <i class="ri-stack-line"></i>
           <span>Toolkit</span>
         </button>
       </nav>
@@ -70,7 +70,7 @@
         {* Alert Banner *}
         <div class="ac-banner ac-banner--ok" role="alert">
           <div class="ac-banner__icon">
-            <i class="bi bi-check-circle" style="font-size: 20px;"></i>
+            <i class="ri-checkbox-circle-line" style="font-size: 20px;"></i>
           </div>
           <div class="ac-banner__text">
             <strong>All systems operational</strong> &mdash; Last checked 2 minutes ago
@@ -82,7 +82,7 @@
         <div class="ac-stat-row">
           <div class="ac-stat-card ac-stat-card--teal">
             <div class="ac-stat-card__icon">
-              <i class="bi bi-server"></i>
+              <i class="ri-server-line"></i>
             </div>
             <div class="ac-stat-card__data">
               <span class="ac-stat-card__value">{$services|count}</span>
@@ -93,7 +93,7 @@
 
           <div class="ac-stat-card ac-stat-card--emerald">
             <div class="ac-stat-card__icon">
-              <i class="bi bi-wallet2" style="font-size: 24px;"></i>
+              <i class="ri-wallet-3-line" style="font-size: 24px;"></i>
             </div>
             <div class="ac-stat-card__data">
               <span class="ac-stat-card__value">$12,840</span>
@@ -104,7 +104,7 @@
 
           <div class="ac-stat-card ac-stat-card--amber">
             <div class="ac-stat-card__icon">
-              <i class="bi bi-life-preserver" style="font-size: 20px;"></i>
+              <i class="ri-lifebuoy-line" style="font-size: 20px;"></i>
             </div>
             <div class="ac-stat-card__data">
               <span class="ac-stat-card__value">17</span>
@@ -115,7 +115,7 @@
 
           <div class="ac-stat-card ac-stat-card--rose">
             <div class="ac-stat-card__icon">
-              <i class="bi bi-clock"></i>
+              <i class="ri-calendar-todo-line"></i>
             </div>
             <div class="ac-stat-card__data">
               <span class="ac-stat-card__value">28</span>
@@ -173,19 +173,19 @@
             <div class="ac-card__inner">
               <div class="ac-action-grid">
                 <button class="ac-action-tile" data-ac-modal="#modal-sync">
-                  <i class="bi bi-arrow-repeat"></i>
+                  <i class="ri-loop-right-line"></i>
                   <span>Sync DB</span>
                 </button>
                 <button class="ac-action-tile" data-demo-toast="info">
-                  <i class="bi bi-box-arrow-right"></i>
+                  <i class="ri-export-line"></i>
                   <span>Export</span>
                 </button>
                 <button class="ac-action-tile" data-demo-toast="success">
-                  <i class="bi bi-journal-text"></i>
+                  <i class="ri-file-list-3-line"></i>
                   <span>Audit Log</span>
                 </button>
                 <button class="ac-action-tile" data-demo-toast="warning">
-                  <i class="bi bi-send"></i>
+                  <i class="ri-send-plane-line"></i>
                   <span>Notify</span>
                 </button>
               </div>
@@ -232,14 +232,14 @@
             <div class="ac-card__toolbar">
               <span class="ac-pill ac-pill--count">{$services|count} records</span>
               <button class="ac-btn ac-btn--outline ac-btn--sm" data-demo-toast="info">
-                <i class="bi bi-download"></i>
+                <i class="ri-file-download-line"></i>
                 Export
               </button>
             </div>
           </div>
           <div class="ac-filter-bar">
             <div class="ac-filter-bar__search">
-              <i class="bi bi-search"></i>
+              <i class="ri-search-line"></i>
               <input type="text" class="ac-input" placeholder="Search services...">
             </div>
             <div class="ac-filter-bar__actions">
@@ -295,7 +295,7 @@
                     <td style="text-align: right;">
                       <div class="ac-dropdown">
                         <button class="ac-btn ac-btn--ghost ac-btn--sm" data-ac-dropdown>
-                          <i class="bi bi-three-dots-vertical"></i>
+                          <i class="ri-more-2-fill"></i>
                         </button>
                         <div class="ac-dropdown__menu">
                           <button class="ac-dropdown__item">View Details</button>
@@ -314,7 +314,7 @@
           <div class="ac-card__bottom">
             <nav class="ac-pager" aria-label="Page navigation">
               <button class="ac-pager__btn" disabled>
-                <i class="bi bi-chevron-left"></i>
+                <i class="ri-arrow-left-s-line"></i>
               </button>
               <button class="ac-pager__btn ac-pager__btn--current">1</button>
               <button class="ac-pager__btn">2</button>
@@ -322,7 +322,7 @@
               <span class="ac-pager__dots">&hellip;</span>
               <button class="ac-pager__btn">8</button>
               <button class="ac-pager__btn">
-                <i class="bi bi-chevron-right"></i>
+                <i class="ri-arrow-right-s-line"></i>
               </button>
             </nav>
           </div>
@@ -332,7 +332,7 @@
           <div class="ac-card__inner">
             <div class="ac-empty">
               <div class="ac-empty__visual">
-                <i class="bi bi-box-seam"></i>
+                <i class="ri-inbox-archive-line"></i>
               </div>
               <h3 class="ac-empty__title">No services found</h3>
               <p class="ac-empty__desc">There are no services currently managed by this module.</p>
@@ -354,7 +354,7 @@
             <div class="ac-stat-row">
               <div class="ac-stat-card ac-stat-card--teal">
                 <div class="ac-stat-card__icon">
-                  <i class="bi bi-arrow-up-circle"></i>
+                  <i class="ri-arrow-up-circle-line"></i>
                 </div>
                 <div class="ac-stat-card__data">
                   <span class="ac-stat-card__value">99.8%</span>
@@ -363,7 +363,7 @@
               </div>
               <div class="ac-stat-card ac-stat-card--emerald">
                 <div class="ac-stat-card__icon">
-                  <i class="bi bi-stopwatch"></i>
+                  <i class="ri-timer-line"></i>
                 </div>
                 <div class="ac-stat-card__data">
                   <span class="ac-stat-card__value">2.34s</span>
@@ -372,7 +372,7 @@
               </div>
               <div class="ac-stat-card ac-stat-card--amber">
                 <div class="ac-stat-card__icon">
-                  <i class="bi bi-arrow-left-right"></i>
+                  <i class="ri-arrow-left-right-line"></i>
                 </div>
                 <div class="ac-stat-card__data">
                   <span class="ac-stat-card__value">2,847</span>
@@ -381,7 +381,7 @@
               </div>
               <div class="ac-stat-card ac-stat-card--rose">
                 <div class="ac-stat-card__icon">
-                  <i class="bi bi-heart-pulse"></i>
+                  <i class="ri-heart-pulse-line"></i>
                 </div>
                 <div class="ac-stat-card__data">
                   <span class="ac-stat-card__value">12</span>
@@ -399,7 +399,7 @@
           <div class="ac-card__top">
             <h3 class="ac-card__title">Available Reports</h3>
             <button class="ac-btn ac-btn--outline ac-btn--sm">
-              <i class="bi bi-download"></i>
+              <i class="ri-download-2-line"></i>
               Download All
             </button>
           </div>
@@ -517,7 +517,7 @@
                   <label class="ac-field__label" for="f-license">License Key</label>
                   <div class="ac-input-wrap ac-input-wrap--valid">
                     <input class="ac-input" type="text" id="f-license" value="AC-DEMO-123456" placeholder="AC-XXXX-XXXX">
-                    <i class="bi bi-check-circle"></i>
+                    <i class="ri-checkbox-circle-line"></i>
                   </div>
                   <span class="ac-field__msg ac-field__msg--ok">License is active and valid.</span>
                 </div>
@@ -588,7 +588,7 @@
                   <div class="ac-accordion__item">
                     <button class="ac-accordion__trigger" type="button">
                       API Webhooks
-                      <i class="bi bi-chevron-down"></i>
+                      <i class="ri-arrow-down-s-line"></i>
                     </button>
                     <div class="ac-accordion__content">
                       <p>Configure external webhook endpoints to receive POST payloads upon service events.</p>
@@ -598,7 +598,7 @@
                   <div class="ac-accordion__item">
                     <button class="ac-accordion__trigger" type="button">
                       Override Templates
-                      <i class="bi bi-chevron-down"></i>
+                      <i class="ri-arrow-down-s-line"></i>
                     </button>
                     <div class="ac-accordion__content">
                       <label class="ac-switch">
@@ -614,7 +614,7 @@
               <fieldset class="ac-fieldset">
                 <legend class="ac-fieldset__legend">Backup & Restore</legend>
                 <label class="ac-dropzone">
-                  <i class="bi bi-cloud-upload" style="font-size: 28px; margin-bottom: 8px;"></i>
+                  <i class="ri-upload-cloud-2-line" style="font-size: 28px; margin-bottom: 8px;"></i>
                   <span class="ac-dropzone__text">Click to upload or drag & drop</span>
                   <span class="ac-dropzone__hint">JSON or XML up to 5MB</span>
                   <input type="file" accept=".json,.xml">
@@ -638,7 +638,7 @@
         {if $updateInfo.update_available}
         <div class="ac-banner ac-banner--warn" role="alert">
           <div class="ac-banner__icon">
-            <i class="bi bi-exclamation-circle" style="font-size: 20px;"></i>
+            <i class="ri-error-warning-line" style="font-size: 20px;"></i>
           </div>
           <div class="ac-banner__text">
             <strong>Update available!</strong> &mdash; v{$updateInfo.latest_version} is available. See the Software Update card below for details.
@@ -648,7 +648,7 @@
         {elseif $updateInfo.error}
         <div class="ac-banner ac-banner--err" role="alert">
           <div class="ac-banner__icon">
-            <i class="bi bi-exclamation-triangle" style="font-size: 20px;"></i>
+            <i class="ri-alert-line" style="font-size: 20px;"></i>
           </div>
           <div class="ac-banner__text">
             <strong>Update check failed</strong> &mdash; Could not reach the update server.
@@ -658,7 +658,7 @@
         {else}
         <div class="ac-banner ac-banner--ok" role="alert">
           <div class="ac-banner__icon">
-            <i class="bi bi-check-circle" style="font-size: 20px;"></i>
+            <i class="ri-checkbox-circle-line" style="font-size: 20px;"></i>
           </div>
           <div class="ac-banner__text">
             <strong>Module is up to date</strong> &mdash; v{$moduleVersion}
@@ -703,7 +703,7 @@
             <div class="ac-card__top">
               <h3 class="ac-card__title">License Information</h3>
               <span class="ac-badge ac-badge--success">
-                <i class="bi bi-check-circle-fill"></i>
+                <i class="ri-checkbox-circle-fill"></i>
                 Active
               </span>
             </div>
@@ -764,7 +764,7 @@
               </div>
               {else}
               <div class="ac-flex ac-flex-col ac-gap-3 ac-items-center ac-justify-center" style="padding:var(--ac-sp-6) 0; color:var(--ac-text-dim);">
-                <i class="bi bi-check-circle" style="font-size: 20px;"></i>
+                <i class="ri-checkbox-circle-line" style="font-size: 20px;"></i>
                 <p style="margin:0;">You are running the latest version of AddonsCare.</p>
               </div>
               {/if}
@@ -772,7 +772,7 @@
             <div class="ac-card__bottom ac-card__bottom--actions">
               {if $updateInfo.update_available && $updateInfo.download_url}
                 <a href="{$updateInfo.download_url}" target="_blank" class="ac-btn ac-btn--accent">
-                  <i class="bi bi-download"></i>
+                  <i class="ri-download-cloud-2-line"></i>
                   &nbsp;Download Update
                 </a>
               {else}
@@ -803,7 +803,7 @@
             </div>
             <div class="ac-card__bottom ac-card__bottom--actions">
               <a href="mailto:support@addonscare.com?subject=Issue%20Report%20-%20{$licensedDomain|default:'example.com'|escape:'url'}&body=Hello%20Support%2C%0A%0AI%20need%20help%20with%20the%20AddonsCare%20module.%0A%0A%5B%20Please%20describe%20your%20issue%20here%20%5D%0A%0A%0A---%20System%20Info%20---%0APHP%20Version%3A%20{$phpVersion|escape:'url'}%0AWHMCS%20Version%3A%20{$whmcsVersion|escape:'url'}%0AModule%20Version%3A%20{$moduleVersion|escape:'url'}%0ALicense%20Code%3A%20{$licenseCode|default:'AC-DEMO'|escape:'url'}%0ADomain%3A%20{$licensedDomain|default:'example.com'|escape:'url'}%0A-------------------%0A" class="ac-btn ac-btn--danger">
-                <i class="bi bi-bug"></i>
+                <i class="ri-bug-line"></i>
                 &nbsp;Report Issue
               </a>
             </div>
@@ -855,7 +855,7 @@
               <button class="ac-btn ac-btn--outline" data-demo-toast="error">Test Error</button>
               <button class="ac-btn ac-btn--outline" data-demo-toast="success">Test Success</button>
               <div class="ac-notice ac-notice--error">
-                <i class="bi bi-x-circle"></i>
+                <i class="ri-close-circle-line"></i>
                 <div><strong>Connection Failed</strong><br>API endpoint unreachable.</div>
               </div>
             </div>
@@ -892,7 +892,7 @@
                 Hover me
               </button>
               <span data-ac-tooltip="Additional info here">
-                <i class="bi bi-info-circle" style="font-size: 20px;"></i>
+                <i class="ri-information-line" style="font-size: 20px;"></i>
               </span>
             </div>
           </div>
@@ -905,7 +905,7 @@
             <div class="ac-card__inner">
               <div class="ac-stepper">
                 <div class="ac-step ac-step--complete">
-                  <div class="ac-step__circle"><i class="bi bi-check"></i></div>
+                  <div class="ac-step__circle"><i class="ri-check-line"></i></div>
                   <span class="ac-step__label">Setup</span>
                 </div>
                 <div class="ac-step ac-step--active">
@@ -927,14 +927,14 @@
       <div class="ac-scroll-hint ac-scroll-hint--vertical" id="ac-scroll-hint-vertical">
         <span class="ac-scroll-hint__text">Scroll down</span>
         <div class="ac-scroll-hint__arrow">
-          <i class="bi bi-chevron-down"></i>
+          <i class="ri-arrow-down-s-line"></i>
         </div>
       </div>
 
       <div class="ac-scroll-hint ac-scroll-hint--horizontal" id="ac-scroll-hint-horizontal">
         <span class="ac-scroll-hint__text">Scroll</span>
         <div class="ac-scroll-hint__arrow">
-          <i class="bi bi-chevron-right"></i>
+          <i class="ri-arrow-right-s-line"></i>
         </div>
       </div>
 
@@ -950,13 +950,13 @@
       <div class="ac-dialog__head">
         <h3 id="modal-title">Confirm Database Sync</h3>
         <button class="ac-dialog__x" data-ac-close aria-label="Close">
-          <i class="bi bi-x"></i>
+          <i class="ri-close-line"></i>
         </button>
       </div>
       <div class="ac-dialog__body">
         <p>This will synchronize all local service records with the remote API. The process may take several minutes depending on record volume.</p>
         <div class="ac-notice ac-notice--warning ac-mt-4">
-          <i class="bi bi-exclamation-triangle"></i>
+          <i class="ri-alert-line"></i>
           <span>Ensure no billing runs are currently active before proceeding.</span>
         </div>
       </div>
