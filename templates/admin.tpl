@@ -70,7 +70,7 @@
         {* Alert Banner *}
         <div class="ac-banner ac-banner--ok" role="alert">
           <div class="ac-banner__icon">
-            <i class="ri-checkbox-circle-line" style="font-size: 20px;"></i>
+            <i class="fa-regular fa-circle-check" style="font-size: 20px;"></i>
           </div>
           <div class="ac-banner__text">
             <strong>All systems operational</strong> &mdash; Last checked 2 minutes ago
@@ -93,7 +93,7 @@
 
           <div class="ac-stat-card ac-stat-card--emerald">
             <div class="ac-stat-card__icon">
-              <i class="ri-wallet-3-line" style="font-size: 24px;"></i>
+              <i class="fa-solid fa-wallet" style="font-size: 24px;"></i>
             </div>
             <div class="ac-stat-card__data">
               <span class="ac-stat-card__value">$12,840</span>
@@ -104,7 +104,7 @@
 
           <div class="ac-stat-card ac-stat-card--amber">
             <div class="ac-stat-card__icon">
-              <i class="ri-lifebuoy-line" style="font-size: 20px;"></i>
+              <i class="fa-solid fa-life-ring" style="font-size: 20px;"></i>
             </div>
             <div class="ac-stat-card__data">
               <span class="ac-stat-card__value">17</span>
@@ -614,7 +614,7 @@
               <fieldset class="ac-fieldset">
                 <legend class="ac-fieldset__legend">Backup & Restore</legend>
                 <label class="ac-dropzone">
-                  <i class="ri-upload-cloud-2-line" style="font-size: 28px; margin-bottom: 8px;"></i>
+                  <i class="fa-solid fa-cloud-arrow-up" style="font-size: 28px; margin-bottom: 8px;"></i>
                   <span class="ac-dropzone__text">Click to upload or drag & drop</span>
                   <span class="ac-dropzone__hint">JSON or XML up to 5MB</span>
                   <input type="file" accept=".json,.xml">
@@ -638,7 +638,7 @@
         {if $updateInfo.update_available}
         <div class="ac-banner ac-banner--warn" role="alert">
           <div class="ac-banner__icon">
-            <i class="ri-error-warning-line" style="font-size: 20px;"></i>
+            <i class="fa-solid fa-triangle-exclamation" style="font-size: 20px;"></i>
           </div>
           <div class="ac-banner__text">
             <strong>Update available!</strong> &mdash; v{$updateInfo.latest_version} is available. See the Software Update card below for details.
@@ -648,7 +648,7 @@
         {elseif $updateInfo.error}
         <div class="ac-banner ac-banner--err" role="alert">
           <div class="ac-banner__icon">
-            <i class="ri-alert-line" style="font-size: 20px;"></i>
+            <i class="fa-solid fa-triangle-exclamation" style="font-size: 20px;"></i>
           </div>
           <div class="ac-banner__text">
             <strong>Update check failed</strong> &mdash; Could not reach the update server.
@@ -658,7 +658,7 @@
         {else}
         <div class="ac-banner ac-banner--ok" role="alert">
           <div class="ac-banner__icon">
-            <i class="ri-checkbox-circle-line" style="font-size: 20px;"></i>
+            <i class="fa-regular fa-circle-check" style="font-size: 20px;"></i>
           </div>
           <div class="ac-banner__text">
             <strong>Module is up to date</strong> &mdash; v{$moduleVersion}
@@ -764,7 +764,7 @@
               </div>
               {else}
               <div class="ac-flex ac-flex-col ac-gap-3 ac-items-center ac-justify-center" style="padding:var(--ac-sp-6) 0; color:var(--ac-text-dim);">
-                <i class="ri-checkbox-circle-line" style="font-size: 20px;"></i>
+                <i class="fa-regular fa-circle-check" style="font-size: 20px;"></i>
                 <p style="margin:0;">You are running the latest version of AddonsCare.</p>
               </div>
               {/if}
@@ -892,7 +892,7 @@
                 Hover me
               </button>
               <span data-ac-tooltip="Additional info here">
-                <i class="ri-information-line" style="font-size: 20px;"></i>
+                <i class="fa-solid fa-circle-info" style="font-size: 20px;"></i>
               </span>
             </div>
           </div>

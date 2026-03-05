@@ -5,6 +5,7 @@
  * ALL styles scoped under .addonscare — no globals, no WHMCS leaks.
  * =============================================================================
  */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* =============================================================================
    1. CSS VARIABLES
@@ -1295,7 +1296,7 @@
         opacity: 1;
         transform: translateX(0) scale(1);
     }
-}}
+}
 
 @keyframes ac-toastOut {
     from {
